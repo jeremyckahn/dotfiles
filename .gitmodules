@@ -1,0 +1,27 @@
+[submodule ".vim/bundle/CSS-one-line--multi-line-folding"]
+	path = .vim/bundle/CSS-one-line--multi-line-folding
+	url = git://github.com/vim-scripts/CSS-one-line--multi-line-folding.git
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/Command-T"]
+	path = .vim/bundle/Command-T
+	url = git://github.com/wincent/Command-T.git
+[submodule ".vim/bundle/lusty"]
+	path = .vim/bundle/lusty
+	url = git://github.com/sjbach/lusty.git
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/vimux"]
+	path = .vim/bundle/vimux
+	url = git://github.com/benmills/vimux.git
