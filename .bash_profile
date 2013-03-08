@@ -35,7 +35,7 @@ alias noblanklines='grep -v "^[[:space:]]*$"'
 
 DOTFILES=~/dotfiles
 
-source $DOTFILES/misc/git-completion.bash
+source $DOTFILES/helpers/git-completion.bash
 
 # Push the current directory
 function psh () {
