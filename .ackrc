@@ -1,0 +1,3 @@
+--ignore-dir=node_modules
+--ignore-dir=components
+--ignore-dir=dist
