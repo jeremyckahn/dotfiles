@@ -1,3 +1,6 @@
+# only search with case sensitivity if there is mixed case
+--smart-case
+
 --ignore-dir=node_modules
 --ignore-dir=components
 --ignore-dir=dist
