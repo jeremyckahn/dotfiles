@@ -27,11 +27,21 @@ alias egrep='egrep --color=auto'
 alias sass_watch='sass --watch style.scss:style.css'
 alias tmux="tmux -2"
 alias ni="node-inspector & sleep .5 && open http://0.0.0.0:8080/debug?port=5858"
-# Adapted from: https://gist.github.com/1525217
-alias serve='python -m SimpleHTTPServer 8080'
 # Outputs a version of a file that has no blank lines.
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
+
+# Start a simple server.  Provide a port number as an argument or leave it
+# blank to use 8080.
+function serve () {
+  SERVER_PORT=8080
+
+  if [ $1 ]; then
+    SERVER_PORT=$1
+  fi
+
+  python -m SimpleHTTPServer ${SERVER_PORT}
+}
 
 DOTFILES=~/dotfiles
 
@@ -148,3 +158,9 @@ alias rpi_chroot='sudo LC_ALL=C chroot ~/rpi/chroot-raspbian-armhf'
 alias rpi_start='qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -hda rootfs.ext2 -kernel zImage -append "root=/dev/sda" -serial stdio &'
 alias rpi_start_raspbian='qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -kernel raspbian/vmlinuz-2.6.32-qemu-armv6 -initrd raspbian/initrd.img-2.6.32-qemu-armv6 -hda raspbian/raspbian.img -net nic -net user -append "root=/dev/sda1" -redir tcp:2222::22 &'
 alias rpi_ssh_qemu='ssh -p2222 raspbian@localhost'
+
+### Some craziness inserted by Eclipse.  I'll uncomment it if something breaks...
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+#export PATH
