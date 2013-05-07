@@ -8,8 +8,7 @@ export EDITOR=vim
 
 alias ll="ls -lah"
 alias gs='git status'
-alias gd='git diff'
-alias gdn='git diff --name-only'
+alias gd='tig status'
 alias gb='git branch'
 alias gl='git log'
 alias gc='git checkout'
