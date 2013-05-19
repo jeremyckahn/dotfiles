@@ -32,6 +32,9 @@ alias noblanklines='grep -v "^[[:space:]]*$"'
 
 # Start a simple server.  Provide a port number as an argument or leave it
 # blank to use 8080.
+#
+# Requires Node and http-server:
+#   npm install http-server -g
 function serve () {
   SERVER_PORT=8080
 
@@ -39,7 +42,7 @@ function serve () {
     SERVER_PORT=$1
   fi
 
-  python -m SimpleHTTPServer ${SERVER_PORT}
+  http-server ./ -p ${SERVER_PORT}
 }
 
 DOTFILES=~/dotfiles
