@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/vimux"]
 	path = .vim/bundle/vimux
 	url = git://github.com/benmills/vimux.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
