@@ -6,7 +6,7 @@ export EDITOR=vim
 # Fix ctrl+l for clearing the screen in Vi mode
 #bind -m vi-insert "\C-l":clear-screen
 
-alias ll="file .* *"
+alias ll="ls -lah"
 alias gs='git status'
 alias gd='tig status'
 alias gb='git branch'
