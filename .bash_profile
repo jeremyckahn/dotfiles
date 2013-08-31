@@ -72,7 +72,7 @@ function pll () {
 
 # Find and replace all files recursively in the current directory.
 function find_and_replace () {
-  grep -rl $1 ./ | xargs -print0 sed -i '' s/$1/$2/
+  grep -rl $1 ./ | xargs sed -i s/$1/$2/
 }
 
 function svnaddall () {
