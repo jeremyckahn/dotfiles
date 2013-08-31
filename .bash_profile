@@ -45,6 +45,17 @@ function serve () {
   http-server ./ -p ${SERVER_PORT}
 }
 
+# OS X only.  Serve a directory and open the default browser to it.
+function open_and_serve () {
+  SERVER_PORT=8080
+
+  if [ $1 ]; then
+    SERVER_PORT=$1
+  fi
+
+  open http://localhost:${SERVER_PORT}; serve ${SERVER_PORT}
+}
+
 DOTFILES=~/dotfiles
 
 source $DOTFILES/helpers/git-completion.bash
@@ -61,7 +72,7 @@ function pll () {
 
 # Find and replace all files recursively in the current directory.
 function find_and_replace () {
-  grep -rl $1 ./ | xargs -print0 sed -i '' s/$1/$2/
+  grep -rl $1 ./ | xargs sed -i s/$1/$2/
 }
 
 function svnaddall () {
