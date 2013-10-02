@@ -12,6 +12,9 @@ set shiftwidth=2
 set softtabstop=2
 setlocal spelllang=en_us
 
+" Ignore these directories for Command-T
+set wildignore=*bower_components,*node_modules
+
 call pathogen#infect()
 call pathogen#helptags()
 let g:ctrlp_working_path_mode = 0
