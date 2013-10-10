@@ -4,4 +4,5 @@
 --ignore-dir=node_modules
 --ignore-dir=components
 --ignore-dir=bower_components
+--ignore-dir=.tmp
 --ignore-dir=dist
