@@ -95,6 +95,11 @@ function tabs_to_spaces_all () {
   for FILE in ./*; do expand -t 2 $FILE > /tmp/spaces && mv /tmp/spaces $FILE ; done;
 }
 
+# Fixes newline copy issues in some web apps I use
+function convert_pbpaste_to_double_newlines () {
+  pbpaste | sed 's/^$/\'$'\n/g' | pbcopy
+}
+
 function clean_dir () {
   echo "Are you really really sure?  The current directory is: "
   pwd
