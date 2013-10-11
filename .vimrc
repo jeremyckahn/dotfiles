@@ -12,6 +12,9 @@ set shiftwidth=2
 set softtabstop=2
 setlocal spelllang=en_us
 
+" Treat .ejs files as HTML
+au BufRead,BufNewFile *.ejs setfiletype html
+
 " Ignore these directories for Command-T
 set wildignore=*bower_components,*node_modules,.tmp
 
