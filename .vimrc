@@ -27,6 +27,12 @@ let g:ctrlp_regexp_search = 1
 let g:ctrlp_use_caching = 1
 let g:CommandTMaxFiles=100000
 
+" Make OS X clipboard play nicely with Vim
+" http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
+nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <F2> :.w !pbcopy<CR><CR>
+vmap <F2> :w !pbcopy<CR><CR>
 
 " Enable file type detection.
 " Also load indent files, to automatically do language-dependent indenting.
