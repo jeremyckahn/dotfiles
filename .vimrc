@@ -39,9 +39,10 @@ filetype plugin indent on
 let mapleader = ","
 
 nmap <leader>n :NERDTreeToggle<Enter>
-nmap <leader>N :LustyFilesystemExplorer<Enter>
-nmap <leader>/ :LustyBufferGrep<Enter>
-nmap <leader>b :LustyBufferExplorer<Enter>
+" Lusty seems to break Apple Vim. :'(
+"nmap <leader>N :LustyFilesystemExplorer<Enter>
+"nmap <leader>/ :LustyBufferGrep<Enter>
+"nmap <leader>b :LustyBufferExplorer<Enter>
 nmap <leader>d :w !diff % -<CR>
 nmap <leader>T :CommandTFlush<CR>
 
