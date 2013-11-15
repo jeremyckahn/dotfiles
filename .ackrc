@@ -6,3 +6,4 @@
 --ignore-dir=bower_components
 --ignore-dir=.tmp
 --ignore-dir=dist
+--ignore-dir=bin
