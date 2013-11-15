@@ -16,8 +16,6 @@ setlocal spelllang=en_us
 " Treat .ejs files as HTML
 au BufRead,BufNewFile *.ejs setfiletype html
 
-let g:CommandTWildIgnore="*bower_components,*node_modules,.tmp"
-
 call pathogen#infect()
 call pathogen#helptags()
 let g:ctrlp_working_path_mode = 0
@@ -25,6 +23,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_regexp_search = 1
 let g:ctrlp_use_caching = 1
 let g:CommandTMaxFiles=100000
+let g:CommandTWildIgnore=&wildignore . ",**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**"
 
 " Make OS X clipboard play nicely with Vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
