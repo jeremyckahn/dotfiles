@@ -117,8 +117,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set pastetoggle=<F2>
-
 set t_Co=256
 
 " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
