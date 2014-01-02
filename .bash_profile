@@ -56,6 +56,18 @@ function open_and_serve () {
   open http://localhost:${SERVER_PORT}; serve ${SERVER_PORT}
 }
 
+function git-kill-branch () {
+
+  # http://stackoverflow.com/a/6482403
+  if [ -z "$1" ]; then
+    echo "Please specify a branch."
+    return 1
+  fi
+
+  git branch -D $1
+  git push origin :$1
+}
+
 DOTFILES=~/dotfiles
 
 source $DOTFILES/helpers/git-completion.bash
