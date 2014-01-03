@@ -161,7 +161,7 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 
 " Immediately search for the word under the cursor in a new tab.
-nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+nmap <leader>A :tab split<CR>:Ack "\W<C-r><C-w>\W"<CR>
 
 let g:unite_source_grep_command = 'ack-grep'
 let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
