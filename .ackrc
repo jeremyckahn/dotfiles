@@ -1,6 +1,7 @@
 # only search with case sensitivity if there is mixed case
 --smart-case
 
+--type-add=css=.sass,.scss,.css
 --ignore-dir=node_modules
 --ignore-dir=components
 --ignore-dir=bower_components
