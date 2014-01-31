@@ -25,7 +25,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias sass_watch='sass --watch style.scss:style.css'
 alias tmux="tmux -2"
-alias ni="node-inspector & sleep .5 && open http://0.0.0.0:8080/debug?port=5858"
+alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 # Outputs a version of a file that has no blank lines.
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
