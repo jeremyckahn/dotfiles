@@ -30,6 +30,12 @@ alias ni="node-inspector & sleep .5 && open http://0.0.0.0:8080/debug?port=5858"
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
 
+alias u='cd ../'
+alias uu='cd ../../'
+alias uuu='cd ../../../'
+alias uuuu='cd ../../../../'
+alias uuuuu='cd ../../../../../'
+
 # Start a simple server.  Provide a port number as an argument or leave it
 # blank to use 8080.
 #
