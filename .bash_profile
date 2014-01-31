@@ -30,11 +30,12 @@ alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
 
-alias u='cd ../'
-alias uu='cd ../../'
-alias uuu='cd ../../../'
-alias uuuu='cd ../../../../'
-alias uuuuu='cd ../../../../../'
+# `u N` will `cd` up N directories.
+# Thanks to James Johnson for this.
+u() {
+  local ts=$(printf "%${1}s");
+  cd $(printf %s "${ts// /../}");
+}
 
 # Start a simple server.  Provide a port number as an argument or leave it
 # blank to use 8080.
