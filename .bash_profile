@@ -53,6 +53,15 @@ function serve () {
   http-server ./ -p ${SERVER_PORT}
 }
 
+# Starts watching a file and `cat`s it whenever the contents change. Ctrl+c to
+# quit.
+#
+# Requires Node and nodemon:
+#   npm install -g nodemon
+function watch_and_log () {
+  nodemon -x cat $1 -w $1
+}
+
 # OS X only.  Serve a directory and open the default browser to it.
 function open_and_serve () {
   SERVER_PORT=8080
