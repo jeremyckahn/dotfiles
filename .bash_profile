@@ -53,6 +53,20 @@ function serve () {
   http-server ./ -p ${SERVER_PORT}
 }
 
+# Use node-inspector to debug Grunt.  To use this:
+#
+#   1. Fire up node-inspector (it's aliased above as `ni`), leave it running
+#   2. In another shell, call grunt-debug [task]
+#
+# Example:
+#
+#  grunt-debug server
+#
+# Adapted from http://stackoverflow.com/a/12739260
+function grunt-debug () {
+  node --debug-brk $(which grunt) $1
+}
+
 # Starts watching a file and `cat`s it whenever the contents change. Ctrl+c to
 # quit.
 #
