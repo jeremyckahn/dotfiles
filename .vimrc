@@ -32,6 +32,10 @@ imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 nmap <F2> :.w !pbcopy<CR><CR>
 vmap <F2> :w !pbcopy<CR><CR>
 
+" Write file with sudo permissions
+" http://vim.wikia.com/wiki/Su-write
+command W w !sudo tee % > /dev/null
+
 " Enable file type detection.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
