@@ -18,12 +18,15 @@ au BufRead,BufNewFile *.ejs setfiletype html
 
 call pathogen#infect()
 call pathogen#helptags()
+
+set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**
+
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_regexp_search = 1
 let g:ctrlp_use_caching = 1
 let g:CommandTMaxFiles=100000
-let g:CommandTWildIgnore=&wildignore . ",**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**"
+let g:CommandTWildIgnore=&wildignore
 
 " Make OS X clipboard play nicely with Vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
@@ -41,6 +44,9 @@ command W w !sudo tee % > /dev/null
 filetype plugin indent on
 
 let mapleader = ","
+
+" Find files with ctrlp
+nmap <leader>p :CtrlP<CR>
 
 nmap <leader>n :NERDTreeToggle<Enter>
 " Lusty seems to break Apple Vim. :'(
