@@ -22,7 +22,7 @@ call pathogen#helptags()
 set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**
 
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp_search = 0
 let g:ctrlp_use_caching = 1
 let g:CommandTMaxFiles=100000
