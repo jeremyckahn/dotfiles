@@ -122,13 +122,22 @@ function svnaddall () {
   svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
 }
 
+# Usage:
+#
+#   svndiff
+#
+# With no arguments, show the diff of the current set of uncommitted changes.
+#
+#   svndiff [revision_number]
+#
+# Provide a revision number to see a diff of that commit.
 function svndiff () {
   if [ -z "$1" ];
   then
-    echo "Please specify a revision number (i.e. svndiff 1234)."
-    return 1
+    svn diff | colordiff | less -R
+  else
+    svn diff -c $1 | colordiff | less -R
   fi
-  svn diff -c $1 | colordiff | less -R
 }
 
 # makes the connection to localhost:8888 really slow.
