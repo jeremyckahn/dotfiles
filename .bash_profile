@@ -122,6 +122,15 @@ function svnaddall () {
   svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
 }
 
+function svndiff () {
+  if [ -z "$1" ];
+  then
+    echo "Please specify a revision number (i.e. svndiff 1234)."
+    return 1
+  fi
+  svn diff -c $1 | colordiff | less -R
+}
+
 # makes the connection to localhost:8888 really slow.
 function goslow () {
   ipfw pipe 1 config bw 4KByte/s
