@@ -47,6 +47,7 @@ let mapleader = ","
 
 " Find files with ctrlp
 nmap <leader>p :CtrlP<CR>
+nmap <leader>P :CtrlPClearCache<CR>
 
 nmap <leader>n :NERDTreeToggle<Enter>
 " Lusty seems to break Apple Vim. :'(
