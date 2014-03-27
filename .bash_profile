@@ -140,6 +140,16 @@ function svndiff () {
   fi
 }
 
+# This hacky thing comes from: http://stackoverflow.com/q/10699184
+function svnrevertpattern () {
+  if [ -z "$1" ];
+  then
+    echo "You need to specify a pattern."
+  else
+    svn revert `svn status .|grep "$1"|awk '{print $2}'`
+  fi
+}
+
 # makes the connection to localhost:8888 really slow.
 function goslow () {
   ipfw pipe 1 config bw 4KByte/s
