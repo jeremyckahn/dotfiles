@@ -144,6 +144,7 @@ function svndiff () {
     svn diff -c $1 | colordiff | less -R
   fi
 }
+alias sd='svndiff'
 
 # This hacky thing comes from: http://stackoverflow.com/q/10699184
 function svnrevertpattern () {
