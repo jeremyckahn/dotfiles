@@ -10,3 +10,4 @@
 --ignore-dir=dist
 --ignore-dir=bin
 --ignore-dir=git_components
+--ignore-dir=.sass-cache
