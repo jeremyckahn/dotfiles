@@ -177,6 +177,26 @@ function convert_pbpaste_to_double_newlines () {
   pbpaste | sed 's/^$/\'$'\n/g' | pbcopy
 }
 
+# Take an AAC audio file and convert to all formats needed for the web.
+# Requires FFmpeg with Vorbis support:
+#
+#   brew install ffmpeg --with-libvorbis
+#
+# Usage:
+#
+#   webify_aac some.aac
+function webify_aac () {
+  if [ -z "$1" ];
+  then
+    echo "You need to specify a file."
+    exit 1
+  fi
+
+  # http://stackoverflow.com/a/125340
+  filename=${1%.*}
+  ffmpeg -i $1 $filename.ogg
+}
+
 function clean_dir () {
   echo "Are you really really sure?  The current directory is: "
   pwd
