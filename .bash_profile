@@ -195,6 +195,7 @@ function webify_aac () {
   # http://stackoverflow.com/a/125340
   filename=${1%.*}
   ffmpeg -i $1 $filename.ogg
+  ffmpeg -i $1 $filename.mp3
 }
 
 function clean_dir () {
