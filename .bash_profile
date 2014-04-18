@@ -198,6 +198,21 @@ function webify_aac () {
   ffmpeg -i $1 $filename.mp3
 }
 
+# Compare the contents of a directory tree, recursively.
+#
+# Usage:
+#
+#  compare_trees dir_one dir_two
+function compare_trees () {
+  if [ -z "$1" -o -z "$2" ];
+  then
+    echo "You need to specify two directories to compare."
+    exit 1
+  fi
+
+  diff <(pushd $1; ls -R) <(pushd $2; ls -R)
+}
+
 function clean_dir () {
   echo "Are you really really sure?  The current directory is: "
   pwd
