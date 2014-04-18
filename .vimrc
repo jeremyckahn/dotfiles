@@ -61,6 +61,9 @@ nmap <leader>T :CommandTFlush<CR>
 noremap <leader>f :call UnsetGutter()<CR>
 noremap <leader>F :call SetGutter()<CR>
 
+" Disable Ex mode
+nmap Q <Nop>
+
 " Substitute the word under the cursor.
 nmap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
