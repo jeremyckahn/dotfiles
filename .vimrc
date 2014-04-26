@@ -189,8 +189,13 @@ noremap <C-L> :tabn<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe<CR>
 
+function! Tig ()
+  silent !tig status
+  redraw!
+endfunction
+
 " Open Tig and see the current Git diff
-noremap <C-t> :!tig status<CR>
+noremap <C-t> :call Tig()<CR>
 
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
