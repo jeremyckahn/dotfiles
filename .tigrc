@@ -1,1 +1,2 @@
 set mouse = true
+bind status P !git push origin
