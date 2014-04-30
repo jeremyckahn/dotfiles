@@ -26,7 +26,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias sass_watch='sass --watch style.scss:style.css'
 alias tmux="tmux -2"
-alias ip="ipconfig getifaddr en1"
 alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 # Outputs a version of a file that has no blank lines.
 #   noblanklines [filename]
@@ -52,6 +51,13 @@ function serve () {
   fi
 
   http-server ./ -p ${SERVER_PORT}
+}
+
+# Prints the machine's network IP
+function ip () {
+  # Determine the first en* adapter being used
+  ADAPTER=`ifconfig | grep "^en." -m 1 -o`
+  ipconfig getifaddr $ADAPTER
 }
 
 # Use node-inspector to debug Grunt.  To use this:
