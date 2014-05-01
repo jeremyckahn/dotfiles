@@ -13,8 +13,9 @@ set softtabstop=2
 set smartcase
 setlocal spelllang=en_us
 
-" Treat .ejs files as HTML
-au BufRead,BufNewFile *.ejs setfiletype html
+" Force some file types to be other file types
+au BufRead,BufNewFile *.ejs,*.mustache setfiletype html
+au BufRead,BufNewFile *.json setfiletype json
 
 call pathogen#infect()
 call pathogen#helptags()
