@@ -1,4 +1,6 @@
 set mouse = true
+set line-graphics = utf-8
+set refresh-mode auto
 bind status P !git push origin
 bind generic F !git fetch
 bind generic O !git checkout %(commit)
