@@ -7,9 +7,7 @@ set hlsearch
 set incsearch
 set nocp
 set autoindent
-set expandtab
-set shiftwidth=2
-set softtabstop=2
+set tabstop=2 shiftwidth=2 expandtab
 set smartcase
 setlocal spelllang=en_us
 
