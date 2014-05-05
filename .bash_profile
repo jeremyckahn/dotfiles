@@ -145,9 +145,9 @@ function svndeleteall () {
 function svndiff () {
   if [ -z "$1" ];
   then
-    svn diff | colordiff | less -R
+    svn diff | tig
   else
-    svn diff -c $1 | colordiff | less -R
+    svn diff -c $1 | tig
   fi
 }
 alias sd='svndiff'
