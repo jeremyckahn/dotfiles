@@ -1,10 +1,8 @@
 export PATH=/usr/local/bin:$PATH
 export EDITOR=vim
 
-# Use Vi editing mode.
-#set -o vi
-# Fix ctrl+l for clearing the screen in Vi mode
-#bind -m vi-insert "\C-l":clear-screen
+# Always follow symlinks
+alias cd="cd -P"
 
 alias ll="ls -lah"
 alias gs='git status'
@@ -22,8 +20,6 @@ alias a='cd ~/Sites/app'
 alias o='open ./'
 alias d='cd ~/dotfiles'
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias sass_watch='sass --watch style.scss:style.css'
 alias tmux="tmux -2"
 alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
