@@ -13,6 +13,7 @@ setlocal spelllang=en_us
 
 " Force some file types to be other file types
 au BufRead,BufNewFile *.ejs,*.mustache setfiletype html
+au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.json setfiletype json
 
 call pathogen#infect()
