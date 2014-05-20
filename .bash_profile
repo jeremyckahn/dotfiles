@@ -46,11 +46,9 @@ function serve () {
   http-server ./ -p ${SERVER_PORT}
 }
 
-# Prints the machine's network IP
+# Prints the machine's broadcasting network IP
 function ip () {
-  # Determine the first en* adapter being used
-  ADAPTER=`ifconfig | grep "^en." -m 1 -o`
-  ipconfig getifaddr $ADAPTER
+  ifconfig | grep broadcast | awk '{print $2}'
 }
 
 # Use node-inspector to debug Grunt.  To use this:
