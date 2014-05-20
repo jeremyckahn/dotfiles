@@ -1,9 +1,6 @@
 export PATH=/usr/local/bin:$PATH
 export EDITOR=vim
 
-# Always follow symlinks
-alias cd="cd -P"
-
 alias ll="ls -lah"
 alias gs='git status'
 alias gd='tig status'
@@ -278,6 +275,12 @@ TERM=screen-256color
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Always follow symlinks.
+#
+# This alias needs to be below the RVM line above, for some crazy reason.
+# Syntax errors occur on shell startup, otherwise.
+alias cd="cd -P"
 
 ## Raspberry Pi stuff.
 # http://superpiadventures.com/2012/07/development-environment/
