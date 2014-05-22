@@ -263,6 +263,14 @@ function __prompt_cmd() {
 }
 export PROMPT_COMMAND=__prompt_cmd
 
+# Names iTerm2 tab
+# http://superuser.com/a/560393
+function name_tab () {
+  str='echo -ne "\033]0;'$1'\007"'
+  export PROMPT_COMMAND=$str
+  echo "iTerm tab is now \"$1\""
+}
+
 # Setup some of the git command prompt display stuff
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
