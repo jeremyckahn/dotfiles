@@ -266,9 +266,17 @@ export PROMPT_COMMAND=__prompt_cmd
 # Names iTerm2 tab
 # http://superuser.com/a/560393
 function name_tab () {
-  str='echo -ne "\033]0;'$1'\007"'
+  if [ $1 ]; then
+    TAB_NAME=$1
+  else
+    # Get the current directory name if no tab name was specified
+    # http://stackoverflow.com/a/1371283
+    TAB_NAME=${PWD##*/}
+  fi
+
+  str='echo -ne "\033]0;'$TAB_NAME'\007"'
   export PROMPT_COMMAND=$str
-  echo "iTerm tab is now \"$1\""
+  echo "iTerm tab is now \"$TAB_NAME\""
 }
 
 # Setup some of the git command prompt display stuff
