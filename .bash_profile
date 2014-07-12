@@ -26,6 +26,12 @@ alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
 
+# Take whatever JSON data is in the OS X pasteboard, jsonlint it, and pipe it
+# into a new Vim buffer.
+#
+# Requires jsonlint (`npm install -g jsonlint`).
+alias json2vim='pbpaste | jsonlint | vim -'
+
 # `u N` will `cd` up N directories.
 # Thanks to James Johnson for this.
 u() {
