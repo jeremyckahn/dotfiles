@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/vim-pbcopy"]
+	path = .vim/bundle/vim-pbcopy
+	url = https://github.com/ahw/vim-pbcopy.git
