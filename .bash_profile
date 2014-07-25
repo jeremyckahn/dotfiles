@@ -254,6 +254,33 @@ function resource () {
   fi
 }
 
+# Rename file "foo" to "_foo"
+#
+# Usage: hide [filename]
+function hide () {
+  if [ -z "$1" ];
+  then
+    echo "Please specify a file to hide."
+    exit 1
+  fi
+
+  mv $1 _$1
+}
+
+# Rename file "_foo" to "foo"
+#
+# Usage: unhide [filename]
+function unhide () {
+  if [ -z "$1" ];
+  then
+    echo "Please specify a file to unhide."
+    exit 1
+  fi
+
+  mv $1 ${1:1}
+}
+
+
 # Colors for the command prompt
 __BLUE="\[\033[0;34m\]"
 __GREEN="\[\033[0;32m\]"
