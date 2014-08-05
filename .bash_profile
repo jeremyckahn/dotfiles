@@ -145,7 +145,7 @@ function svndeleteall () {
 function svndiff () {
   if [ -z "$1" ];
   then
-    svn diff | tig
+    svn diff -x --ignore-all-space | tig
   else
     svn diff -c $1 | tig
   fi
