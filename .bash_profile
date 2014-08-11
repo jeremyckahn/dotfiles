@@ -162,6 +162,24 @@ function svnrevertpattern () {
   fi
 }
 
+function svn_stash_to_patch () {
+  if [ -z "$1" ];
+  then
+    echo "You need to specify a place to stash to (somedir/stash.patch)."
+  else
+    svn diff > $1
+  fi
+}
+
+function svn_apply_from_patch () {
+  if [ -z "$1" ];
+  then
+    echo "You need to specify a place to apply from (somedir/stash.patch)."
+  else
+    patch -p0 < $1
+  fi
+}
+
 # makes the connection to localhost:8888 really slow.
 function goslow () {
   ipfw pipe 1 config bw 4KByte/s
