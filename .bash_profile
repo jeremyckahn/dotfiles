@@ -33,6 +33,10 @@ alias noblanklines='grep -v "^[[:space:]]*$"'
 # Requires jsonlint (`npm install -g jsonlint`).
 alias json2vim='pbpaste | jsonlint | vim -'
 
+# Temporarily disable BASH history
+# http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
+alias disablehistory="unset HISTFILE"
+
 # `u N` will `cd` up N directories.
 # Thanks to James Johnson for this.
 u() {
