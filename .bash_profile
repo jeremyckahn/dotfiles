@@ -26,6 +26,7 @@ alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 # Outputs a version of a file that has no blank lines.
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
+alias ios='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 # Take whatever JSON data is in the OS X pasteboard, jsonlint it, and pipe it
 # into a new Vim buffer.
