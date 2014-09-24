@@ -11,6 +11,10 @@ set tabstop=2 shiftwidth=2 expandtab
 set smartcase
 setlocal spelllang=en_us
 
+" http://damien.lespiau.name/blog/2009/03/18/per-project-vimrc/comment-page-1/
+set exrc " enable per-directory .vimrc files
+set secure " disable unsafe commands in local .vimrc files
+
 " Force some file types to be other file types
 au BufRead,BufNewFile *.ejs,*.mustache setfiletype html
 au BufRead,BufNewFile *.md setfiletype markdown
