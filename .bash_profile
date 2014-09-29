@@ -19,6 +19,7 @@ alias l='cd ~/Sites/lib'
 alias a='cd ~/Sites/app'
 alias o='open ./'
 alias d='cd ~/dotfiles'
+alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
 alias sass_watch='sass --watch style.scss:style.css'
 alias tmux="tmux -2"
