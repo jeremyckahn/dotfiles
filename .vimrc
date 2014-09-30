@@ -81,6 +81,8 @@ function! UnsetGutter()
   set colorcolumn=0
 endfunction
 
+command CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
+
  autocmd BufWritePre * :%s/\s\+$//e
 "|             |                  | |
 "|             |                  | This part actually removes the whitespace
