@@ -9,6 +9,8 @@ alias gl='git log'
 alias gc='git checkout'
 alias gf='git fetch'
 alias diffmaster='git diff master -w | tig'
+# http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
+alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias git-nuke='git reset --hard && git clean -df'
 alias ss='svn status'
 alias v='vim'
