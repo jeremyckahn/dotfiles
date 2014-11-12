@@ -30,6 +30,7 @@ alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
+alias nom='npm' # nom all the things
 
 # Take whatever JSON data is in the OS X pasteboard, jsonlint it, and pipe it
 # into a new Vim buffer.
