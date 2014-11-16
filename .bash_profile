@@ -359,14 +359,6 @@ TERM=screen-256color
 # Syntax errors occur on shell startup, otherwise.
 alias cd="cd -P"
 
-## Raspberry Pi stuff.
-# http://superpiadventures.com/2012/07/development-environment/
-function rpi_mnt {
-  sudo mount -t proc proc ~/rpi/chroot-raspbian-armhf/proc
-  sudo mount -t sysfs sysfs ~/rpi/chroot-raspbian-armhf/sys
-  sudo mount -o bind /dev ~/rpi/chroot-raspbian-armhf/dev
-}
-
 function __file_size {
   echo `cat $1 | gzip -9f | wc -c`
 }
@@ -378,14 +370,3 @@ function file_size {
 function minified_js_size {
   echo `__file_size <(uglifyjs $1)` "bytes, minified and gzipped."
 }
-
-alias rpi_chroot='sudo LC_ALL=C chroot ~/rpi/chroot-raspbian-armhf'
-alias rpi_start='qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -hda rootfs.ext2 -kernel zImage -append "root=/dev/sda" -serial stdio &'
-alias rpi_start_raspbian='qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -kernel raspbian/vmlinuz-2.6.32-qemu-armv6 -initrd raspbian/initrd.img-2.6.32-qemu-armv6 -hda raspbian/raspbian.img -net nic -net user -append "root=/dev/sda1" -redir tcp:2222::22 &'
-alias rpi_ssh_qemu='ssh -p2222 raspbian@localhost'
-
-### Some craziness inserted by Eclipse.  I'll uncomment it if something breaks...
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-#PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-#export PATH
