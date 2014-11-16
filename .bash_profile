@@ -367,12 +367,16 @@ function rpi_mnt {
   sudo mount -o bind /dev ~/rpi/chroot-raspbian-armhf/dev
 }
 
-function file_size {
-  echo `cat $1 | gzip -9f | wc -c`" bytes, minified and gzipped."
+function __file_size {
+  echo `cat $1 | gzip -9f | wc -c`
 }
 
-function js_size {
-  file_size <(uglifyjs $1)
+function file_size {
+  echo `__file_size $1` "bytes, gzipped."
+}
+
+function minified_js_size {
+  echo `__file_size <(uglifyjs $1)` "bytes, minified and gzipped."
 }
 
 alias rpi_chroot='sudo LC_ALL=C chroot ~/rpi/chroot-raspbian-armhf'
