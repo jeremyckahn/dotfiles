@@ -367,6 +367,14 @@ function rpi_mnt {
   sudo mount -o bind /dev ~/rpi/chroot-raspbian-armhf/dev
 }
 
+function file_size {
+  echo `cat $1 | gzip -9f | wc -c`" bytes, minified and gzipped."
+}
+
+function js_size {
+  file_size <(uglifyjs $1)
+}
+
 alias rpi_chroot='sudo LC_ALL=C chroot ~/rpi/chroot-raspbian-armhf'
 alias rpi_start='qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -hda rootfs.ext2 -kernel zImage -append "root=/dev/sda" -serial stdio &'
 alias rpi_start_raspbian='qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -kernel raspbian/vmlinuz-2.6.32-qemu-armv6 -initrd raspbian/initrd.img-2.6.32-qemu-armv6 -hda raspbian/raspbian.img -net nic -net user -append "root=/dev/sda1" -redir tcp:2222::22 &'
