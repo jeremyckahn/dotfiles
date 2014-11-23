@@ -121,7 +121,7 @@ source $DOTFILES/helpers/git-completion.bash
 
 # Push the current directory
 function psh () {
-  git push origin `git branch | grep \* | sed 's/\* //'`
+  git push origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
 # Pull the current directory
