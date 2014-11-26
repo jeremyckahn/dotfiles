@@ -66,7 +66,7 @@ function serve () {
 
 # Prints the machine's broadcasting network IP
 function ip () {
-  ifconfig | grep broadcast | awk '{print $2}'
+  ifconfig | grep broadcast | awk '{print $2}' | head -n1
 }
 
 # Use node-inspector to debug Grunt.  To use this:
