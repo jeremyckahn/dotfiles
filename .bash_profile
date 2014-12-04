@@ -370,3 +370,7 @@ function file_size {
 function minified_js_size {
   echo `__file_size <(uglifyjs $1)` "bytes, minified and gzipped."
 }
+
+function mkdir_and_follow {
+  mkdir -p $1 && cd $_
+}
