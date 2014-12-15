@@ -29,8 +29,6 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp_search = 0
 let g:ctrlp_use_caching = 1
-let g:CommandTMaxFiles=100000
-let g:CommandTWildIgnore=&wildignore
 
 " Make OS X clipboard play nicely with Vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
@@ -54,12 +52,10 @@ nmap <leader>p :CtrlP<CR>
 nmap <leader>P :CtrlPClearCache<CR>
 
 nmap <leader>n :NERDTreeToggle<Enter>
-" Lusty seems to break Apple Vim. :'(
-"nmap <leader>N :LustyFilesystemExplorer<Enter>
-"nmap <leader>/ :LustyBufferGrep<Enter>
-"nmap <leader>b :LustyBufferExplorer<Enter>
 nmap <leader>d :w !diff % -<CR>
-nmap <leader>T :CommandTFlush<CR>
+
+let g:tabman_toggle = '<leader>t'
+let g:tabman_focus  = '<leader>T'
 
 " Enable or disable auto width-formatting.
 noremap <leader>f :call UnsetGutter()<CR>
@@ -186,9 +182,6 @@ nmap <leader>A :tab split<CR>:Ack "\W<C-r><C-w>\W"<CR>
 let g:unite_source_grep_command = 'ack-grep'
 let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
 let g:unite_source_grep_recursive_opt = ''
-
-let g:tabman_toggle = '<leader>t'
-let g:tabman_focus  = '<leader>T'
 
 " Open Ggrep results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
