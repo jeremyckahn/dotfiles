@@ -187,6 +187,9 @@ let g:unite_source_grep_command = 'ack-grep'
 let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
 let g:unite_source_grep_recursive_opt = ''
 
+let g:tabman_toggle = '<leader>t'
+let g:tabman_focus  = '<leader>T'
+
 " Open Ggrep results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
 
