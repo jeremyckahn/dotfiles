@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/Command-T"]
-	path = .vim/bundle/Command-T
-	url = git://github.com/wincent/Command-T.git
 [submodule ".vim/bundle/lusty"]
 	path = .vim/bundle/lusty
 	url = git://github.com/sjbach/lusty.git
