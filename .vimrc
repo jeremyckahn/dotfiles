@@ -30,8 +30,6 @@ let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp_search = 0
 let g:ctrlp_use_caching = 1
 
-let g:syntastic_always_populate_loc_list = 1
-
 " Make OS X clipboard play nicely with Vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
 nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
@@ -48,6 +46,8 @@ command W w !sudo tee % > /dev/null
 filetype plugin indent on
 
 let mapleader = ","
+
+nmap <leader>E :Error<CR><C-w>j
 
 " Find files with ctrlp
 nmap <leader>p :CtrlP<CR>
