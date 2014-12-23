@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/tabman.vim"]
 	path = .vim/bundle/tabman.vim
 	url = https://github.com/kien/tabman.vim.git
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
