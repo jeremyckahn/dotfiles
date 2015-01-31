@@ -9,3 +9,4 @@
 --ignore-dir=dist
 --ignore-dir=bin
 --ignore-dir=.sass-cache
+--ignore-dir=.grunt
