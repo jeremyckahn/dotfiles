@@ -124,6 +124,8 @@ function psh () {
   git push origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
+alias pushit="psh" # \m/ (>_<) \m/
+
 # Pull the current directory
 function pll () {
   git pull origin `git branch | grep \* | sed 's/\* //'`
