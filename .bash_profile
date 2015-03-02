@@ -376,3 +376,18 @@ function minified_js_size {
 function mkdir_and_follow {
   mkdir -p $1 && cd $_
 }
+
+# Compare current Git branch to another brand and view it in Tig's friendly
+# pager.  Usage
+#
+#   diffbranch develop
+function diffbranch () {
+  if [ -z "$1" ];
+  then
+    echo "You need to specify a branch."
+    exit 1
+  fi
+
+  BRANCH=$1
+  git diff $BRANCH -w | tig
+}
