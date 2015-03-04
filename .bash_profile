@@ -343,6 +343,7 @@ function name_tab () {
   export PROMPT_COMMAND=$str
   echo "iTerm tab is now \"$TAB_NAME\""
 }
+alias N='name_tab'
 
 # Setup some of the git command prompt display stuff
 export GIT_PS1_SHOWDIRTYSTATE=1
