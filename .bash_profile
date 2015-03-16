@@ -32,6 +32,9 @@ alias noblanklines='grep -v "^[[:space:]]*$"'
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
 alias nom='npm' # nom all the things
 
+# http://stackoverflow.com/a/21295146/470685
+alias ports_in_use='lsof -i -n -P | grep TCP'
+
 # Take whatever JSON data is in the OS X pasteboard, jsonlint it, and pipe it
 # into a new Vim buffer.
 #
