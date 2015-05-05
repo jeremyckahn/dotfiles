@@ -7,6 +7,7 @@ alias gd='tig status'
 alias gb='git branch'
 alias gl='git log'
 alias gc='git checkout'
+alias dev='git checkout develop'
 alias gf='git fetch'
 alias diffmaster='git diff master -w | tig'
 # http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
