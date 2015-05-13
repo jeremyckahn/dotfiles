@@ -396,3 +396,8 @@ function diffbranch () {
   BRANCH=$1
   git diff $BRANCH -w | tig
 }
+
+# https://gist.github.com/meltedspork/b553985f096ab4520a2b
+function killport () {
+  lsof -i tcp:$1 | awk '{ if($2 != "PID") print $2}' | xargs kill -9;
+}
