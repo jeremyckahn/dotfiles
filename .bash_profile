@@ -406,3 +406,8 @@ function vm () {
   cd ~/Sites/boxes/trusty64
   vagrant up && vagrant ssh
 }
+
+function vm_suspend () {
+  cd ~/Sites/boxes/trusty64
+  vagrant suspend
+}
