@@ -401,3 +401,8 @@ function diffbranch () {
 function killport () {
   lsof -i tcp:$1 | awk '{ if($2 != "PID") print $2}' | xargs kill -9;
 }
+
+function vm () {
+  cd ~/Sites/boxes/trusty64
+  vagrant up && vagrant ssh
+}
