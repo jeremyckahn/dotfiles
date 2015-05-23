@@ -411,3 +411,7 @@ function vm_suspend () {
   cd ~/Sites/boxes/trusty64
   vagrant suspend
 }
+
+function checkpoint () {
+  git commit -am "$(echo "puts Time.new.inspect" | ruby)"
+}
