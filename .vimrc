@@ -57,6 +57,7 @@ nmap <leader>p :CtrlP<CR>
 nmap <leader>P :CtrlPClearCache<CR>
 
 nmap <leader>n :NERDTreeToggle<Enter>
+nmap <leader>w :w<CR>
 nmap <leader>d :w !diff % -<CR>
 
 let g:tabman_toggle = '<leader>t'
