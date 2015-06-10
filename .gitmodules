@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/vim-ruby-fold"]
+	path = .vim/bundle/vim-ruby-fold
+	url = git://github.com/bruno-/vim-ruby-fold.git
