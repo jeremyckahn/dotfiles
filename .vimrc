@@ -49,7 +49,7 @@ command W w !sudo tee % > /dev/null
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
 nmap <leader>E :Error<CR><C-w>j
 
