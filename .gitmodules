@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/vim-ruby-fold"]
 	path = .vim/bundle/vim-ruby-fold
 	url = git://github.com/bruno-/vim-ruby-fold.git
+[submodule ".vim/bundle/tern_for_vim"]
+	path = .vim/bundle/tern_for_vim
+	url = https://github.com/marijnh/tern_for_vim.git
