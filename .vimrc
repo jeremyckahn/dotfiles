@@ -61,6 +61,7 @@ nmap <leader>n :NERDTreeToggle<Enter>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>d :w !diff % -<CR>
+nmap <leader>D :bd<CR>
 
 let g:tabman_toggle = '<leader>t'
 let g:tabman_focus  = '<leader>T'
