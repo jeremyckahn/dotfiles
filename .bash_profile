@@ -129,7 +129,7 @@ function psh () {
   git push origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
-# Push the current directory
+# Force push the current directory
 function PUSH () {
   git push --force origin -u `git branch | grep \* | sed 's/\* //'`
 }
