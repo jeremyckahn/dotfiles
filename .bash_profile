@@ -423,22 +423,3 @@ function vm_suspend () {
 function checkpoint () {
   git commit -am "$(echo "puts Time.new.inspect" | ruby)"
 }
-
-function tag_and_push () {
-  if [ -e bower.json ];
-  then
-    VERSION=`echo "console.log(require('./bower.json').version)" | node`
-    FOUND_REF=`git show-ref --tags | grep refs/tags/$VERSION$`
-
-    if [ ! -z "$FOUND_REF" ];
-    then
-      git tag $VERSION
-      git push --tags
-    else
-      echo "Git tag $VERSION already exists.  Exiting."
-    fi
-
-  else
-    echo 'There is no bower.json file!  Exiting.'
-  fi
-}
