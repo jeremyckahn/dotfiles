@@ -22,7 +22,6 @@ alias vr='vim -R'
 alias s='cd ~/Sites'
 alias l='cd ~/Sites/lib'
 alias a='cd ~/Sites/app'
-alias o='open ./'
 alias d='cd ~/dotfiles'
 alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
@@ -422,4 +421,13 @@ function vm_suspend () {
 
 function checkpoint () {
   git commit -am "$(echo "puts Time.new.inspect" | ruby)"
+}
+
+function o () {
+  if [ -z "$1" ];
+  then
+    open ./
+  else
+    open $1
+  fi
 }
