@@ -336,6 +336,7 @@ __WHITE="\[\033[1;37m\]"
 
 # Build a custom command prompt
 function __prompt_cmd() {
+  echo -ne "\033]0;${PWD##*/}\007"
   PS1="$__LIGHT_GRAY[\h]$__LIGHT_BLUE[\W]$__PLAIN "
 }
 export PROMPT_COMMAND=__prompt_cmd
