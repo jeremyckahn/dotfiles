@@ -60,7 +60,7 @@ u() {
 # blank to use 8080.
 #
 # Requires Node and http-server:
-#   npm install http-server -g
+#   npm install live-server -g
 function serve () {
   SERVER_PORT=8080
 
@@ -68,7 +68,7 @@ function serve () {
     SERVER_PORT=$1
   fi
 
-  http-server ./ -p ${SERVER_PORT}
+  live-server --port=${SERVER_PORT}
 }
 
 # Prints the machine's broadcasting network IP
@@ -99,19 +99,7 @@ function watch_and_log () {
   nodemon -x cat $1 -w $1
 }
 
-# OS X only.  Serve a directory and open the default browser to it.
-function open_and_serve () {
-  SERVER_PORT=8080
-
-  if [ $1 ]; then
-    SERVER_PORT=$1
-  fi
-
-  open http://localhost:${SERVER_PORT}; serve ${SERVER_PORT}
-}
-
 function git-kill-branch () {
-
   # http://stackoverflow.com/a/6482403
   if [ -z "$1" ]; then
     echo "Please specify a branch."
