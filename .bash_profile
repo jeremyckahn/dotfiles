@@ -18,14 +18,12 @@ alias git-nuke='git reset --hard && git clean -df'
 alias ss='svn status'
 alias v='vim'
 alias t='tig'
-alias vr='vim -R'
 alias s='cd ~/Sites'
 alias l='cd ~/Sites/lib'
 alias a='cd ~/Sites/app'
 alias d='cd ~/dotfiles'
 alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
-alias sass_watch='sass --watch style.scss:style.css'
 alias tmux="tmux -2"
 alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 # Outputs a version of a file that has no blank lines.
@@ -49,13 +47,6 @@ alias json2vim='pbpaste | jsonlint | vim -'
 # http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
 alias disablehistory="unset HISTFILE"
 
-# `u N` will `cd` up N directories.
-# Thanks to James Johnson for this.
-u() {
-  local ts=$(printf "%${1}s");
-  cd $(printf %s "${ts// /../}");
-}
-
 # Start a simple server.  Provide a port number as an argument or leave it
 # blank to use 8080.
 #
@@ -74,20 +65,6 @@ function serve () {
 # Prints the machine's broadcasting network IP
 function ip () {
   ifconfig | grep broadcast | awk '{print $2}' | head -n1
-}
-
-# Use node-inspector to debug Grunt.  To use this:
-#
-#   1. Fire up node-inspector (it's aliased above as `ni`), leave it running
-#   2. In another shell, call grunt-debug [task]
-#
-# Example:
-#
-#  grunt-debug server
-#
-# Adapted from http://stackoverflow.com/a/12739260
-function grunt-debug () {
-  node --debug-brk $(which grunt) $1
 }
 
 # Starts watching a file and `cat`s it whenever the contents change. Ctrl+c to
@@ -114,19 +91,19 @@ DOTFILES=~/dotfiles
 
 source $DOTFILES/helpers/git-completion.bash
 
-# Push the current directory
+# Push the current branch
 function psh () {
   git push origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
-# Force push the current directory
+# Force push the current branch
 function PUSH () {
   git push --force origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
 alias pushit="psh" # \m/ (>_<) \m/
 
-# Pull the current directory
+# Pull the current branch
 function pll () {
   git pull origin `git branch | grep \* | sed 's/\* //'`
 }
@@ -144,53 +121,6 @@ function svndeleteall () {
   svn status | grep -v "^.[ \t]*\..*" | grep '^!' | awk '{print $2}' | xargs svn rm
 }
 
-# Usage:
-#
-#   svndiff
-#
-# With no arguments, show the diff of the current set of uncommitted changes.
-#
-#   svndiff [revision_number]
-#
-# Provide a revision number to see a diff of that commit.
-function svndiff () {
-  if [ -z "$1" ];
-  then
-    svn diff -x --ignore-all-space | tig
-  else
-    svn diff -c $1 | tig
-  fi
-}
-alias sd='svndiff'
-
-# This hacky thing comes from: http://stackoverflow.com/q/10699184
-function svnrevertpattern () {
-  if [ -z "$1" ];
-  then
-    echo "You need to specify a pattern."
-  else
-    svn revert `svn status .|grep "$1"|awk '{print $2}'`
-  fi
-}
-
-function svn_stash_to_patch () {
-  if [ -z "$1" ];
-  then
-    echo "You need to specify a place to stash to (somedir/stash.patch)."
-  else
-    svn diff > $1
-  fi
-}
-
-function svn_apply_from_patch () {
-  if [ -z "$1" ];
-  then
-    echo "You need to specify a place to apply from (somedir/stash.patch)."
-  else
-    patch -p0 < $1
-  fi
-}
-
 # makes the connection to localhost:8888 really slow.
 function goslow () {
   ipfw pipe 1 config bw 4KByte/s
@@ -202,36 +132,6 @@ function gofast () {
   ipfw flush
 }
 
-# For all files in the current directory, convert tabs to 2 spaces.
-function tabs_to_spaces_all () {
-  for FILE in ./*; do expand -t 2 $FILE > /tmp/spaces && mv /tmp/spaces $FILE ; done;
-}
-
-# Fixes newline copy issues in some web apps I use
-function convert_pbpaste_to_double_newlines () {
-  pbpaste | sed 's/^$/\'$'\n/g' | pbcopy
-}
-
-# Take an AAC audio file and convert to all formats needed for the web.
-# Requires FFmpeg with Vorbis support:
-#
-#   brew install ffmpeg --with-libvorbis
-#
-# Usage:
-#
-#   webify_aac some.aac
-function webify_aac () {
-  if [ -z "$1" ];
-  then
-    echo "You need to specify a file."
-    exit 1
-  fi
-
-  # http://stackoverflow.com/a/125340
-  filename=${1%.*}
-  ffmpeg -i $1 $filename.ogg
-  ffmpeg -i $1 $filename.mp3
-}
 
 # Compare the contents of a directory tree, recursively.
 #
@@ -246,33 +146,6 @@ function compare_trees () {
   fi
 
   diff <(pushd $1; ls -R) <(pushd $2; ls -R)
-}
-
-function clean_dir () {
-  echo "Are you really really sure?  The current directory is: "
-  pwd
-  read -e INPUT
-
-  if [[ $INPUT == "y" || $INPUT == "Y" || $INPUT  == "yes" ]]; then
-    echo "Removing .svn, .DS_, and ._* files... "
-    find . -iname ".svn*" | xargs rm -Rv
-    find . -iname ".DS_*" | xargs rm -Rv
-    find . -iname "._*" | xargs rm -Rv
-    echo "All done!"
-  else
-    echo "Cleaning of the directory was canceled."
-  fi
-}
-
-function new_project () {
-  mkdir src/;
-  mkdir lib/;
-  touch README.md;
-  echo -e "*.swp\n.DS_Store" > .gitignore;
-  git init;
-  git add src/ lib/ .gitignore README.md;
-  git commit -am "Initial commit.";
-  git status;
 }
 
 function resource () {
@@ -397,16 +270,6 @@ function diffbranch () {
 # https://gist.github.com/meltedspork/b553985f096ab4520a2b
 function killport () {
   lsof -i tcp:$1 | awk '{ if($2 != "PID") print $2}' | xargs kill -9;
-}
-
-function vm () {
-  cd ~/Sites/boxes/trusty64
-  vagrant up && vagrant ssh
-}
-
-function vm_suspend () {
-  cd ~/Sites/boxes/trusty64
-  vagrant suspend
 }
 
 function checkpoint () {
