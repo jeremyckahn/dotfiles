@@ -25,5 +25,8 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
+'atom-text-editor':
+  'alt-s': 'project-find:search-under-cursor'
+
 'atom-text-editor.vim-mode.insert-mode':
   'j j': 'vim-mode:activate-normal-mode'
