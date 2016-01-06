@@ -30,3 +30,7 @@
 
 'atom-text-editor.vim-mode.insert-mode':
   'j j': 'vim-mode:activate-normal-mode'
+
+'.editor':
+  'shift-cmd-e': 'html-entities:encode'
+  'shift-alt-cmd-e': 'html-entities:decode'
