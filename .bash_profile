@@ -31,6 +31,7 @@ alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 alias noblanklines='grep -v "^[[:space:]]*$"'
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias nom='npm' # nom all the things
+alias nr='npm run'
 alias bumpnbuild='grunt bump && grunt build'
 alias sudio="say There\'s this girl that\'s been on my mind All the time, Sussudio oh oh Now she don\'t even know my name But I think she likes me just the same Sussudio oh oh  Oh if she called me I\'d be there I\'d come running anywhere She\'s all I need, all my life I feel so good if I just say the word Sussudio, just say the word Oh Sussudio  Now I know that I\'m too young My love has just begun Sussudio oh oh Ooh give me a chance, give me a sign I\'ll show her anytime Sussudio oh oh  Ah, I\'ve just got to have her, have her now I\'ve got to get closer but I don\'t know how She makes me nervous and makes me scared But I feel so good if I just say the word Sussudio just say the word Oh Sussudio, oh  Ah, she\'s all I need all of my life I feel so good if I just say the word Sussudio I just say the word Oh Sussudio I just say the word Oh Sussudio I\'ll say the word Sussudio oh oh oh Just say the word"
 
