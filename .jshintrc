@@ -5,6 +5,7 @@
   "curly": true,
   "eqeqeq": true,
   "eqnull": true,
+  "esversion": 6,
   "immed": true,
   "lastsemic": true,
   "latedef": true,
