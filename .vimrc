@@ -27,7 +27,7 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 call pathogen#infect()
 call pathogen#helptags()
 
-set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**
+set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**,**/tmp/**
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_by_filename = 0
