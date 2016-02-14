@@ -224,3 +224,4 @@ set encoding=utf-8
 
 " Enable code folding for CoffeeScript
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+setl foldmethod=syntax
