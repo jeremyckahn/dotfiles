@@ -286,3 +286,9 @@ function o () {
     open $1
   fi
 }
+
+# Open the Github repo for the current directory
+function gh () {
+  REPO=$(git remote -v show | head -n1 | grep -o ":.*\.git" | sed "s/^.//;s/.git//")
+  open "https://github.com/$REPO"
+}
