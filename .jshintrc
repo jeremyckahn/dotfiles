@@ -14,6 +14,7 @@
   "newcap": true,
   "noarg": true,
   "nomen": false,
+  "node": true,
   "plusplus": false,
   "sub": true,
   "undef": true,
