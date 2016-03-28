@@ -208,17 +208,8 @@ function! Tig ()
   redraw!
 endfunction
 
-function! Misfit ()
-  silent !misfit
-  redraw!
-endfunction
-
 " Open Tig and see the current Git diff
 noremap <C-t> :call Tig()<CR>
-
-" Open Misfit
-"   npm install -g misfit
-noremap <C-m> :call Misfit()<CR>
 
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
