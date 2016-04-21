@@ -91,6 +91,17 @@ function git-kill-branch () {
   git push origin :$1
 }
 
+function git-kill-tag () {
+  # https://nathanhoad.net/how-to-delete-a-remote-git-tag
+  if [ -z "$1" ]; then
+    echo "Please specify a tag"
+    return 1
+  fi
+
+  git tag -d "$1"
+  git push origin :refs/tags/"$1"
+}
+
 DOTFILES=~/dotfiles
 
 source $DOTFILES/helpers/git-completion.bash
