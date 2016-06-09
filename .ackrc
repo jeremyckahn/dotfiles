@@ -11,4 +11,5 @@
 --ignore-dir=.sass-cache
 --ignore-dir=.grunt
 --ignore-dir=tmp
+--ignore-dir=build
 --ignore-file=is:npm-debug.log
