@@ -46,9 +46,9 @@
 [submodule ".vim/bundle/grunt.vim"]
 	path = .vim/bundle/grunt.vim
 	url = https://github.com/mklabs/grunt.vim.git
-[submodule ".vim/bundle/yajs.vim"]
-	path = .vim/bundle/yajs.vim
-	url = https://github.com/othree/yajs.vim.git
 [submodule ".vim/bundle/vim-sleuth"]
 	path = .vim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule ".vim/bundle/vim-javascript"]
+	path = .vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
