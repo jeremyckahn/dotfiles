@@ -301,8 +301,17 @@ function o () {
   fi
 }
 
+function _github_repo () {
+  echo $(git remote -v show | head -n1 | grep -o ":.*\.git" | sed "s/^.//;s/.git//")
+}
+
 # Open the Github repo for the current directory
-function gh () {
-  REPO=$(git remote -v show | head -n1 | grep -o ":.*\.git" | sed "s/^.//;s/.git//")
+function GH () {
+  REPO=$(_github_repo)
   open "https://github.com/$REPO"
+}
+
+function PR () {
+  REPO=$(_github_repo)
+  open "https://github.com/$REPO/compare"
 }
