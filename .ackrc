@@ -12,4 +12,6 @@
 --ignore-dir=.grunt
 --ignore-dir=tmp
 --ignore-dir=build
+--ignore-dir=coverage
+--ignore-dir=assets
 --ignore-file=is:npm-debug.log
