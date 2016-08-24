@@ -301,6 +301,12 @@ function o () {
   fi
 }
 
+# https://gist.github.com/intel352/9761288
+function git-show-base-branch () {
+  branch=`git rev-parse --abbrev-ref HEAD`
+  git show-branch | ack '\*' | ack -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'
+}
+
 function _github_repo () {
   echo $(git remote -v show | head -n1 | grep -o ":.*\.git" | sed "s/^.//;s/.git//")
 }
@@ -313,5 +319,7 @@ function GH () {
 
 function PR () {
   REPO=$(_github_repo)
-  open "https://github.com/$REPO/compare"
+  BASE_BRANCH=$(git-show-base-branch)
+  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  open "https://github.com/$REPO/compare/$BASE_BRANCH...$CURRENT_BRANCH"
 }
