@@ -323,3 +323,16 @@ function PR () {
   CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
   open "https://github.com/$REPO/compare/$BASE_BRANCH...$CURRENT_BRANCH"
 }
+
+# Usage:
+#
+#   dl-yt-audio-chunk [youtube-url] [start-time] [duration] [filename]
+#
+#  start-time and duration must be in HH:MM:SS format, and filename must not
+#  have a file type suffix.
+#
+# Requires youtube-dl and ffmpeg
+function dl-yt-audio-chunk () {
+  ffmpeg -ss "$2" -i $(youtube-dl -f 22 --get-url "$1") -t "$3" -c:v copy -c:a copy "/tmp/$4.mp4"
+  ffmpeg -i "/tmp/$4.mp4" -vn -acodec copy "$4.aac"
+}
