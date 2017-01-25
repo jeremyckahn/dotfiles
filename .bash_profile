@@ -52,6 +52,11 @@ alias json2vim='pbpaste | jsonlint | vim -'
 # http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
 alias disablehistory="unset HISTFILE"
 
+# http://www.2ality.com/2016/01/locally-installed-npm-executables.html
+function npm-do {
+  (PATH=$(npm bin):$PATH; eval "$@";)
+}
+
 # Start a simple server.  Provide a port number as an argument or leave it
 # blank to use 8080.
 #
