@@ -341,3 +341,10 @@ function dl-yt-audio-chunk () {
   ffmpeg -ss "$2" -i $(youtube-dl -f 22 --get-url "$1") -t "$3" -c:v copy -c:a copy "/tmp/$4.mp4"
   ffmpeg -i "/tmp/$4.mp4" -vn -acodec copy "$4.aac"
 }
+
+# Requires jsonlint and jid
+#   brew install jid
+#   npm install -g jsonlint
+view_pasted_json () {
+  [[ $(pbpaste | jsonlint 2> /dev/null) ]] && pbpaste | jid || echo "Pasteboard contains invalid JSON!"
+}
