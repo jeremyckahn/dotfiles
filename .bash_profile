@@ -346,5 +346,7 @@ function dl-yt-audio-chunk () {
 #   brew install jid
 #   npm install -g jsonlint
 view_pasted_json () {
-  [[ $(pbpaste | jsonlint 2> /dev/null) ]] && pbpaste | jid || echo "Pasteboard contains invalid JSON!"
+  [[ $(pbpaste | jsonlint 2> /dev/null) ]] && \
+    pbpaste | jid || \
+    echo "Pasteboard contains invalid JSON!"
 }
