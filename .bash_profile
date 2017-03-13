@@ -113,19 +113,19 @@ DOTFILES=~/dotfiles
 source $DOTFILES/helpers/git-completion.bash
 
 # Push the current branch
-function psh () {
+function PS () {
   git push origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
 # Force push the current branch
-function PUSH () {
+function FORCE_PUSH () {
   git push --force origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
 alias pushit="psh" # \m/ (>_<) \m/
 
 # Pull the current branch
-function pll () {
+function PL () {
   git pull origin `git branch | grep \* | sed 's/\* //'`
 }
 
