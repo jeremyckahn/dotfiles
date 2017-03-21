@@ -224,6 +224,9 @@ set encoding=utf-8
 
 " Enable code folding for CoffeeScript
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+
+autocmd BufNewFile,BufReadPost *.js setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.json setl foldmethod=indent
 setl foldmethod=syntax
 
 let g:javascript_plugin_jsdoc = 1
