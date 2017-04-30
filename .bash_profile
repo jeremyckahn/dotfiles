@@ -338,7 +338,7 @@ function PR () {
 #
 # Requires youtube-dl and ffmpeg
 function dl-yt-audio-chunk () {
-  ffmpeg -ss "$2" -i $(youtube-dl -f 22 --get-url "$1") -t "$3" -c:v copy -c:a copy "/tmp/$4.mp4"
+  ffmpeg -ss "$2" -i $(youtube-dl -f best --get-url "$1") -t "$3" -c:v copy -c:a copy "/tmp/$4.mp4"
   ffmpeg -i "/tmp/$4.mp4" -vn -acodec copy "$4.aac"
 }
 
