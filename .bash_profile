@@ -350,3 +350,8 @@ view_pasted_json () {
     pbpaste | jid || \
     echo "Pasteboard contains invalid JSON!"
 }
+
+# Usage: compress_json_file some-data.json
+compress_json_file () {
+  node -e "console.log(JSON.stringify(require('./$1')))"
+}
