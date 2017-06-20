@@ -53,6 +53,8 @@ alias json2vim='pbpaste | jsonlint | vim -'
 # http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
 alias disablehistory="unset HISTFILE"
 
+command -v pokemon >/dev/null 2>&1 && pokemon mewtwo
+
 # http://www.2ality.com/2016/01/locally-installed-npm-executables.html
 function npm-do {
   (PATH=$(npm bin):$PATH; eval "$@";)
