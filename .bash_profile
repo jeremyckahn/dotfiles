@@ -32,7 +32,6 @@ alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
 alias noblanklines='grep -v "^[[:space:]]*$"'
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias nom='npm' # nom all the things
-alias nr='npm run'
 alias mf='misfit'
 alias gurnt='grunt'
 alias bumpnbuild='grunt bump && grunt build'
@@ -358,4 +357,13 @@ view_pasted_json () {
 # Usage: compress_json_file some-data.json
 compress_json_file () {
   node -e "console.log(JSON.stringify(require('./$1')))"
+}
+
+nr () {
+  if [ -z "$1" ];
+  then
+    misfit
+  else
+    npm run "$1"
+  fi
 }
