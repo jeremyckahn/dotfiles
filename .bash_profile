@@ -53,7 +53,7 @@ alias json2vim='pbpaste | jsonlint | vim -'
 alias disablehistory="unset HISTFILE"
 
 # https://github.com/LazoCoder/Pokemon-Terminal
-command -v pokemon >/dev/null 2>&1 && pokemon mewtwo
+#command -v pokemon >/dev/null 2>&1 && pokemon mewtwo
 
 # http://www.2ality.com/2016/01/locally-installed-npm-executables.html
 function npm-do {
