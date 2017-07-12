@@ -144,13 +144,8 @@ set noswapfile
 
 set t_Co=256
 
-" http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-hi x233_Grey7 ctermfg=233 guifg=#121212
-hi ColorColumn ctermbg=233_Grey7
-
 " show hidden whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
-au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
@@ -214,7 +209,7 @@ noremap <C-t> :call Tig()<CR>
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
 
-colorscheme desertEx
+colorscheme material_theme
 
 " Always show the status line (for vim-powerline)
 set laststatus=2
