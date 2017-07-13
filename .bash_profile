@@ -207,42 +207,7 @@ function unhide () {
   mv $1 ${1:1}
 }
 
-
-# Colors for the command prompt
-__BLUE="\[\033[0;34m\]"
-__GREEN="\[\033[0;32m\]"
-__LIGHT_BLUE="\[\033[1;34m\]"
-__LIGHT_GRAY="\[\033[0;37m\]"
-__LIGHT_GREEN="\[\033[1;32m\]"
-__LIGHT_RED="\[\033[1;31m\]"
-__PLAIN="\[\033[0;0m\]"
-__RED="\[\033[0;31m\]"
-__WHITE="\[\033[1;37m\]"
-
 source ~/dotfiles/bash-powerline/bash-powerline.sh
-
-# Names iTerm2 tab
-# http://superuser.com/a/560393
-function name_tab () {
-  if [ $1 ]; then
-    TAB_NAME=$1
-  else
-    # Get the current directory name if no tab name was specified
-    # http://stackoverflow.com/a/1371283
-    TAB_NAME=${PWD##*/}
-  fi
-
-  str='echo -ne "\033]0;'$TAB_NAME'\007"'
-  export PROMPT_COMMAND=$str
-  echo "iTerm tab is now \"$TAB_NAME\""
-}
-alias N='name_tab'
-
-# Setup some of the git command prompt display stuff
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILE=1
-export GIT_PS1_SHOWUPSTREAM="auto"
 
 TERM=screen-256color
 
