@@ -219,7 +219,7 @@ __PLAIN="\[\033[0;0m\]"
 __RED="\[\033[0;31m\]"
 __WHITE="\[\033[1;37m\]"
 
-source bash-powerline/bash-powerline.sh
+source ~/dotfiles/bash-powerline/bash-powerline.sh
 
 # Names iTerm2 tab
 # http://superuser.com/a/560393
