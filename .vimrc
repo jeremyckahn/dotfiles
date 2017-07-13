@@ -209,7 +209,7 @@ noremap <C-t> :call Tig()<CR>
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
 
-colorscheme material_theme
+colorscheme hybrid_material
 
 " Always show the status line (for vim-powerline)
 set laststatus=2
