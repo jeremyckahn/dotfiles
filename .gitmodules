@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "bash-powerline"]
+	path = bash-powerline
+	url = https://github.com/riobard/bash-powerline.git
