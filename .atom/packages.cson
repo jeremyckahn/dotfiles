@@ -1,9 +1,0 @@
-packages: [
-  "docblockr"
-  "find-and-replace-under-cursor"
-  "jshint"
-  "package-sync"
-  "terminal-plus"
-  "vim-mode"
-  "html-entities"
-]
