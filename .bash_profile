@@ -329,3 +329,20 @@ nr () {
     npm run "$1"
   fi
 }
+
+function new_cli_tool () {
+  if [ -z "$1" ];
+  then
+    "Must specify a project name as the first argument"
+    exit 1
+  else
+    git clone --depth=1 https://github.com/jeremyckahn/node-cli-boilerplate.git "$1"
+    cd "$1" || exit 1
+    rm -rf .git
+    find . -type f -exec sed -i "" "s/node-cli-boilerplate/$1/g" {} \;
+    git init
+    git add --all
+    git commit -m "Initial commit"
+    npm install
+  fi
+}
