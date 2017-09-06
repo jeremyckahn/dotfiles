@@ -28,7 +28,9 @@ alias d='cd ~/dotfiles'
 alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
 alias tmux="tmux -2"
-alias ni="open http://127.0.0.1:8080/debug?port=5858 && node-inspector"
+alias ni="npm install --save"
+alias nid="npm install --save-dev"
+alias nh="npm home"
 # Outputs a version of a file that has no blank lines.
 #   noblanklines [filename]
 alias noblanklines='grep -v "^[[:space:]]*$"'
