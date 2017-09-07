@@ -170,7 +170,7 @@ function compare_trees () {
   if [ -z "$1" -o -z "$2" ];
   then
     echo "You need to specify two directories to compare."
-    exit 1
+    return
   fi
 
   diff <(pushd $1; ls -R) <(pushd $2; ls -R)
@@ -192,7 +192,7 @@ function hide () {
   if [ -z "$1" ];
   then
     echo "Please specify a file to hide."
-    exit 1
+    return
   fi
 
   mv $1 _$1
@@ -205,7 +205,7 @@ function unhide () {
   if [ -z "$1" ];
   then
     echo "Please specify a file to unhide."
-    exit 1
+    return
   fi
 
   mv $1 ${1:1}
@@ -248,7 +248,7 @@ function diffbranch () {
   if [ -z "$1" ];
   then
     echo "You need to specify a branch."
-    exit 1
+    return
   fi
 
   BRANCH=$1
@@ -336,10 +336,10 @@ function new_cli_tool () {
   if [ -z "$1" ];
   then
     "Must specify a project name as the first argument"
-    exit 1
+    return
   else
     git clone --depth=1 https://github.com/jeremyckahn/node-cli-boilerplate.git "$1"
-    cd "$1" || exit 1
+    cd "$1" || return
     rm -rf .git
     find . -type f -exec sed -i "" "s/node-cli-boilerplate/$1/g" {} \;
     git init
