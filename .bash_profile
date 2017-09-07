@@ -348,3 +348,9 @@ function new_cli_tool () {
     npm install
   fi
 }
+
+# Requires jsctags
+#   npm install -g git+https://github.com/ramitos/jsctags.git
+function generate_jsctags () {
+  find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -not -path "./dist/*" -not -path "./test/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
+}

@@ -58,6 +58,7 @@ nmap <leader>p :CtrlP<CR>
 nmap <leader>P :CtrlPClearCache<CR>
 
 nmap <leader>n :NERDTreeToggle<Enter>
+nmap <leader>t :TagbarToggle<Enter>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>d :w !diff % -<CR>
