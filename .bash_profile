@@ -29,7 +29,9 @@ alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
 alias tmux="tmux -2"
 alias ni="npm install --save"
+alias nu="npm uninstall --save"
 alias nid="npm install --save-dev"
+alias nud="npm uninstall --save-dev"
 alias nh="npm home"
 # Outputs a version of a file that has no blank lines.
 #   noblanklines [filename]
