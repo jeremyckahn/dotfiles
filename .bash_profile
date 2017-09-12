@@ -351,6 +351,23 @@ function new_cli_tool () {
   fi
 }
 
+function new_js_project() {
+  if [ -z "$1" ];
+  then
+    "Must specify a project name as the first argument"
+    return
+  else
+    git clone --depth=1 https://github.com/jeremyckahn/modern-js-project.git "$1"
+    cd "$1" || exit 1
+    rm -rf .git
+    find . -type f -exec sed -i "" "s/modern-js-project/$1/g" {} \;
+    git init
+    git add --all
+    git commit -m "Initial commit"
+    npm install
+  fi
+}
+
 # Requires jsctags
 #   npm install -g git+https://github.com/ramitos/jsctags.git
 function generate_jsctags () {
