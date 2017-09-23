@@ -207,6 +207,12 @@ endfunction
 " Open Tig and see the current Git diff
 noremap <C-t> :call Tig()<CR>
 
+" Open Misfit
+"
+" Requires misfit:
+"   npm i -g misfit
+noremap <C-m> :!misfit<CR>
+
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
 
