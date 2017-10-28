@@ -304,3 +304,17 @@ function new_js_project() {
     npm install
   fi
 }
+
+# https://tomlankhorst.nl/brew-bundle-restore-backup/
+backup_brew () {
+  pushd ~/dotfiles
+  brew bundle dump --force
+}
+
+#https://stackoverflow.com/a/41199625
+backup_npm () {
+  npm list --global --parseable --depth=0 | sed '1d' | awk '{gsub(/\/.*\//,"",$1); print}' > ~/dotfiles/npm_backup
+}
+restore_npm () {
+  xargs npm install --global < ~/dotfiles/npm_backup
+}
