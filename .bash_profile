@@ -5,20 +5,14 @@ alias ll="ls -lah"
 alias gs='git status'
 alias gd='tig status'
 alias gb='git branch'
-alias gl='git log'
 alias gc='git checkout'
 alias st='git stash'
 alias B='git checkout --track -b'
 alias dev='git checkout develop'
 alias gf='git fetch --all'
-alias UP='docker-compose up'
-alias DOWN='docker-compose down'
-alias diffmaster='git diff master -w | tig'
 # http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
 alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias git-nuke='git reset --hard && git clean -df'
-alias git-lost='git-nuke'
-alias ss='svn status'
 alias v='vim'
 alias t='tig'
 alias s='cd ~/Sites'
@@ -33,14 +27,9 @@ alias nu="npm uninstall --save"
 alias nid="npm install --save-dev"
 alias nud="npm uninstall --save-dev"
 alias nh="npm home"
-# Outputs a version of a file that has no blank lines.
-#   noblanklines [filename]
-alias noblanklines='grep -v "^[[:space:]]*$"'
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias nom='npm' # nom all the things
 alias mf='misfit'
-alias gurnt='grunt'
-alias bumpnbuild='grunt bump && grunt build'
 alias justugh='git stash && git checkout develop && git pull && npm install'
 alias sudio="say There\'s this girl that\'s been on my mind All the time, Sussudio oh oh Now she don\'t even know my name But I think she likes me just the same Sussudio oh oh  Oh if she called me I\'d be there I\'d come running anywhere She\'s all I need, all my life I feel so good if I just say the word Sussudio, just say the word Oh Sussudio  Now I know that I\'m too young My love has just begun Sussudio oh oh Ooh give me a chance, give me a sign I\'ll show her anytime Sussudio oh oh  Ah, I\'ve just got to have her, have her now I\'ve got to get closer but I don\'t know how She makes me nervous and makes me scared But I feel so good if I just say the word Sussudio just say the word Oh Sussudio, oh  Ah, she\'s all I need all of my life I feel so good if I just say the word Sussudio I just say the word Oh Sussudio I just say the word Oh Sussudio I\'ll say the word Sussudio oh oh oh Just say the word"
 alias word-diff='git diff --word-diff=color'
@@ -57,14 +46,6 @@ alias json2vim='pbpaste | jsonlint | vim -'
 # Temporarily disable BASH history
 # http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
 alias disablehistory="unset HISTFILE"
-
-# https://github.com/LazoCoder/Pokemon-Terminal
-#command -v pokemon >/dev/null 2>&1 && pokemon mewtwo
-
-# http://www.2ality.com/2016/01/locally-installed-npm-executables.html
-function npm-do {
-  (PATH=$(npm bin):$PATH; eval "$@";)
-}
 
 # Start a simple server.  Provide a port number as an argument or leave it
 # blank to use 8080.
@@ -84,15 +65,6 @@ function serve () {
 # Prints the machine's broadcasting network IP
 function ip () {
   ifconfig | grep broadcast | awk '{print $2}' | head -n1
-}
-
-# Starts watching a file and `cat`s it whenever the contents change. Ctrl+c to
-# quit.
-#
-# Requires Node and nodemon:
-#   npm install -g nodemon
-function watch_and_log () {
-  nodemon -x cat $1 -w $1
 }
 
 function git-kill-branch () {
@@ -117,9 +89,7 @@ function git-kill-tag () {
   git push origin :refs/tags/"$1"
 }
 
-DOTFILES=~/dotfiles
-
-source $DOTFILES/helpers/git-completion.bash
+source ~/dotfiles/helpers/git-completion.bash
 
 # Push the current branch
 function PS () {
@@ -143,14 +113,6 @@ function find_and_replace () {
   grep -rl $1 ./ | xargs sed -i s/$1/$2/
 }
 
-function svnaddall () {
-  svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
-}
-
-function svndeleteall () {
-  svn status | grep -v "^.[ \t]*\..*" | grep '^!' | awk '{print $2}' | xargs svn rm
-}
-
 # makes the connection to localhost:8888 really slow.
 function goslow () {
   ipfw pipe 1 config bw 4KByte/s
@@ -160,22 +122,6 @@ function goslow () {
 # makes the connection to localhost:8888 fast again
 function gofast () {
   ipfw flush
-}
-
-
-# Compare the contents of a directory tree, recursively.
-#
-# Usage:
-#
-#  compare_trees dir_one dir_two
-function compare_trees () {
-  if [ -z "$1" -o -z "$2" ];
-  then
-    echo "You need to specify two directories to compare."
-    return
-  fi
-
-  diff <(pushd $1; ls -R) <(pushd $2; ls -R)
 }
 
 function resource () {
@@ -311,15 +257,6 @@ function dl-yt-audio-chunk () {
   ffmpeg -i "/tmp/$4.mp4" -vn -acodec copy "$4.aac"
 }
 
-# Requires jsonlint and jid
-#   brew install jid
-#   npm install -g jsonlint
-view_pasted_json () {
-  [[ $(pbpaste | jsonlint 2> /dev/null) ]] && \
-    pbpaste | jid || \
-    echo "Pasteboard contains invalid JSON!"
-}
-
 # Usage: compress_json_file some-data.json
 compress_json_file () {
   node -e "console.log(JSON.stringify(require('./$1')))"
@@ -366,10 +303,4 @@ function new_js_project() {
     git commit -m "Initial commit"
     npm install
   fi
-}
-
-# Requires jsctags
-#   npm install -g git+https://github.com/ramitos/jsctags.git
-function generate_jsctags () {
-  find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -not -path "./dist/*" -not -path "./test/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
 }
