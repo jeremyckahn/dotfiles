@@ -1,10 +1,13 @@
+babel-eslint
 devtools-terminal
 es5-ext
 eslint
+eslint-plugin-react
 gtop
 http-server
 jshint
 jsonlint
+jsxhint
 live-server
 misfit
 node-gyp
