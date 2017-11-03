@@ -12,7 +12,6 @@ live-server
 misfit
 node-gyp
 nodemon
-npm
 spawn-sync
 uglify-js
 undefined
