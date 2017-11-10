@@ -294,10 +294,10 @@ function new_js_project() {
     "Must specify a project name as the first argument"
     return
   else
-    git clone --depth=1 https://github.com/jeremyckahn/modern-js-project.git "$1"
+    git clone --depth=1 https://github.com/jeremyckahn/js-project-starter.git "$1"
     cd "$1" || exit 1
     rm -rf .git
-    find . -type f -exec sed -i "" "s/modern-js-project/$1/g" {} \;
+    find . -type f -exec sed -i "" "s/js-project-starter/$1/g" {} \;
     git init
     git add --all
     git commit -m "Initial commit"
