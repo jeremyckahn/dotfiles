@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH:$HOME/go/bin
+export PATH=/usr/local/bin:$PATH:$HOME/go/bin:$HOME/Library/Python/3.6/bin
 export EDITOR=vim
 
 alias ll="ls -lah"
