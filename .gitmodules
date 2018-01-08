@@ -1,63 +1,9 @@
-[submodule ".vim/bundle/CSS-one-line--multi-line-folding"]
-	path = .vim/bundle/CSS-one-line--multi-line-folding
-	url = git://github.com/vim-scripts/CSS-one-line--multi-line-folding.git
-[submodule ".vim/bundle/ack.vim"]
-	path = .vim/bundle/ack.vim
-	url = git://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-css-color"]
-	path = .vim/bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
-[submodule ".vim/bundle/ctrlp"]
-	path = .vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/vim-pbcopy"]
-	path = .vim/bundle/vim-pbcopy
-	url = https://github.com/ahw/vim-pbcopy.git
-[submodule ".vim/bundle/vim-coffeescript"]
-	path = .vim/bundle/vim-coffeescript
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule ".vim/bundle/vim-ruby-fold"]
-	path = .vim/bundle/vim-ruby-fold
-	url = git://github.com/bruno-/vim-ruby-fold.git
-[submodule ".vim/bundle/tern_for_vim"]
-	path = .vim/bundle/tern_for_vim
-	url = https://github.com/marijnh/tern_for_vim.git
-[submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule ".vim/bundle/grunt.vim"]
-	path = .vim/bundle/grunt.vim
-	url = https://github.com/mklabs/grunt.vim.git
-[submodule ".vim/bundle/vim-sleuth"]
-	path = .vim/bundle/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth.git
-[submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule "bash-powerline"]
 	path = bash-powerline
 	url = https://github.com/jeremyckahn/bash-powerline.git
 [submodule "iTerm2-Color-Schemes"]
 	path = iTerm2-Color-Schemes
 	url = https://github.com/mbadolato/iTerm2-Color-Schemes.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git

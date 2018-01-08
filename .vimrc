@@ -11,6 +11,44 @@ set tabstop=2 shiftwidth=2 expandtab
 set smartcase
 setlocal spelllang=en_us
 
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+filetype off
+
+" INSTALL VUNDLE:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ap/vim-css-color'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ahw/vim-pbcopy'
+Plugin 'tpope/vim-markdown'
+Plugin 'bruno-/vim-ruby-fold'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-sleuth'
+Plugin 'pangloss/vim-javascript'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " http://damien.lespiau.name/blog/2009/03/18/per-project-vimrc/comment-page-1/
 set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
@@ -23,9 +61,6 @@ au BufRead,BufNewFile *.json.* setfiletype json
 " http://www.reddit.com/r/vim/comments/2x5yav/markdown_with_fenced_code_blocks_is_great/
 au BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
-
-call pathogen#infect()
-call pathogen#helptags()
 
 set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**,**/tmp/**
 
@@ -99,10 +134,6 @@ command CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
 "if has('mouse')
   "set mouse=a
 "endif
-
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow buffer switching without saving
 set hidden
