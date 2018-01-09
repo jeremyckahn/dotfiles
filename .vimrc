@@ -34,12 +34,12 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'ahw/vim-pbcopy'
 Plugin 'tpope/vim-markdown'
 Plugin 'bruno-/vim-ruby-fold'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-sleuth'
 Plugin 'pangloss/vim-javascript'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ternjs/tern_for_vim'
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
