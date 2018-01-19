@@ -21,6 +21,7 @@ alias a='cd ~/Sites/app'
 alias d='cd ~/dotfiles'
 alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
+alias less='less -r'
 alias tmux="tmux -2"
 alias ni="npm install --save"
 alias nu="npm uninstall --save"
