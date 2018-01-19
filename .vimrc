@@ -242,7 +242,7 @@ noremap <C-t> :call Tig()<CR>
 "
 " Requires misfit:
 "   npm i -g misfit
-noremap <leader>m :!misfit<CR>
+noremap mm :!misfit<CR>
 
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
