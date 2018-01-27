@@ -272,16 +272,19 @@ nr () {
   fi
 }
 
-function new_cli_tool () {
-  if [ -z "$1" ];
+function __new_project () {
+  PROJECT_TYPE="$1"
+  PROJECT_NAME="$2"
+
+  if [ -z "$PROJECT_NAME" ];
   then
-    "Must specify a project name as the first argument"
+    echo "Must specify a project name as the first argument"
     return
   else
-    git clone --depth=1 https://github.com/jeremyckahn/node-cli-boilerplate.git "$1"
-    cd "$1" || return
+    git clone --depth=1 "https://github.com/jeremyckahn/$PROJECT_TYPE.git" "$PROJECT_NAME"
+    cd "$PROJECT_NAME" || return
     rm -rf .git
-    find . -type f -exec sed -i "" "s/node-cli-boilerplate/$1/g" {} \;
+    find . -type f -exec sed -i "" "s/$PROJECT_TYPE/$PROJECT_NAME/g" {} \;
     git init
     git add --all
     git commit -m "Initial commit"
@@ -289,21 +292,16 @@ function new_cli_tool () {
   fi
 }
 
+function new_cli_tool () {
+  __new_project node-cli-boilerplate "$1"
+}
+
 function new_js_project() {
-  if [ -z "$1" ];
-  then
-    "Must specify a project name as the first argument"
-    return
-  else
-    git clone --depth=1 https://github.com/jeremyckahn/js-project-starter.git "$1"
-    cd "$1" || exit 1
-    rm -rf .git
-    find . -type f -exec sed -i "" "s/js-project-starter/$1/g" {} \;
-    git init
-    git add --all
-    git commit -m "Initial commit"
-    npm install
-  fi
+  __new_project js-project-starter "$1"
+}
+
+function new_react_project() {
+  __new_project react-starter "$1"
 }
 
 # https://tomlankhorst.nl/brew-bundle-restore-backup/
