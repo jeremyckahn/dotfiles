@@ -92,6 +92,8 @@ nmap <leader>E :Error<CR><C-w>j
 nmap <leader>p :CtrlP<CR>
 nmap <leader>P :CtrlPClearCache<CR>
 
+let NERDTreeHijackNetrw=1
+
 nmap <leader>n :NERDTreeToggle<Enter>
 nmap <leader>t :TagbarToggle<Enter>
 nmap <leader>w :w<CR>
