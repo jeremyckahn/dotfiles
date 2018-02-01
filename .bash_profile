@@ -1,5 +1,6 @@
 export PATH=/usr/local/bin:$PATH:$HOME/go/bin:$HOME/Library/Python/3.6/bin
 export EDITOR=vim
+export GOPATH=$HOME/go
 
 alias ll="ls -lah"
 alias gs='git status'
