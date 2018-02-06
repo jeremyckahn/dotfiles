@@ -133,9 +133,9 @@ command CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
 "|             This command will run immediately after you save a file
 "Creates a new autocommand
 
-"if has('mouse')
-  "set mouse=a
-"endif
+if has('mouse')
+  set mouse=a
+endif
 
 " allow buffer switching without saving
 set hidden
