@@ -38,6 +38,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-sleuth'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ternjs/tern_for_vim'
@@ -267,3 +268,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Easily force tab settings for when Vim mysteriously overrides them
 noremap <leader>t :set tabstop=2 shiftwidth=2 expandtab<CR>
+
+" https://github.com/mxw/vim-jsx#usage
+let g:jsx_ext_required = 0
