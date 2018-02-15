@@ -268,3 +268,6 @@ setl foldmethod=syntax
 
 let g:javascript_plugin_jsdoc = 1
 let g:syntastic_javascript_checkers = ['eslint']
+
+" Easily force tab settings for when Vim mysteriously overrides them
+noremap <leader>t :set tabstop=2 shiftwidth=2 expandtab<CR>
