@@ -261,6 +261,10 @@ autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 autocmd BufNewFile,BufReadPost *.js setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.json setl foldmethod=indent
+
+" Don't fold automatically https://stackoverflow.com/a/8316817
+au BufRead * normal zR
+
 setl foldmethod=syntax
 
 let g:javascript_plugin_jsdoc = 1
