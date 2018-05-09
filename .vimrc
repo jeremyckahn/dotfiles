@@ -108,6 +108,8 @@ let g:tabman_focus  = '<leader>T'
 noremap <leader>f :call UnsetGutter()<CR>
 noremap <leader>F :call SetGutter()<CR>
 
+nmap <leader>b :Prettier<CR>
+
 " Disable Ex mode
 nmap Q <Nop>
 
