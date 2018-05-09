@@ -42,6 +42,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'prettier/vim-prettier'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -275,3 +276,8 @@ noremap <leader>t :set tabstop=2 shiftwidth=2 expandtab<CR>
 
 " https://github.com/mxw/vim-jsx#usage
 let g:jsx_ext_required = 0
+
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens = 'avoid'
