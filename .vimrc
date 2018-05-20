@@ -43,6 +43,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'prettier/vim-prettier'
+Plugin 'brooth/far.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
