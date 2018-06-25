@@ -44,6 +44,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'prettier/vim-prettier'
 Plugin 'brooth/far.vim'
+Plugin 'dyng/ctrlsf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -219,6 +220,9 @@ nmap <leader>a :tab split<CR>:Ack ""<Left>
 
 " Immediately search for the word under the cursor in a new tab.
 nmap <leader>A :tab split<CR>:Ack "\W<C-r><C-w>\W"<CR>
+
+nmap <leader>c :tab split<CR>:CtrlSF ""<Left>
+nmap <leader>C :tab split<CR>:CtrlSF "<C-r><C-w>"<CR>
 
 let g:unite_source_grep_command = 'ack-grep'
 let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
