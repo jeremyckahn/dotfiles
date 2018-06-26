@@ -212,14 +212,12 @@ noremap <buffer> k gk
 inoremap <down> <C-C>gja
 inoremap <up> <C-C>gka
 
-nmap <leader>a :CtrlSF "" -R<Left><Left><Left><Left>
-nmap <leader>A :CtrlSF "<C-r><C-w>" -W<CR>:CtrlSFOpen<CR>
+nmap <leader>a :CtrlSF -R ""<Left>
+nmap <leader>A :CtrlSF -W "<C-r><C-w>"<CR>:CtrlSFOpen<CR>
 nmap <leader>c :CtrlSFFocus<CR>
 nmap <leader>C :CtrlSFToggle<CR>
-let g:ctrlsf_auto_close = {
-  \ "normal" : 0,
-  \ "compact": 0
-\}
+let g:ctrlsf_auto_close = 0
+let g:ctrlsf_confirm_save = 0
 
 " Open Ggrep results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
