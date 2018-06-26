@@ -23,8 +23,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
-Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -212,21 +212,14 @@ noremap <buffer> k gk
 inoremap <down> <C-C>gja
 inoremap <up> <C-C>gka
 
-" https://github.com/mileszs/ack.vim
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
-" Open a new tab and search for something.
-nmap <leader>a :tab split<CR>:Ack ""<Left>
-
-" Immediately search for the word under the cursor in a new tab.
-nmap <leader>A :tab split<CR>:Ack "\W<C-r><C-w>\W"<CR>
-
-nmap <leader>c :tab split<CR>:CtrlSF ""<Left>
-nmap <leader>C :tab split<CR>:CtrlSF "<C-r><C-w>"<CR>
-
-let g:unite_source_grep_command = 'ack-grep'
-let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
-let g:unite_source_grep_recursive_opt = ''
+nmap <leader>a :CtrlSF "" -R<Left><Left><Left><Left>
+nmap <leader>A :CtrlSF "<C-r><C-w>" -W<CR>:CtrlSFOpen<CR>
+nmap <leader>c :CtrlSFFocus<CR>
+nmap <leader>C :CtrlSFToggle<CR>
+let g:ctrlsf_auto_close = {
+  \ "normal" : 0,
+  \ "compact": 0
+\}
 
 " Open Ggrep results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
