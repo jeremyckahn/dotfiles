@@ -27,8 +27,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ap/vim-css-color'
 Plugin 'kien/ctrlp.vim'
@@ -269,7 +267,6 @@ au BufRead * normal zR
 setl foldmethod=syntax
 
 let g:javascript_plugin_jsdoc = 1
-let g:syntastic_javascript_checkers = ['eslint']
 
 " Easily force tab settings for when Vim mysteriously overrides them
 noremap <leader>t :set tabstop=2 shiftwidth=2 expandtab<CR>
