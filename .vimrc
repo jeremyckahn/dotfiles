@@ -283,3 +283,6 @@ let g:prettier#config#trailing_comma = 'es5'
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
+
+nmap <silent> <C-n> <Plug>(ale_previous_wrap)
+nmap <silent> <C-m> <Plug>(ale_next_wrap)
