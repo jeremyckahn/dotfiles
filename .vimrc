@@ -45,6 +45,7 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'prettier/vim-prettier'
 Plugin 'brooth/far.vim'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -281,3 +282,7 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
 let g:prettier#config#arrow_parens = 'avoid'
 let g:prettier#config#trailing_comma = 'es5'
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
