@@ -219,7 +219,9 @@ nmap <leader>c :CtrlSFFocus<CR>
 nmap <leader>C :CtrlSFToggle<CR>
 let g:ctrlsf_auto_close = 0
 let g:ctrlsf_confirm_save = 0
-let g:ctrlsf_focus_at_start = 1
+let g:ctrlsf_auto_focus = {
+    \ 'at': 'start',
+    \ }
 
 " Open Ggrep results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
