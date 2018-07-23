@@ -290,3 +290,4 @@ nmap <silent> <C-m> <Plug>(ale_next_wrap)
 " Disable syntax highlighting for files over 1 MB
 " https://stackoverflow.com/a/179103
 autocmd BufReadPre * if getfsize(expand("%")) > 1000000 | syntax off | endif
+autocmd BufEnter dist/* ALEDisableBuffer
