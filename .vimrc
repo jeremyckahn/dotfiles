@@ -16,37 +16,31 @@ setlocal spelllang=en_us
 set nocompatible
 filetype off
 
-" INSTALL VUNDLE:
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'vim-scripts/CSS-one-line--multi-line-folding'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'ap/vim-css-color'
+Plug 'kien/ctrlp.vim'
+Plug 'ahw/vim-pbcopy'
+Plug 'tpope/vim-markdown'
+Plug 'vim-ruby/vim-ruby'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-sleuth'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'ternjs/tern_for_vim'
+Plug 'prettier/vim-prettier'
+Plug 'brooth/far.vim'
+Plug 'dyng/ctrlsf.vim'
+Plug 'w0rp/ale'
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ap/vim-css-color'
-Plugin 'kien/ctrlp.vim'
-Plugin 'ahw/vim-pbcopy'
-Plugin 'tpope/vim-markdown'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-sleuth'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'prettier/vim-prettier'
-Plugin 'brooth/far.vim'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'w0rp/ale'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" Initialize plugin system
+call plug#end()
 filetype plugin indent on    " required
 
 " http://damien.lespiau.name/blog/2009/03/18/per-project-vimrc/comment-page-1/
