@@ -66,10 +66,9 @@ let g:ctrlp_use_caching = 1
 
 " Make OS X clipboard play nicely with Vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
-nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-nmap <F2> :.w !pbcopy<CR><CR>
-vmap <F2> :w !pbcopy<CR><CR>
+nmap Y :.w !pbcopy<CR><CR>
+vmap Y :w !pbcopy<CR><CR>
+nmap P :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 
 " Write file with sudo permissions
 " http://vim.wikia.com/wiki/Su-write
