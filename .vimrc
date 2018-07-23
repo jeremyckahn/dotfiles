@@ -23,7 +23,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'ap/vim-css-color'
-Plug 'kien/ctrlp.vim'
 Plug 'ahw/vim-pbcopy'
 Plug 'tpope/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
@@ -38,6 +37,8 @@ Plug 'prettier/vim-prettier'
 Plug 'brooth/far.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'w0rp/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -82,9 +83,10 @@ let mapleader = "\<Space>"
 
 nmap <leader>E :Error<CR><C-w>j
 
-" Find files with ctrlp
-nmap <leader>p :CtrlP<CR>
-nmap <leader>P :CtrlPClearCache<CR>
+let $FZF_DEFAULT_COMMAND = 'ack -l ""'
+
+" Find files with fzf
+nmap <leader>p :FZF<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
