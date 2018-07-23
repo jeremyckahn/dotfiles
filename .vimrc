@@ -87,6 +87,7 @@ let $FZF_DEFAULT_COMMAND = 'ack -l ""'
 
 " Find files with fzf
 nmap <leader>p :FZF<CR>
+nmap <leader>P :Commands<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
