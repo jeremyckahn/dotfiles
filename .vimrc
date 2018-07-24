@@ -199,6 +199,7 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 
 " Quickly get rid of highlighting
 noremap <leader>h :noh<CR>
+noremap <leader>H :Helptags<CR>
 
 " Make j and k work normally for soft wrapped lines
 noremap <buffer> j gj
