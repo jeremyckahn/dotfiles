@@ -1,6 +1,3 @@
-" See this link for installing Command-T for OS X:
-" http://railslove.com/blog/2011/10/17/installing-macvim-with-ruby-support-and-command-t-on-osx-lion
-
 syntax enable
 set number
 set hlsearch
@@ -23,7 +20,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'ap/vim-css-color'
-Plug 'ahw/vim-pbcopy'
 Plug 'tpope/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
 Plug 'ervandew/supertab'
@@ -65,9 +61,7 @@ let g:ctrlp_use_caching = 1
 
 " Make OS X clipboard play nicely with Vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
-nmap Y :.w !pbcopy<CR><CR>
-vmap Y :w !pbcopy<CR><CR>
-nmap P :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+set clipboard=unnamed
 
 " Write file with sudo permissions
 " http://vim.wikia.com/wiki/Su-write
