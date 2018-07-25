@@ -15,7 +15,7 @@ alias gf='git fetch --all'
 # http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
 alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias git-nuke='git reset --hard && git clean -df'
-alias v='vim'
+alias v='[ $(jobs | grep vim | wc -l) == 0 ] && vim || fg $(jobs | grep vim | grep -o "\d")'
 alias t='tig'
 alias s='cd ~/Sites'
 alias l='cd ~/Sites/lib'
