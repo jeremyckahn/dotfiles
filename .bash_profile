@@ -41,7 +41,7 @@ alias word-diff='git diff --word-diff=color'
 # Requires asciinema and svg-term
 # brew install asciinema
 # npm install -g svg-term-cli
-alias record="rm /tmp/temp.cast 2> /dev/null; asciinema rec /tmp/temp.cast && cat /tmp/temp.cast | svg-term > recording.svg"
+alias record="asciinema rec /tmp/temp.cast --overwrite && cat /tmp/temp.cast | svg-term > recording.svg"
 
 # http://stackoverflow.com/a/21295146/470685
 alias ports_in_use='lsof -i -n -P | grep TCP'
