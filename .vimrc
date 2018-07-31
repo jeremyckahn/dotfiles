@@ -34,6 +34,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'janko-m/vim-test'
 
 " Initialize plugin system
 call plug#end()
@@ -285,3 +286,6 @@ nmap <silent> <C-m> <Plug>(ale_next_wrap)
 " https://stackoverflow.com/a/179103
 autocmd BufReadPre * if getfsize(expand("%")) > 1000000 | syntax off | endif
 autocmd BufEnter dist/* ALEDisableBuffer
+
+let test#strategy = "vimterminal"
+noremap tt :TestNearest<CR>
