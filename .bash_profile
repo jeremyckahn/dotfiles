@@ -325,3 +325,24 @@ backup_npm () {
 restore_npm () {
   xargs npm install --global < ~/dotfiles/npm_backup
 }
+
+# View the README for a locally installed npm package
+#   Usage: view_readme [package-name]
+#
+# Protip: Use "&" to background this process and keep your shell interactive:
+#   view_readme [package-name] &
+view_readme () {
+  if [ -z "$1" ];
+  then
+    echo "Please provide a local npm module to view the README of"
+  else
+    MODULE_PATH="node_modules/$1/README.md"
+
+    if [ -f "$MODULE_PATH" ];
+    then
+      npx vmd "$MODULE_PATH"
+    else
+      echo "$MODULE_PATH not found"'!'
+    fi
+  fi
+}
