@@ -31,6 +31,7 @@ alias nu="npm uninstall --save"
 alias nid="npm install --save-dev"
 alias nud="npm uninstall --save-dev"
 alias nh="npm home"
+alias nd="npm docs"
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias nom='npm' # nom all the things
 alias mf='misfit'
