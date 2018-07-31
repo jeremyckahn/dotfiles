@@ -16,7 +16,6 @@ alias gf='git fetch --all'
 # http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
 alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias git-nuke='git reset --hard && git clean -df'
-alias v='[ $(jobs | grep vim | wc -l) == 0 ] && vim || fg $(jobs | grep vim | grep -o "\d")'
 alias t='tig'
 alias s='cd ~/Sites'
 alias l='cd ~/Sites/lib'
@@ -346,5 +345,19 @@ view_readme () {
     else
       echo "$MODULE_PATH not found"'!'
     fi
+  fi
+}
+
+function v () {
+  if [ "$(jobs | grep -c vim)" == 0 ];
+  then
+    if [ -z "$1" ];
+    then
+      vim
+    else
+      vim "$1"
+    fi
+  else
+    fg $(jobs | grep vim | grep -o "\d")
   fi
 }
