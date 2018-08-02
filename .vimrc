@@ -35,6 +35,7 @@ Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 " Initialize plugin system
 call plug#end()
@@ -289,3 +290,8 @@ autocmd BufEnter dist/* ALEDisableBuffer
 
 let test#strategy = "vimterminal"
 noremap tt :TestNearest<CR>
+
+" https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
+" Don't show YCM's preview window
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0

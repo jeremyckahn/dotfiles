@@ -1,0 +1,15 @@
+{
+  "libs": [
+    "browser",
+    "jquery",
+    "react"
+  ],
+  "plugins": {
+    "doc_comment": null,
+    "es_modules": {},
+    "node": {}
+  },
+  "dontLoad": [
+    "node_modules/**"
+  ]
+}
