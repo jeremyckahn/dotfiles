@@ -282,6 +282,10 @@ nr () {
   fi
 }
 
+function npr () {
+  npm run $(node -e "Object.keys(require('./package.json').scripts).forEach(script => console.log(script))" | fzf)
+}
+
 function __new_project () {
   PROJECT_TYPE="$1"
   PROJECT_NAME="$2"
