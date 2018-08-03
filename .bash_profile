@@ -282,7 +282,7 @@ nr () {
   fi
 }
 
-function npr () {
+function NR () {
   npm run $(node -e "Object.keys(require('./package.json').scripts).forEach(script => console.log(script))" | fzf)
 }
 
