@@ -206,7 +206,7 @@ inoremap <down> <C-C>gja
 inoremap <up> <C-C>gka
 
 nmap <leader>a :CtrlSF -R ""<Left>
-nmap <leader>A :CtrlSF<CR>
+nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
 nmap <leader>c :CtrlSFFocus<CR>
 nmap <leader>C :CtrlSFToggle<CR>
 let g:ctrlsf_auto_close = 0
