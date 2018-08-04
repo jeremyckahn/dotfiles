@@ -276,14 +276,10 @@ compress_json_file () {
 nr () {
   if [ -z "$1" ];
   then
-    misfit
+    npm run $(node -e "Object.keys(require('./package.json').scripts).forEach(script => console.log(script))" | fzf)
   else
     npm run "$1"
   fi
-}
-
-function NR () {
-  npm run $(node -e "Object.keys(require('./package.json').scripts).forEach(script => console.log(script))" | fzf)
 }
 
 function __new_project () {
