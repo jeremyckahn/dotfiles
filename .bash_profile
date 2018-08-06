@@ -17,6 +17,9 @@ alias gf='git fetch --all'
 alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias git-nuke='git reset --hard && git clean -df'
 alias t='tig'
+
+# go get github.com/jesseduffield/lazygit
+alias lg='lazygit'
 alias s='cd ~/Sites'
 alias l='cd ~/Sites/lib'
 alias a='cd ~/Sites/app'
