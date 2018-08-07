@@ -295,3 +295,6 @@ noremap tt :TestNearest<CR>
 " Don't show YCM's preview window
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
+
+noremap <leader>r :YcmRestartServer<CR>
+noremap <leader>R :source ~/.vimrc<CR>
