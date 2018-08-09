@@ -243,7 +243,7 @@ noremap <leader>m :terminal misfit<CR>
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
 
-"colorscheme hybrid_material
+colorscheme desertEx
 
 " Always show the status line (for vim-powerline)
 set laststatus=2
