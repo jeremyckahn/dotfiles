@@ -36,6 +36,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 
 " Initialize plugin system
 call plug#end()
@@ -239,6 +240,7 @@ noremap <C-t> :call Tig()<CR>
 " Requires misfit:
 "   npm i -g misfit
 noremap <leader>m :terminal misfit<CR>
+noremap <leader>M :LivedownPreview<CR>
 
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
