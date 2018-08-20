@@ -365,3 +365,12 @@ function v () {
     fg $(jobs | grep vim | grep -o "\d")
   fi
 }
+
+function mirror_from_to () {
+  if [ -z "$1" ] || [ -z "$2" ];
+  then
+    echo "Requires a \"from\" and \"to\" file"
+  else
+    nodemon --watch "$1" --exec "cp $1 $2"
+  fi
+}
