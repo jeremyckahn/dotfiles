@@ -43,6 +43,10 @@ alias sudio="say There\'s this girl that\'s been on my mind All the time, Sussud
 alias word-diff='git diff --word-diff=color'
 alias cs='cat $(ack -l "") | fzf'
 
+# https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
+# brew install bat
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+
 # Requires asciinema and svg-term
 # brew install asciinema
 # npm install -g svg-term-cli
