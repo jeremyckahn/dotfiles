@@ -6,6 +6,7 @@ set nocp
 set autoindent
 set tabstop=2 shiftwidth=2 expandtab
 set smartcase
+set autoread
 setlocal spelllang=en_us
 
 " Use Vim settings, rather then Vi settings (much better!).
