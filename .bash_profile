@@ -45,7 +45,9 @@ alias cs='cat $(ack -l "") | fzf'
 
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
-alias preview="fzf --preview 'bat --color \"always\" {}'"
+function preview () {
+  ack -l '' | fzf --preview 'bat --color always {}'
+}
 
 # Requires asciinema and svg-term
 # brew install asciinema
