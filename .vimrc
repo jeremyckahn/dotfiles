@@ -302,3 +302,5 @@ let g:ycm_add_preview_to_completeopt = 0
 
 noremap <leader>r :YcmRestartServer<CR>
 noremap <leader>R :source ~/.vimrc<CR>
+
+vmap <leader>s :'<,'>sort<CR>
