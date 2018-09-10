@@ -1,5 +1,3 @@
-babel-eslint
-devtools-terminal
 gtop
 http-server
 jsonlint
@@ -8,7 +6,6 @@ livedown
 misfit
 ndb
 nodemon
-spawn-sync
 svg-term-cli
 vmd
 vtop
