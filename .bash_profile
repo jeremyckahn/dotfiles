@@ -118,7 +118,7 @@ function PS () {
 
 # Force push the current branch
 function FORCE_PUSH () {
-  git push --force origin -u `git branch | grep \* | sed 's/\* //'`
+  git push --force-with-lease origin -u `git branch | grep \* | sed 's/\* //'`
 }
 
 alias pushit="psh" # \m/ (>_<) \m/
