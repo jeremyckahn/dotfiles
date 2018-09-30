@@ -20,11 +20,9 @@ alias t='tig'
 
 # go get github.com/jesseduffield/lazygit
 alias lg='lazygit'
-alias s='cd ~/Sites'
-alias l='cd ~/Sites/lib'
-alias a='cd ~/Sites/app'
 alias d='cd ~/dotfiles'
 alias oss='cd ~/oss'
+alias jck='cd ~/oss/jeremyckahn'
 alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
 alias less='less -r'
