@@ -177,7 +177,10 @@ function unhide () {
   mv $1 ${1:1}
 }
 
-source ~/dotfiles/bash-powerline/bash-powerline.sh
+# The bash-powerline fork doesn't work well on Linux
+if [ "$(uname)" == "Darwin" ]; then
+  source ~/dotfiles/bash-powerline/bash-powerline.sh
+fi
 
 TERM=screen-256color
 
