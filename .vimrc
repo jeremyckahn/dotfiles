@@ -166,7 +166,7 @@ set wildignore+=*.DS_STORE,*.db
 
 " --- remove sounds effects ---
 set noerrorbells
-set visualbell
+" set visualbell
 
 
 " --- backup and swap files ---
@@ -304,3 +304,5 @@ noremap <leader>r :YcmRestartServer<CR>
 noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <leader>s :'<,'>sort<CR>
+
+let g:airline_powerline_fonts = 1
