@@ -229,6 +229,11 @@ noremap <C-L> :tabn<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe<CR>
 
+tmap <C-H> <C-w>:tabp<CR>
+tmap <C-L> <C-w>:tabn<CR>
+tmap <C-J> <C-w><C-c>
+tmap <C-K> <C-w>:tabe<CR>
+
 function! Tig ()
   silent !tig status
   redraw!
