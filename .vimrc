@@ -236,6 +236,14 @@ tmap <C-L> <C-w>:tabn<CR>
 tmap <C-J> <C-w><C-c>
 tmap <C-K> <C-w>:tabe<CR>
 
+" Map <leader> + 1-9 to jump to respective tab
+let i = 1
+while i < 10
+  execute ":noremap <leader>" . i . " :tabn " . i . "<CR>"
+  execute ":tmap <leader>" . i . " <C-w>:tabn " . i . "<CR>"
+  let i += 1
+endwhile
+
 function! Tig ()
   silent !tig status
   redraw!
