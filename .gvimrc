@@ -1,1 +1,1 @@
-set guifont=Inconsolata\ 18
+set guifont=UbuntuMonoDerivativePowerline-Regular:h20
