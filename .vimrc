@@ -230,6 +230,7 @@ noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe<CR>
 
 nmap <leader>t :tab term<CR>
+tmap <leader>t <C-w>:tab term<CR>
 tmap <C-H> <C-w>:tabp<CR>
 tmap <C-L> <C-w>:tabn<CR>
 tmap <C-J> <C-w><C-c>
