@@ -229,6 +229,7 @@ noremap <C-L> :tabn<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe<CR>
 
+nmap <leader>t :tab term<CR>
 tmap <C-H> <C-w>:tabp<CR>
 tmap <C-L> <C-w>:tabn<CR>
 tmap <C-J> <C-w><C-c>
@@ -272,9 +273,6 @@ au BufRead * normal zR
 setl foldmethod=syntax
 
 let g:javascript_plugin_jsdoc = 1
-
-" Easily force tab settings for when Vim mysteriously overrides them
-noremap <leader>t :set tabstop=2 shiftwidth=2 expandtab<CR>
 
 " https://github.com/mxw/vim-jsx#usage
 let g:jsx_ext_required = 0
