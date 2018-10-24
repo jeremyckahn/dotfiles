@@ -317,3 +317,11 @@ noremap <leader>R :source ~/.vimrc<CR>
 vmap <leader>s :'<,'>sort<CR>
 
 let g:airline_powerline_fonts = 1
+
+function! CRA ()
+  tab term tig
+  tab term npm run test
+  tab term npm run start
+endfunction
+
+command CRA execute ":call CRA()"
