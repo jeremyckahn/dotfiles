@@ -320,8 +320,8 @@ let g:airline_powerline_fonts = 1
 
 function! CRA ()
   tab term tig
-  tab term npm run test
-  tab term npm run start
+  tab term npm test
+  tab term npm start
 endfunction
 
 command CRA execute ":call CRA()"
