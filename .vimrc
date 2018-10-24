@@ -229,8 +229,7 @@ noremap <C-L> :tabn<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe<CR>
 
-nmap <leader>t :tab term<CR>
-tmap <leader>t <C-w>:tab term<CR>
+nmap <C-t> :tab term<CR>
 tmap <C-H> <C-w>:tabp<CR>
 tmap <C-L> <C-w>:tabn<CR>
 tmap <C-J> <C-w><C-c>
@@ -250,7 +249,7 @@ function! Tig ()
 endfunction
 
 " Open Tig and see the current Git diff
-noremap <C-t> :call Tig()<CR>
+noremap <leader>t :call Tig()<CR>
 
 " Open Misfit
 "
