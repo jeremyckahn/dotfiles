@@ -319,7 +319,7 @@ vmap <leader>s :'<,'>sort<CR>
 let g:airline_powerline_fonts = 1
 
 function! CRA ()
-  tab term
+  tab term ++curwin
   tab term npm test
   tab term npm start
 endfunction
