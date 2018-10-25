@@ -237,7 +237,7 @@ tmap <C-K> <C-w>:tabe<CR>
 " Map <leader> + 1-9 to jump to respective tab
 let i = 1
 while i < 10
-  execute ":noremap <Tab>" . i . " :tabn " . i . "<CR>"
+  execute ":noremap <leader>" . i . " :tabn " . i . "<CR>"
   let i += 1
 endwhile
 
