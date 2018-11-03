@@ -30,7 +30,6 @@ Plug 'mxw/vim-jsx'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'prettier/vim-prettier'
-Plug 'brooth/far.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
