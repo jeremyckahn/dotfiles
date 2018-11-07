@@ -40,6 +40,7 @@ Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 Plug 'bogado/file-line'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-eunuch'
+Plug 'editorconfig/editorconfig-vim'
 
 " Initialize plugin system
 call plug#end()
