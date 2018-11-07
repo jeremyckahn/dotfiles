@@ -38,6 +38,7 @@ Plug 'janko-m/vim-test'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 Plug 'bogado/file-line'
+Plug 'djoshea/vim-autoread'
 
 " Initialize plugin system
 call plug#end()
