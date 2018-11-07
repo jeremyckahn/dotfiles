@@ -39,6 +39,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 Plug 'bogado/file-line'
 Plug 'djoshea/vim-autoread'
+Plug 'tpope/vim-eunuch'
 
 " Initialize plugin system
 call plug#end()
@@ -67,10 +68,6 @@ let g:ctrlp_use_caching = 1
 " Make OS X clipboard play nicely with Vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
 set clipboard=unnamed
-
-" Write file with sudo permissions
-" http://vim.wikia.com/wiki/Su-write
-command W w !sudo tee % > /dev/null
 
 " Enable file type detection.
 " Also load indent files, to automatically do language-dependent indenting.
