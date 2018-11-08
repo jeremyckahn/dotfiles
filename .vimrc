@@ -121,7 +121,7 @@ function! UnsetGutter()
   set colorcolumn=0
 endfunction
 
-command CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
+command! CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
 
  autocmd BufWritePre * :%s/\s\+$//e
 "|             |                  | |
@@ -318,4 +318,4 @@ function! CRA ()
   tab term npm start
 endfunction
 
-command CRA execute ":call CRA()"
+command! CRA execute ":call CRA()"
