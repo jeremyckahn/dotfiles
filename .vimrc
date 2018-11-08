@@ -319,3 +319,4 @@ function! CRA ()
 endfunction
 
 command! CRA execute ":call CRA()"
+command! Reload execute "source ~/.vimrc"
