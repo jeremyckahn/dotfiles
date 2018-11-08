@@ -36,7 +36,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'janko-m/vim-test'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 Plug 'bogado/file-line'
@@ -300,9 +299,6 @@ nmap <silent> <C-m> <Plug>(ale_next_wrap)
 " https://stackoverflow.com/a/179103
 autocmd BufReadPre * if getfsize(expand("%")) > 1000000 | syntax off | endif
 autocmd BufEnter dist/* ALEDisableBuffer
-
-let test#strategy = "vimterminal"
-noremap tt :TestNearest<CR>
 
 " https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
 " Don't show YCM's preview window
