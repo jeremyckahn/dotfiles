@@ -42,6 +42,7 @@ Plug 'bogado/file-line'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'yuttie/comfortable-motion.vim'
 
 " Initialize plugin system
 call plug#end()
