@@ -43,6 +43,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'moll/vim-node'
 
 " Initialize plugin system
 call plug#end()
