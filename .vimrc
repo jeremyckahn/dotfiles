@@ -44,6 +44,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'moll/vim-node'
+Plug 'mhinz/vim-startify'
 
 " Initialize plugin system
 call plug#end()
