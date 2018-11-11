@@ -235,11 +235,20 @@ function checkpoint () {
 }
 
 function o () {
-  if [ -z "$1" ];
-  then
-    open ./
+  if [ "$(uname)" == "Darwin" ]; then
+    if [ -z "$1" ];
+    then
+      open ./
+    else
+      open $1
+    fi
   else
-    open $1
+    if [ -z "$1" ];
+    then
+      xdg-open ./
+    else
+      xdg-open $1
+    fi
   fi
 }
 
