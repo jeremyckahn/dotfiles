@@ -18,15 +18,12 @@ alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n
 alias git-nuke='git reset --hard && git clean -df'
 alias t='tig'
 
-# go get github.com/jesseduffield/lazygit
-alias lg='lazygit'
 alias d='cd ~/dotfiles'
 alias oss='cd ~/oss'
 alias jck='cd ~/oss/jeremyckahn'
 alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
 alias less='less -r'
-alias tmux="tmux -2"
 alias ni="npm install --save"
 alias nu="npm uninstall --save"
 alias nid="npm install --save-dev"
@@ -36,7 +33,6 @@ alias nd="npm docs"
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias nom='npm' # nom all the things
 alias mf='misfit'
-alias justugh='git stash && git checkout develop && git pull && npm install'
 alias sudio="say There\'s this girl that\'s been on my mind All the time, Sussudio oh oh Now she don\'t even know my name But I think she likes me just the same Sussudio oh oh  Oh if she called me I\'d be there I\'d come running anywhere She\'s all I need, all my life I feel so good if I just say the word Sussudio, just say the word Oh Sussudio  Now I know that I\'m too young My love has just begun Sussudio oh oh Ooh give me a chance, give me a sign I\'ll show her anytime Sussudio oh oh  Ah, I\'ve just got to have her, have her now I\'ve got to get closer but I don\'t know how She makes me nervous and makes me scared But I feel so good if I just say the word Sussudio just say the word Oh Sussudio, oh  Ah, she\'s all I need all of my life I feel so good if I just say the word Sussudio I just say the word Oh Sussudio I just say the word Oh Sussudio I\'ll say the word Sussudio oh oh oh Just say the word"
 alias word-diff='git diff --word-diff=color'
 alias cs='cat $(ack -l "") | fzf'
@@ -74,11 +70,11 @@ alias disablehistory="unset HISTFILE"
 function serve () {
   SERVER_PORT=8080
 
-  if [ $1 ]; then
+  if [ "$1" ]; then
     SERVER_PORT=$1
   fi
 
-  live-server --port=${SERVER_PORT} --ignore=.git
+  live-server --port="${SERVER_PORT}" --ignore=.git
 }
 
 # Prints the machine's broadcasting network IP
@@ -93,8 +89,8 @@ function git-kill-branch () {
     return 1
   fi
 
-  git branch -D $1
-  git push origin :$1
+  git branch -D "$1"
+  git push origin :"$1"
 }
 
 function git-kill-tag () {
@@ -119,8 +115,6 @@ function PS () {
 function FORCE_PUSH () {
   git push --force-with-lease origin -u `git branch | grep \* | sed 's/\* //'`
 }
-
-alias pushit="psh" # \m/ (>_<) \m/
 
 # Pull the current branch
 function PL () {
@@ -286,11 +280,6 @@ function PR () {
 function dl-yt-audio-chunk () {
   ffmpeg -ss "$2" -i $(youtube-dl -f best --get-url "$1") -t "$3" -c:v copy -c:a copy "/tmp/$4.mp4"
   ffmpeg -i "/tmp/$4.mp4" -vn -acodec copy "$4.aac"
-}
-
-# Usage: compress_json_file some-data.json
-compress_json_file () {
-  node -e "console.log(JSON.stringify(require('./$1')))"
 }
 
 nr () {
