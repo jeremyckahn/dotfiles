@@ -84,8 +84,11 @@ nmap <leader>E :Error<CR><C-w>j
 
 let $FZF_DEFAULT_COMMAND = 'ack -l ""'
 
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
 " Find files with fzf
-nmap <leader>p :FZF<CR>
+nmap <leader>p :Files!<CR>
 nmap <leader>P :Commands<CR>
 
 let NERDTreeHijackNetrw=1
