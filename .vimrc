@@ -101,6 +101,7 @@ let g:NERDSpaceDelims = 1
 nmap <leader>n :NERDTreeToggle<Enter>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
+nmap <leader>Q :qa!<CR>
 nmap <leader>d :w !diff % -<CR>
 nmap <leader>D :bd<CR>
 
