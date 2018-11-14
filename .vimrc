@@ -87,6 +87,8 @@ let $FZF_DEFAULT_COMMAND = 'ack -l ""'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+nmap <leader>/ :BLines!<CR>
+
 " Find files with fzf
 nmap <leader>p :Files!<CR>
 nmap <leader>P :Commands<CR>
