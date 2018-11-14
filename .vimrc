@@ -92,6 +92,7 @@ nmap <leader>/ :BLines!<CR>
 " Find files with fzf
 nmap <leader>p :Files!<CR>
 nmap <leader>P :Commands<CR>
+nmap tt :Windows!<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
