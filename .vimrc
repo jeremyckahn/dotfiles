@@ -258,6 +258,8 @@ endfunction
 " Open Tig and see the current Git diff
 noremap <leader>t :call Tig()<CR>
 
+nmap <leader>T :term ++curwin<CR>
+
 " Open Misfit
 "
 " Requires misfit:
