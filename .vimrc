@@ -82,7 +82,7 @@ let mapleader = "\<Space>"
 
 nmap <leader>E :Error<CR><C-w>j
 
-let $FZF_DEFAULT_COMMAND = 'ack -l ""'
+let $FZF_DEFAULT_COMMAND = 'git ls-files'
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
