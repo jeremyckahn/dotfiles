@@ -41,7 +41,7 @@ alias clean_ds_store='find ./ -name ".DS_Store" -depth -exec rm {} \;'
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
 function preview () {
-  git ls-files '' | fzf --preview 'bat --color always {}'
+  rg --files --hidden --glob '!.git/*' | fzf --preview 'bat --color always {}'
 }
 
 # Requires asciinema and svg-term

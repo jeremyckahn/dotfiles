@@ -84,7 +84,7 @@ nmap <leader>E :Error<CR><C-w>j
 
 " Requires ripgrep
 " https://github.com/BurntSushi/ripgrep
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
