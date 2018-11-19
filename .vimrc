@@ -82,7 +82,9 @@ let mapleader = "\<Space>"
 
 nmap <leader>E :Error<CR><C-w>j
 
-let $FZF_DEFAULT_COMMAND = 'git ls-files'
+" Requires ripgrep
+" https://github.com/BurntSushi/ripgrep
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
