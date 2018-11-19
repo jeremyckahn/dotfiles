@@ -89,7 +89,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-nmap <leader>/ :BLines!<CR>
+nmap // :BLines!<CR>
 
 " Find files with fzf
 nmap <leader>p :Files!<CR>
