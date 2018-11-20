@@ -223,7 +223,12 @@ nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
 nmap <leader>c :CtrlSFFocus<CR>
 nmap <leader>C :CtrlSFToggle<CR>
 
-let g:ctrlsf_ackprg = '/usr/local/bin/rg'
+if has("macunix")
+  let g:ctrlsf_ackprg = '/usr/local/bin/rg'
+elseif has("unix")
+  let g:ctrlsf_ackprg = '/usr/bin/rg'
+endif
+
 let g:ctrlsf_auto_close = 0
 let g:ctrlsf_confirm_save = 0
 let g:ctrlsf_auto_focus = {
