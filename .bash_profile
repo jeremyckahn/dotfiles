@@ -108,7 +108,7 @@ source ~/dotfiles/helpers/git-completion.bash
 
 # Push the current branch
 function PS () {
-  git push origin -u `git branch | grep \* | sed 's/\* //'`
+  git push origin `git branch | grep \* | sed 's/\* //'`
 }
 
 # Force push the current branch
