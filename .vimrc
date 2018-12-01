@@ -259,13 +259,8 @@ while i < 10
   let i += 1
 endwhile
 
-function! Tig ()
-  silent !tig status
-  redraw!
-endfunction
-
 " Open Tig and see the current Git diff
-noremap <leader>t :call Tig()<CR>
+noremap <leader>t :term ++close tig status<CR>
 
 nmap <leader>T :term ++curwin<CR>
 
