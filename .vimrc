@@ -336,3 +336,14 @@ endfunction
 
 command! CRA execute ":call CRA()"
 command! Reload execute "source ~/.vimrc"
+
+" Show file path in lightline
+" https://github.com/itchyny/lightline.vim/issues/87#issuecomment-119130738
+let g:lightline = {
+  \ 'component_function': {
+  \   'filename': 'LightLineFilename'
+  \ }
+  \ }
+function! LightLineFilename()
+  return expand('%')
+endfunction
