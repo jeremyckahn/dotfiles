@@ -218,6 +218,9 @@ noremap <buffer> k gk
 inoremap <down> <C-C>gja
 inoremap <up> <C-C>gka
 
+" Insert console.log
+inoremap <C-c> console.log(
+
 nmap <leader>a :CtrlSF -R ""<Left>
 nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
 nmap <leader>c :CtrlSFFocus<CR>
