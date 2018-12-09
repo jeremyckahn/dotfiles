@@ -329,8 +329,6 @@ noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <leader>s :'<,'>sort<CR>
 
-let g:airline_powerline_fonts = 1
-
 function! CRA ()
   tab term ++curwin
   tab term npm test
@@ -339,6 +337,9 @@ endfunction
 
 command! CRA execute ":call CRA()"
 command! Reload execute "source ~/.vimrc"
+
+" This is handled by lightline
+set noshowmode
 
 " Show file path in lightline
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-119130738
