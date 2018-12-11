@@ -314,9 +314,6 @@ let g:ale_linters = {
 nmap <silent> <C-n> <Plug>(ale_previous_wrap)
 nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
-" Disable syntax highlighting for files over 1 MB
-" https://stackoverflow.com/a/179103
-autocmd BufReadPre * if getfsize(expand("%")) > 1000000 | syntax off | endif
 autocmd BufEnter dist/* ALEDisableBuffer
 
 " https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
