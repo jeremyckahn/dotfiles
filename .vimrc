@@ -39,7 +39,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 Plug 'bogado/file-line'
-Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'yuttie/comfortable-motion.vim'
@@ -348,3 +347,7 @@ let g:lightline = {
 function! LightLineFilename()
   return expand('%')
 endfunction
+
+" Reload file on focus/enter
+" https://stackoverflow.com/a/20418591
+au FocusGained,BufEnter * :silent! e
