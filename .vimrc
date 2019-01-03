@@ -350,4 +350,4 @@ endfunction
 
 " Reload file on focus/enter
 " https://stackoverflow.com/a/20418591
-au FocusGained,BufEnter * :silent! e
+au FocusGained,BufEnter * :silent! !
