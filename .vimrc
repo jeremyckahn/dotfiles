@@ -218,8 +218,8 @@ inoremap <up> <C-C>gka
 
 " Insert common snippets
 inoremap <C-c> console.log(
-inoremap <C-d> describe('' () => {});<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
-inoremap <C-t> test('' () => {});<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+inoremap <C-d> describe('', () => {});<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+inoremap <C-t> test('', () => {});<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 inoremap <C-b> beforeEach(() => {});<Left><Left><Left>
 
 nmap <leader>a :CtrlSF -R ""<Left>
