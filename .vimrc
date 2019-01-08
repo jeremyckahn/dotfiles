@@ -41,7 +41,6 @@ Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 Plug 'bogado/file-line'
 Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'yuttie/comfortable-motion.vim'
 Plug 'moll/vim-node'
 Plug 'mhinz/vim-startify'
 
@@ -217,8 +216,11 @@ noremap <buffer> k gk
 inoremap <down> <C-C>gja
 inoremap <up> <C-C>gka
 
-" Insert console.log
+" Insert common snippets
 inoremap <C-c> console.log(
+inoremap <C-d> describe('' () => {});<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+inoremap <C-t> test('' () => {});<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+inoremap <C-b> beforeEach(() => {});<Left><Left><Left>
 
 nmap <leader>a :CtrlSF -R ""<Left>
 nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
