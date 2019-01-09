@@ -265,8 +265,8 @@ while i < 10
   let i += 1
 endwhile
 
-" Open Tig and see the current Git diff
-noremap <leader>t :term ++close tig status<CR>
+" Open and close Tig
+noremap <leader>t :tab term ++close tig status<CR>
 
 nmap <leader>T :term ++curwin<CR>
 
