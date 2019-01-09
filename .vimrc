@@ -92,7 +92,9 @@ nmap // :BLines!<CR>
 " Find files with fzf
 nmap <leader>p :Files!<CR>
 nmap <leader>P :Commands<CR>
-nmap tt :Windows!<CR>
+
+" Quickly run tests
+nmap tt :term ++close npm test<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
