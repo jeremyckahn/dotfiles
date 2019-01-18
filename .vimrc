@@ -280,8 +280,6 @@ noremap <leader>M :LivedownPreview<CR>
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
 
-colorscheme desertEx
-
 " Always show the status line (for vim-powerline)
 set laststatus=2
 
