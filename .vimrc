@@ -260,7 +260,6 @@ tmap <C-K> <C-w>:tabe<CR>
 let i = 1
 while i < 10
   execute ":nmap <leader><leader>" . i . " :tabn " . i . "<CR>"
-  execute ":tmap <leader><leader>" . i . " <C-w>:tabn " . i . "<CR>"
   let i += 1
 endwhile
 
