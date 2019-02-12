@@ -93,9 +93,6 @@ nmap // :BLines!<CR>
 nmap <leader>p :Files!<CR>
 nmap <leader>P :Commands<CR>
 
-" Quickly run tests
-nmap tt :term ++close npm test<CR>
-
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
 
@@ -252,23 +249,23 @@ noremap <C-L> :tabn<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe<CR>
 
-nmap <C-t> :tab term<CR>
+nmap <leader><leader>t :tab term<CR>
+tmap <leader><leader>t <C-w>:tab term<CR>
 tmap <C-H> <C-w>:tabp<CR>
 tmap <C-L> <C-w>:tabn<CR>
 tmap <C-J> <C-w><C-c>
 tmap <C-K> <C-w>:tabe<CR>
 
-" Map <leader> + 1-9 to jump to respective tab
+" Map <leader><leader> + 1-9 to jump to respective tab
 let i = 1
 while i < 10
-  execute ":noremap <leader>" . i . " :tabn " . i . "<CR>"
+  execute ":nmap <leader><leader>" . i . " :tabn " . i . "<CR>"
+  execute ":tmap <leader><leader>" . i . " <C-w>:tabn " . i . "<CR>"
   let i += 1
 endwhile
 
 " Open and close Tig
 noremap <leader>t :tab term ++close tig status<CR>
-
-nmap <leader>T :term ++curwin<CR>
 
 " Open Misfit
 "
@@ -332,6 +329,9 @@ function! CRA ()
   tab term npm test
   tab term npm start
 endfunction
+
+" Quickly run tests
+nmap tt :term ++close npm test<CR>
 
 command! CRA execute ":call CRA()"
 command! Reload execute "source ~/.vimrc"
