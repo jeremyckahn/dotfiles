@@ -43,6 +43,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'moll/vim-node'
 Plug 'mhinz/vim-startify'
+Plug 'machakann/vim-highlightedyank'
 
 " Initialize plugin system
 call plug#end()
