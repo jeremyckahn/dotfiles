@@ -352,3 +352,5 @@ endfunction
 " Reload file on focus/enter
 " https://stackoverflow.com/a/20418591
 au FocusGained,BufEnter * :silent! !
+
+let g:highlightedyank_highlight_duration = 200
