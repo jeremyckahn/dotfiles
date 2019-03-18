@@ -354,3 +354,5 @@ endfunction
 au FocusGained,BufEnter * :silent! !
 
 let g:highlightedyank_highlight_duration = 200
+
+command! Filename execute ":echo expand('%:p')"
