@@ -69,9 +69,11 @@ let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp_search = 0
 let g:ctrlp_use_caching = 1
 
-" Make OS X clipboard play nicely with Vim
-" http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing
-set clipboard=unnamed
+if has("macunix")
+  set clipboard=unnamed
+elseif has("unix")
+  set clipboard=unnamedplus
+endif
 
 " Enable file type detection.
 " Also load indent files, to automatically do language-dependent indenting.
