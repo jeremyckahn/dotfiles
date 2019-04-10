@@ -180,6 +180,12 @@ if [ "$(uname)" == "Darwin" ]; then
   source ~/dotfiles/bash-powerline/bash-powerline.sh
 fi
 
+if [ "$(uname)" == "Linux" ]; then
+  # https://stackoverflow.com/a/27456981
+  alias setclip="xclip -selection c"
+  alias getclip="xclip -selection c -o"
+fi
+
 TERM=screen-256color
 
 # Load RVM into a shell session *as a function*
