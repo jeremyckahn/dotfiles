@@ -265,6 +265,9 @@ while i < 10
   let i += 1
 endwhile
 
+" execute this to preserve trailing space
+execute "noremap bb :term ++close "
+
 " Open and close Tig
 noremap <leader>t :tab term ++close tig status<CR>
 
