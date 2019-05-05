@@ -44,6 +44,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'moll/vim-node'
 Plug 'mhinz/vim-startify'
 Plug 'machakann/vim-highlightedyank'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Initialize plugin system
 call plug#end()
@@ -134,13 +135,6 @@ function! UnsetGutter()
 endfunction
 
 command! CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
-
- autocmd BufWritePre * :%s/\s\+$//e
-"|             |                  | |
-"|             |                  | This part actually removes the whitespace
-"|             |                  The command will run for all file types
-"|             This command will run immediately after you save a file
-"Creates a new autocommand
 
 if has('mouse')
   set mouse=a
@@ -361,3 +355,7 @@ au FocusGained,BufEnter * :silent! !
 let g:highlightedyank_highlight_duration = 200
 
 command! Filename execute ":echo expand('%:p')"
+
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
