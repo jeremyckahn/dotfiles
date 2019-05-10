@@ -77,7 +77,7 @@ function serve () {
     SERVER_PORT=$1
   fi
 
-  live-server --port="${SERVER_PORT}" --ignore=.git,node_modules
+  live-server --port="${SERVER_PORT}" --ignore=.git
 }
 
 # Prints the machine's broadcasting network IP
