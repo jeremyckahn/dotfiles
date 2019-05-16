@@ -36,7 +36,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
 Plug 'bogado/file-line'
 Plug 'tpope/vim-eunuch'
@@ -45,6 +44,12 @@ Plug 'moll/vim-node'
 Plug 'mhinz/vim-startify'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
+
+" https://freshman.tech/vim-javascript/#intelligent-code-completion
+"
+" To install language servers, manually call:
+"   CocInstall coc-tsserver coc-json coc-html coc-css
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Initialize plugin system
 call plug#end()
