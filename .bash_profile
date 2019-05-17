@@ -291,6 +291,14 @@ function dl-yt-audio-chunk () {
   ffmpeg -i "/tmp/$4.mp4" -vn -acodec copy "$4.aac"
 }
 
+# Usage:
+#
+#   convert-mov-to-mp4 some.mov
+# https://mrcoles.com/convert-mov-mp4-ffmpeg/
+function convert-mov-to-mp4 () {
+  ffmpeg -i "$1" -vcodec h264 -acodec mp2 video.mp4
+}
+
 nr () {
   if [ -z "$1" ];
   then
