@@ -98,6 +98,7 @@ command! -bang -nargs=? -complete=dir Files
 
 nmap // :BLines!<CR>
 nmap ?? :Rg!<CR>
+noremap <leader>T :Commits!<CR>
 
 " Find files with fzf
 nmap <leader>p :Files!<CR>
@@ -114,9 +115,6 @@ nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
 nmap <leader>d :w !diff % -<CR>
 nmap <leader>D :bd<CR>
-
-let g:tabman_toggle = '<leader>t'
-let g:tabman_focus  = '<leader>T'
 
 " Enable or disable auto width-formatting.
 noremap <leader>f :call UnsetGutter()<CR>
