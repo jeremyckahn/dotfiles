@@ -378,3 +378,7 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
