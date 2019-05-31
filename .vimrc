@@ -382,3 +382,7 @@ endfunction
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Print the number of occurrences of the current word under the cursor
+" (comma + *)
+map ,* *<C-O>:%s///gn<CR>
