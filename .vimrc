@@ -14,6 +14,9 @@ setlocal spelllang=en_us
 set nocompatible
 filetype off
 
+" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+set nomodeline
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/CSS-one-line--multi-line-folding'
