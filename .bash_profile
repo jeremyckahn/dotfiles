@@ -39,6 +39,9 @@ alias mf='misfit'
 alias sudio="say There\'s this girl that\'s been on my mind All the time, Sussudio oh oh Now she don\'t even know my name But I think she likes me just the same Sussudio oh oh  Oh if she called me I\'d be there I\'d come running anywhere She\'s all I need, all my life I feel so good if I just say the word Sussudio, just say the word Oh Sussudio  Now I know that I\'m too young My love has just begun Sussudio oh oh Ooh give me a chance, give me a sign I\'ll show her anytime Sussudio oh oh  Ah, I\'ve just got to have her, have her now I\'ve got to get closer but I don\'t know how She makes me nervous and makes me scared But I feel so good if I just say the word Sussudio just say the word Oh Sussudio, oh  Ah, she\'s all I need all of my life I feel so good if I just say the word Sussudio I just say the word Oh Sussudio I just say the word Oh Sussudio I\'ll say the word Sussudio oh oh oh Just say the word"
 alias word-diff='git diff --word-diff=color'
 alias cs='cat $(ack -l "") | fzf'
+
+# Similar to vim.fzf's :Rg, for VSCode
+alias vf='code -g $(rg --column --line-number --no-heading --smart-case . | fzf | rg -o ".*:\d+:\d+")'
 alias clean_ds_store='find ./ -name ".DS_Store" -depth -exec rm {} \;'
 
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
