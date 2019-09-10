@@ -1,6 +1,8 @@
 export PATH=/usr/local/bin:$PATH:$HOME/go/bin:$HOME/Library/Python/3.6/bin
 export EDITOR=vim
 export GOPATH=$HOME/go
+# https://github.com/feross/funding#how-can-i-disable-this
+export OPEN_SOURCE_CONTRIBUTOR=true
 
 alias ll="ls -lah"
 alias gs='git status'
