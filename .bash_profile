@@ -38,6 +38,9 @@ alias nom='npm' # nom all the things
 # Display help text for user-installed binaries
 alias helps="ls /usr/local/bin | fzf --preview '{} --help'"
 
+# Display tree of directories or previews of files
+alias trees="ls -ah | fzf --preview 'if [[ -d {} ]]; then tree {}; else bat --color always {}; fi'"
+
 # https://stackoverflow.com/a/48593067
 alias list_links='npm ls --depth=0 --link=true'
 alias mf='misfit'
