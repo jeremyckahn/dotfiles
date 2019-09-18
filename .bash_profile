@@ -35,6 +35,9 @@ alias nd="npm docs"
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias nom='npm' # nom all the things
 
+# Display help text for user-installed binaries
+alias helps="ls /usr/local/bin | fzf --preview '{} --help'"
+
 # https://stackoverflow.com/a/48593067
 alias list_links='npm ls --depth=0 --link=true'
 alias mf='misfit'
