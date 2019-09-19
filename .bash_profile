@@ -388,3 +388,15 @@ function mirror_from_to () {
     nodemon --watch "$1" --exec "cp $1 $2"
   fi
 }
+
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
+OMEBREW_PREFIX=$(brew --prefix)
+if type brew &>/dev/null; then
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
