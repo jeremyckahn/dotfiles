@@ -260,6 +260,9 @@ tmap <C-L> <C-w>:tabn<CR>
 tmap <C-J> <C-w><C-c>
 tmap <C-K> <C-w>:tabe<CR>
 
+" https://github.com/vim/vim/issues/2490#issuecomment-383382372
+tmap <Esc><Esc> <C-W>N
+
 " Map <leader> + 1-9 to jump to respective tab
 let i = 1
 while i < 10
