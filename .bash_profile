@@ -389,6 +389,10 @@ function mirror_from_to () {
   fi
 }
 
+function search_git_history () {
+  git log --patch -U0 --color=always | less +/"$1"
+}
+
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
 OMEBREW_PREFIX=$(brew --prefix)
 if type brew &>/dev/null; then
