@@ -47,6 +47,7 @@ Plug 'moll/vim-node'
 Plug 'mhinz/vim-startify'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'vim/killersheep'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
