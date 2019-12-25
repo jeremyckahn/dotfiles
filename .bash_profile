@@ -4,6 +4,9 @@ export GOPATH=$HOME/go
 # https://github.com/feross/funding#how-can-i-disable-this
 export OPEN_SOURCE_CONTRIBUTOR=true
 
+# https://support.apple.com/en-us/HT208050
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 alias ll="ls -lah"
 alias gs='git status'
 alias gd='tig status'
