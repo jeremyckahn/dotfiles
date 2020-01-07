@@ -205,6 +205,9 @@ inoremap <C-d> <end>
 " hitting jj will jump out of insert mode
 inoremap jj <esc>
 
+nmap ss :set syntax=off<CR>
+nmap SS :set syntax=on<CR>
+
 " quick vertical split
 noremap <leader>v :vsp<CR><C-w><C-w>
 
