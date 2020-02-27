@@ -115,7 +115,12 @@ let NERDTreeShowHidden=1
 
 let g:NERDSpaceDelims = 1
 
-nmap <leader>n :NERDTreeToggle<Enter>
+function! ToggleNERDTree()
+  NERDTreeToggle
+  silent NERDTreeMirror
+endfunction
+
+nmap <leader>n :call ToggleNERDTree()<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
