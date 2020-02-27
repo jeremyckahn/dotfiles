@@ -106,9 +106,12 @@ nmap // :BLines!<CR>
 nmap ?? :Rg!<CR>
 noremap <leader>T :Commits!<CR>
 
+" https://github.com/junegunn/fzf.vim/issues/162
+let g:fzf_commands_expect = 'enter'
+
 " Find files with fzf
 nmap <leader>p :Files!<CR>
-nmap <leader>P :Commands<CR>
+nmap cc :Commands<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
