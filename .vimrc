@@ -113,7 +113,7 @@ let g:fzf_commands_expect = 'enter'
 nmap <leader>p :Files!<CR>
 
 " Shows Git history for the current buffer
-command! History execute ":BCommits!"
+command! FileHistory execute ":BCommits!"
 
 nmap cc :Commands<CR>
 
