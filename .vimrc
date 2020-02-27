@@ -360,6 +360,7 @@ set noshowmode
 " Show file path in lightline
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-119130738
 let g:lightline = {
+  \ 'colorscheme': 'darcula',
   \ 'component_function': {
   \   'filename': 'LightLineFilename'
   \ }
