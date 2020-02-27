@@ -276,8 +276,8 @@ while i < 10
   let i += 1
 endwhile
 
-" Open and close Tig
-noremap <leader>t :tab term ++close tig status<CR>
+" Open and close lazygit
+noremap <leader>g :tab term ++close lazygit<CR>
 
 " Open Misfit
 "
