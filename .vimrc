@@ -284,7 +284,6 @@ endwhile
 " Open and close lazygit
 noremap <leader>g :tab term ++close lazygit<CR>
 
-noremap <leader>m :NERDTreeMirror<CR>
 noremap <leader>M :LivedownPreview<CR>
 
 " Open the current buffer in a new tab
