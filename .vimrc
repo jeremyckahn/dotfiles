@@ -111,6 +111,10 @@ let g:fzf_commands_expect = 'enter'
 
 " Find files with fzf
 nmap <leader>p :Files!<CR>
+
+" Shows Git history for the current buffer
+command! History execute ":BCommits!"
+
 nmap cc :Commands<CR>
 
 let NERDTreeHijackNetrw=1
@@ -223,7 +227,6 @@ noremap <leader>v :vsp<CR><C-w><C-w>
 
 " Quickly get rid of highlighting
 noremap <leader>h :noh<CR>
-noremap <leader>H :Startify<CR>
 
 " Make j and k work normally for soft wrapped lines
 noremap <buffer> j gj
