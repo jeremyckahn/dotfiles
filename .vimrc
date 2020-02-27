@@ -59,6 +59,8 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
 filetype plugin indent on    " required
 
+colo hybrid_material
+
 " http://damien.lespiau.name/blog/2009/03/18/per-project-vimrc/comment-page-1/
 set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
