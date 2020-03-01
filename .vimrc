@@ -363,6 +363,9 @@ let g:lightline = {
   \ 'colorscheme': 'darcula',
   \ 'component_function': {
   \   'filename': 'LightLineFilename'
+  \ },
+  \ 'component': {
+  \   'lineinfo': "%3l:%-2v|%{printf('%03d/%03d',line('.'),line('$'))}",
   \ }
   \ }
 function! LightLineFilename()
