@@ -361,11 +361,14 @@ set noshowmode
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-119130738
 let g:lightline = {
   \ 'colorscheme': 'darcula',
+  \ 'active': {
+  \   'right': [['lineinfo'], ['fileformat', 'filetype']]
+  \ },
   \ 'component_function': {
   \   'filename': 'LightLineFilename'
   \ },
   \ 'component': {
-  \   'lineinfo': "%3l:%-2v|%{printf('%03d/%03d',line('.'),line('$'))}",
+  \   'lineinfo': "[%l:%-v] [%{printf('%03d/%03d',line('.'),line('$'))}]",
   \ }
   \ }
 function! LightLineFilename()
