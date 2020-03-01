@@ -271,14 +271,14 @@ noremap <C-L> :tabn<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe<CR>
 
-nmap <leader><leader>t :tab term<CR>
+nmap <leader>t :tab term<CR>
 tmap <C-H> <C-w>:tabp<CR>
 tmap <C-L> <C-w>:tabn<CR>
 tmap <C-J> <C-w><C-c>
 tmap <C-K> <C-w>:tabe<CR>
 
 " https://github.com/vim/vim/issues/2490#issuecomment-383382372
-tmap <leader><leader><Esc> <C-W>N
+tmap <C-b> <C-W>N
 
 " Map <leader> + 1-9 to jump to respective tab
 let i = 1
