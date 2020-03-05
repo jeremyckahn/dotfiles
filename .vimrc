@@ -413,3 +413,16 @@ nmap <silent> ]c <Plug>(coc-diagnostic-next)
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
 map ,* *<C-O>:%s///gn<CR>
+
+" Run a command on all tabs and return to the current tab
+" https://vim.fandom.com/wiki/Run_a_command_in_multiple_buffers#Restoring_position
+function! TabDo(command)
+  let currTab=tabpagenr()
+  execute 'tabdo ' . a:command
+  execute 'tabn ' . currTab
+endfunction
+com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
+
+" Resize splits in all tabs upon window resize
+" https://vi.stackexchange.com/a/206
+autocmd VimResized * Tabdo wincmd =
