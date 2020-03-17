@@ -51,6 +51,7 @@ Plug 'vim/killersheep'
 Plug 'pechorin/any-jump.vim'
 Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
+Plug 'jacquesbh/vim-showmarks'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
