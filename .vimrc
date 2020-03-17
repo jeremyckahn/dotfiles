@@ -50,6 +50,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim/killersheep'
 Plug 'pechorin/any-jump.vim'
 Plug 'wavded/vim-stylus'
+Plug 'digitaltoad/vim-pug'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
