@@ -271,17 +271,17 @@ autocmd QuickFixCmdPost *grep* cwindow
 set ww=<,>,[,],h,l
 
 noremap <C-H> :tabp<CR>
-noremap <C-U> :tabm -1<CR>
+noremap <C-Y> :tabm -1<CR>
 noremap <C-L> :tabn<CR>
-noremap <C-I> :tabm +1<CR>
+noremap <C-P> :tabm +1<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe <Bar> Startify<CR>
 
 nmap <leader>t :tab term<CR>source $HOME/.bash_profile<CR>clear<CR>
 tmap <C-H> <C-w>:tabp<CR>
-tmap <C-U> <C-w>:tabm -1<CR>
+tmap <C-Y> <C-w>:tabm -1<CR>
 tmap <C-L> <C-w>:tabn<CR>
-tmap <C-I> <C-w>:tabm +1<CR>
+tmap <C-P> <C-w>:tabm +1<CR>
 tmap <C-J> <C-w><C-c>
 tmap <C-K> <C-w>:tabe <Bar> Startify<CR>
 
