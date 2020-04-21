@@ -34,7 +34,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'majutsushi/tagbar'
 Plug 'itchyny/lightline.vim'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
