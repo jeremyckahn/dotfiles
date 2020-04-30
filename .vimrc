@@ -52,6 +52,7 @@ Plug 'pechorin/any-jump.vim'
 Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
 Plug 'jacquesbh/vim-showmarks'
+Plug 'patstockwell/vim-monokai-tasty'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
@@ -63,7 +64,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
 filetype plugin indent on    " required
 
-colo hybrid_material
+colo vim-monokai-tasty
 
 " http://damien.lespiau.name/blog/2009/03/18/per-project-vimrc/comment-page-1/
 set exrc " enable per-directory .vimrc files
