@@ -384,9 +384,11 @@ function! LightLineFilename()
   return expand('%')
 endfunction
 
-" Reload file on focus/enter
+" Reload file on focus/enter. This seems to break in Windows.
 " https://stackoverflow.com/a/20418591
-au FocusGained,BufEnter * :silent! !
+if !has("win32")
+  au FocusGained,BufEnter * :silent! !
+endif
 
 let g:highlightedyank_highlight_duration = 200
 
