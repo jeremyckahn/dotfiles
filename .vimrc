@@ -280,7 +280,12 @@ noremap <C-P> :tabm +1<CR>
 noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe <Bar> Startify<CR>
 
-nmap <leader>t :tab term<CR>source $HOME/.bash_profile<CR>clear<CR>
+if has('win32')
+  nmap <leader>t :tab term<CR>
+else
+  nmap <leader>t :tab term<CR>source $HOME/.bash_profile<CR>clear<CR>
+endif
+
 tmap <C-H> <C-w>:tabp<CR>
 tmap <C-Y> <C-w>:tabm -1<CR>
 tmap <C-L> <C-w>:tabn<CR>
