@@ -184,6 +184,8 @@ if has("gui_running")
   set guioptions-=l " Get rid of the left scrollbar
   set guioptions-=L " Get rid of the left scrollbar
   set guioptions-=b " Get rid of the bottom scrollbar
+  set guifont=Ubuntu_Mono:h14
+
 endif
 
 :set backspace=indent,eol,start
