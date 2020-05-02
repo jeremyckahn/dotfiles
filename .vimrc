@@ -86,7 +86,7 @@ let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp_search = 0
 let g:ctrlp_use_caching = 1
 
-if has("macunix")
+if has("macunix") || has('win32')
   set clipboard=unnamed
 elseif has("unix")
   set clipboard=unnamedplus
