@@ -110,7 +110,6 @@ command! -bang -nargs=? -complete=dir Files
 
 nmap // :BLines!<CR>
 nmap ?? :Rg!<CR>
-noremap <leader>T :Commits!<CR>
 
 " https://github.com/junegunn/fzf.vim/issues/162
 let g:fzf_commands_expect = 'enter'
@@ -282,7 +281,7 @@ noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe <Bar> Startify<CR>
 
 if has('win32')
-  nmap <leader>t :tab term<CR>
+  nmap <leader>t :tab term<CR>bash<CR>clear<CR>
 else
   nmap <leader>t :tab term<CR>source $HOME/.bash_profile<CR>clear<CR>
 endif
