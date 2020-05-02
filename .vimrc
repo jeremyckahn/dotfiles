@@ -53,6 +53,7 @@ Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
 Plug 'jacquesbh/vim-showmarks'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'vim-scripts/TogFullscreen.vim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
