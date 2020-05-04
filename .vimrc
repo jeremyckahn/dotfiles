@@ -281,7 +281,7 @@ noremap <C-J> :tabc<CR>
 noremap <C-K> :tabe <Bar> Startify<CR>
 
 if has('win32')
-  nmap <leader>t :tab term<CR>bash<CR>clear<CR>
+  nmap <leader>t :tab term<CR>
 else
   nmap <leader>t :tab term<CR>source $HOME/.bash_profile<CR>clear<CR>
 endif
