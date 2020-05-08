@@ -363,10 +363,17 @@ function! CRA ()
   tab term npm start
 endfunction
 
+function! L ()
+  tab term ++curwin
+  tab term lazygit
+  tab term lazynpm
+endfunction
+
 " Quickly run tests
 nmap tt :term ++close npm test<CR>
 
 command! CRA execute ":call CRA()"
+command! L execute ":call L()"
 command! Reload execute "source ~/.vimrc"
 
 " This is handled by lightline
