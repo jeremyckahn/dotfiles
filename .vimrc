@@ -51,6 +51,8 @@ Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
 Plug 'jacquesbh/vim-showmarks'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-shell'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
