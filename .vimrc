@@ -86,6 +86,10 @@ let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp_search = 0
 let g:ctrlp_use_caching = 1
 
+" https://github.com/xolox/vim-shell#the-gshell_fullscreen_items-option
+let g:shell_fullscreen_items = "mT"
+let g:shell_fullscreen_always_on_top = 0
+
 if has("macunix") || has('win32')
   set clipboard=unnamed
 elseif has("unix")
