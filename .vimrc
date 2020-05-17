@@ -108,8 +108,14 @@ nmap <leader>E :Error<CR><C-w>j
 " https://github.com/BurntSushi/ripgrep
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
 
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+if has('win32')
+  " Disable preview on Windows since it doesn't really work
+  let g:fzf_preview_window = ''
+else
+  command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+endif
+
 
 nmap // :BLines!<CR>
 nmap ?? :Rg!<CR>
