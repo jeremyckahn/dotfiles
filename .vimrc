@@ -54,6 +54,7 @@ Plug 'patstockwell/vim-monokai-tasty'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-shell'
 Plug 'RRethy/vim-illuminate'
+Plug 'rhysd/git-messenger.vim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
@@ -461,3 +462,5 @@ com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
 " Resize splits in all tabs upon window resize
 " https://vi.stackexchange.com/a/206
 autocmd VimResized * Tabdo wincmd =
+
+let g:git_messenger_always_into_popup=v:true
