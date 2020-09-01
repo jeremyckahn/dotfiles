@@ -175,7 +175,9 @@ endfunction
 command! CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
 
 if has('mouse')
+  " https://vi.stackexchange.com/a/521
   set mouse=a
+  set ttymouse=xterm2
 endif
 
 " allow buffer switching without saving
