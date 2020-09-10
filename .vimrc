@@ -72,13 +72,47 @@ colo vim-monokai-tasty
 " set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
 
-" Force some file types to be other file types
-au BufRead,BufNewFile *.ejs,*.mustache setfiletype html
-au BufRead,BufNewFile *.json setfiletype json
-au BufRead,BufNewFile *.json.* setfiletype json
+" Ensure that :Reload-ing the file doesn't define redundant autocmds
+" https://learnvimscriptthehardway.stevelosh.com/chapters/14.html
+augroup standard_group
+  autocmd!
 
-" http://www.reddit.com/r/vim/comments/2x5yav/markdown_with_fenced_code_blocks_is_great/
-au BufNewFile,BufReadPost *.md set filetype=markdown
+  " Force some file types to be other file types
+  autocmd BufRead,BufNewFile *.ejs,*.mustache setfiletype html
+  autocmd BufRead,BufNewFile *.json setfiletype json
+  autocmd BufRead,BufNewFile *.json.* setfiletype json
+  autocmd BufEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+  " http://www.reddit.com/r/vim/comments/2x5yav/markdown_with_fenced_code_blocks_is_great/
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+  " Enable code folding for CoffeeScript
+  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+
+  autocmd BufNewFile,BufReadPost *.js setl foldmethod=indent
+  autocmd BufNewFile,BufReadPost *.json setl foldmethod=indent
+
+  " Don't fold automatically https://stackoverflow.com/a/8316817
+  autocmd BufRead * normal zR
+
+  " Open Ggrep results in a quickfix window
+  autocmd QuickFixCmdPost *grep* cwindow
+
+  autocmd BufEnter dist/* ALEDisableBuffer
+
+  " Resize splits in all tabs upon window resize
+  " https://vi.stackexchange.com/a/206
+  autocmd VimResized * Tabdo wincmd =
+
+  " Reload file on focus/enter. This seems to break in Windows.
+  " https://stackoverflow.com/a/20418591
+  if !has("win32")
+    autocmd FocusGained,BufEnter * :silent! !
+  endif
+augroup END
+
 let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
 set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**,**/tmp/**
@@ -225,9 +259,6 @@ set t_Co=256
 
 " show hidden whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
-au BufEnter * match ExtraWhitespace /\s\+$/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 " Allow cursor movements during insert mode
 inoremap <C-h> <C-o>h
@@ -280,9 +311,6 @@ let g:ctrlsf_auto_focus = {
     \ 'at': 'start',
     \ }
 
-" Open Ggrep results in a quickfix window
-autocmd QuickFixCmdPost *grep* cwindow
-
 " Fix Vim's ridiculous line wrapping model
 set ww=<,>,[,],h,l
 
@@ -330,15 +358,6 @@ set laststatus=2
 " Necessary to show Unicode glyphs
 set encoding=utf-8
 
-" Enable code folding for CoffeeScript
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-
-autocmd BufNewFile,BufReadPost *.js setl foldmethod=indent
-autocmd BufNewFile,BufReadPost *.json setl foldmethod=indent
-
-" Don't fold automatically https://stackoverflow.com/a/8316817
-au BufRead * normal zR
-
 setl foldmethod=syntax
 
 let g:javascript_plugin_jsdoc = 1
@@ -358,8 +377,6 @@ let g:ale_linters = {
 
 nmap <silent> <C-n> <Plug>(ale_previous_wrap)
 nmap <silent> <C-m> <Plug>(ale_next_wrap)
-
-autocmd BufEnter dist/* ALEDisableBuffer
 
 " https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
 " Don't show YCM's preview window
@@ -411,12 +428,6 @@ function! LightLineFilename()
   return expand('%')
 endfunction
 
-" Reload file on focus/enter. This seems to break in Windows.
-" https://stackoverflow.com/a/20418591
-if !has("win32")
-  au FocusGained,BufEnter * :silent! !
-endif
-
 let g:highlightedyank_highlight_duration = 200
 
 command! Filename execute ":echo expand('%:p')"
@@ -460,9 +471,5 @@ function! TabDo(command)
   execute 'tabn ' . currTab
 endfunction
 com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
-
-" Resize splits in all tabs upon window resize
-" https://vi.stackexchange.com/a/206
-autocmd VimResized * Tabdo wincmd =
 
 let g:git_messenger_always_into_popup=v:true
