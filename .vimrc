@@ -106,6 +106,10 @@ augroup standard_group
   " https://vi.stackexchange.com/a/206
   autocmd VimResized * Tabdo wincmd =
 
+  " Disable line numbers in Terminal Mode
+  " https://vi.stackexchange.com/a/17370
+  autocmd TerminalOpen * set nonu
+
   " Reload file on focus/enter. This seems to break in Windows.
   " https://stackoverflow.com/a/20418591
   if !has("win32")
