@@ -491,6 +491,9 @@ endfunction
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
 map ,* *<C-O>:%s///gn<CR>
