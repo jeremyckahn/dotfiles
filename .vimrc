@@ -165,6 +165,8 @@ let g:fzf_commands_expect = 'enter'
 " Find files with fzf
 nmap <leader>p :Files!<CR>
 
+nmap <leader>B :Buffers<CR>
+
 " Shows Git history for the current buffer
 command! FileHistory execute ":BCommits!"
 
