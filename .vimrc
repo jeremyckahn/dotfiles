@@ -157,6 +157,8 @@ else
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 endif
 
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
+
 nmap // :BLines!<CR>
 nmap ?? :Rg!<CR>
 
@@ -491,9 +493,6 @@ endfunction
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
 map ,* *<C-O>:%s///gn<CR>
@@ -513,4 +512,8 @@ let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
 let g:floaterm_width=0.95
 
-let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
+let g:floaterm_keymap_toggle = '<C-t>'
+let g:floaterm_keymap_new    = '<C-n>'
+let g:floaterm_keymap_kill   = '<C-d>'
+let g:floaterm_keymap_prev   = '<C-[>'
+let g:floaterm_keymap_next   = '<C-]>'
