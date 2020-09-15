@@ -155,7 +155,6 @@ else
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 endif
 
-
 nmap // :BLines!<CR>
 nmap ?? :Rg!<CR>
 
@@ -165,12 +164,31 @@ let g:fzf_commands_expect = 'enter'
 " Find files with fzf
 nmap <leader>p :Files!<CR>
 
-nmap <leader>B :Buffers<CR>
-
 " Shows Git history for the current buffer
 command! FileHistory execute ":BCommits!"
 
 nmap cc :Commands<CR>
+
+" Delete buffers
+" https://github.com/junegunn/fzf.vim/pull/733#issuecomment-559720813
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
+
+command B execute "Buffers"
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
