@@ -348,10 +348,8 @@ noremap <C-K> :tabe <Bar> Startify<CR>
 
 if has('win32')
   nmap <leader>t :tab term<CR>
-elseif has('macunix')
-  nmap <leader>t :FloatermNew<CR>
 else
-  nmap <leader>t :tab term<CR>source $HOME/.bash_profile<CR>clear<CR>
+  nmap <leader>t :FloatermNew<CR>
 endif
 
 tmap <C-H> <C-w>:tabp<CR>
@@ -371,12 +369,7 @@ while i < 10
   let i += 1
 endwhile
 
-" Open and close lazygit
-if has('macunix')
-  nmap <leader>g :FloatermNew lazygit<CR>
-else
-  nmap <leader>g :tab term ++close lazygit<CR>
-endif
+nmap <leader>g :FloatermNew lazygit<CR>
 
 noremap <leader>M :LivedownPreview<CR>
 
