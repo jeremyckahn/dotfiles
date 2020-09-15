@@ -56,6 +56,7 @@ Plug 'xolox/vim-shell'
 Plug 'RRethy/vim-illuminate'
 Plug 'rhysd/git-messenger.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'antoinemadec/coc-fzf'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
@@ -470,8 +471,9 @@ let g:strip_whitespace_confirm=0
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
@@ -507,3 +509,5 @@ let g:git_messenger_always_into_popup=v:true
 let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
 let g:floaterm_width=0.95
+
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
