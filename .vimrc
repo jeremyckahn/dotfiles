@@ -55,6 +55,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-shell'
 Plug 'RRethy/vim-illuminate'
 Plug 'rhysd/git-messenger.vim'
+Plug 'voldikss/vim-floaterm'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
@@ -347,7 +348,7 @@ noremap <C-K> :tabe <Bar> Startify<CR>
 if has('win32')
   nmap <leader>t :tab term<CR>
 else
-  nmap <leader>t :tab term<CR>source $HOME/.bash_profile<CR>clear<CR>
+  nmap <leader>t :FloatermNew<CR>
 endif
 
 tmap <C-H> <C-w>:tabp<CR>
@@ -368,7 +369,7 @@ while i < 10
 endwhile
 
 " Open and close lazygit
-noremap <leader>g :tab term ++close lazygit<CR>
+noremap <leader>g :FloatermNew lazygit<CR>
 
 noremap <leader>M :LivedownPreview<CR>
 
@@ -496,3 +497,7 @@ endfunction
 com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
 
 let g:git_messenger_always_into_popup=v:true
+
+let g:floaterm_autoclose=1
+let g:floaterm_height=0.95
+let g:floaterm_width=0.95
