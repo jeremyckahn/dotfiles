@@ -371,7 +371,7 @@ while i < 10
   let i += 1
 endwhile
 
-nmap <leader>g :FloatermNew lazygit<CR>
+nmap <leader>g :FloatermNew! EDITOR=floaterm bash -c 'lazygit'<CR>
 
 noremap <leader>M :LivedownPreview<CR>
 
