@@ -511,5 +511,5 @@ let g:floaterm_width=0.95
 let g:floaterm_keymap_toggle = '<C-t>'
 let g:floaterm_keymap_new    = '<C-n>'
 let g:floaterm_keymap_kill   = '<C-d>'
-let g:floaterm_keymap_prev   = '<C-[>'
-let g:floaterm_keymap_next   = '<C-]>'
+let g:floaterm_keymap_prev   = '<C-i>'
+let g:floaterm_keymap_next   = '<C-o>'
