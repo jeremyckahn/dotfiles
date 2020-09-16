@@ -509,7 +509,7 @@ let g:floaterm_height=0.95
 let g:floaterm_width=0.95
 
 let g:floaterm_keymap_toggle = '<C-t>'
-let g:floaterm_keymap_new    = '<C-n>'
-let g:floaterm_keymap_kill   = '<C-d>'
-let g:floaterm_keymap_prev   = '<C-i>'
-let g:floaterm_keymap_next   = '<C-o>'
+let g:floaterm_keymap_prev   = '<F1>'
+let g:floaterm_keymap_next   = '<F2>'
+let g:floaterm_keymap_new    = '<F3>'
+let g:floaterm_keymap_kill   = '<F4>'
