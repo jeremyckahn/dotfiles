@@ -414,10 +414,13 @@ noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <leader>s :'<,'>sort<CR>
 
-function! CRA ()
-  tab term ++curwin
-  tab term npm test
-  tab term npm start
+command! NPMStart execute "FloatermNew npm start"
+command! NPMTest execute "FloatermNew npm test -- --watch"
+
+function! JS ()
+  FloatermNew
+  NPMStart
+  NPMTest
 endfunction
 
 function! L ()
@@ -429,7 +432,7 @@ endfunction
 " Quickly run tests
 nmap tt :term ++close npm test<CR>
 
-command! CRA execute ":call CRA()"
+command! JS execute ":call JS()"
 command! L execute ":call L()"
 command! Reload execute "source ~/.vimrc"
 
