@@ -506,7 +506,6 @@ let g:floaterm_height=0.95
 let g:floaterm_width=0.95
 
 let g:floaterm_keymap_toggle = 'ff'
-let g:floaterm_keymap_prev   = 'bb'
-let g:floaterm_keymap_next   = 'nn'
+let g:floaterm_keymap_prev   = '--'
+let g:floaterm_keymap_next   = '=='
 let g:floaterm_keymap_new    = '<C-t>'
-let g:floaterm_keymap_kill   = '<C-d>'
