@@ -341,12 +341,12 @@ let g:ctrlsf_auto_focus = {
 " Fix Vim's ridiculous line wrapping model
 set ww=<,>,[,],h,l
 
-noremap <C-H> :tabp<CR>
-noremap <C-Y> :tabm -1<CR>
-noremap <C-L> :tabn<CR>
-noremap <C-P> :tabm +1<CR>
-noremap <C-J> :tabc<CR>
-noremap <C-K> :tabe <Bar> Startify<CR>
+noremap <C-h> :tabp<CR>
+noremap <C-y> :tabm -1<CR>
+noremap <C-l> :tabn<CR>
+noremap <C-p> :tabm +1<CR>
+noremap <C-j> :tabc<CR>
+noremap <C-k> :tabe <Bar> Startify<CR>
 
 if has('win32')
   nmap <leader>t :tab term<CR>
@@ -354,12 +354,12 @@ else
   nmap <leader>t :FloatermNew<CR>
 endif
 
-tmap <C-H> <C-w>:tabp<CR>
-tmap <C-Y> <C-w>:tabm -1<CR>
-tmap <C-L> <C-w>:tabn<CR>
-tmap <C-P> <C-w>:tabm +1<CR>
-tmap <C-J> <C-w><C-c>
-tmap <C-K> <C-w>:tabe <Bar> Startify<CR>
+tmap <C-h> <C-w>:tabp<CR>
+tmap <C-y> <C-w>:tabm -1<CR>
+tmap <C-l> <C-w>:tabn<CR>
+tmap <C-p> <C-w>:tabm +1<CR>
+tmap <C-j> <C-w><C-c>
+tmap <C-k> <C-w>:tabe <Bar> Startify<CR>
 
 " https://github.com/vim/vim/issues/2490#issuecomment-383382372
 tmap <C-b> <C-W>N
@@ -428,9 +428,6 @@ function! L ()
   tab term lazygit
   tab term lazynpm
 endfunction
-
-" Quickly run tests
-nmap tt :term ++close npm test<CR>
 
 command! JS execute ":call JS()"
 command! L execute ":call L()"
@@ -508,8 +505,8 @@ let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
 let g:floaterm_width=0.95
 
-let g:floaterm_keymap_toggle = '<C-t>'
-let g:floaterm_keymap_prev   = '<F1>'
-let g:floaterm_keymap_next   = '<F2>'
-let g:floaterm_keymap_new    = '<F3>'
-let g:floaterm_keymap_kill   = '<F4>'
+let g:floaterm_keymap_toggle = 'ff'
+let g:floaterm_keymap_prev   = 'bb'
+let g:floaterm_keymap_next   = 'nn'
+let g:floaterm_keymap_new    = '<C-t>'
+let g:floaterm_keymap_kill   = '<C-d>'
