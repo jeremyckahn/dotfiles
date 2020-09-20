@@ -57,6 +57,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'rhysd/git-messenger.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'antoinemadec/coc-fzf'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
