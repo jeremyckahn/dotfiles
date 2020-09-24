@@ -161,17 +161,17 @@ endif
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
 
-nmap // :BLines!<CR>
-nmap ?? :Rg!<CR>
+nmap // :BLines<CR>
+nmap ?? :Rg<CR>
 
 " https://github.com/junegunn/fzf.vim/issues/162
 let g:fzf_commands_expect = 'enter'
 
 " Find files with fzf
-nmap <leader>p :Files!<CR>
+nmap <leader>p :Files<CR>
 
 " Shows Git history for the current buffer
-command! FileHistory execute ":BCommits!"
+command! FileHistory execute ":BCommits"
 
 nmap cc :Commands<CR>
 
