@@ -31,6 +31,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-sleuth'
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'itchyny/lightline.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
