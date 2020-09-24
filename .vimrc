@@ -193,7 +193,7 @@ command! BD call fzf#run(fzf#wrap({
   \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
 
-command B execute "Buffers"
+command! B execute "Buffers"
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
@@ -239,7 +239,9 @@ command! CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
 if has('mouse')
   " https://vi.stackexchange.com/a/521
   set mouse=a
-  set ttymouse=xterm2
+  if !has('nvim')
+    set ttymouse=xterm2
+  endif
 endif
 
 " allow buffer switching without saving
