@@ -1,5 +1,5 @@
 export PATH=/usr/local/bin:$PATH:$HOME/go/bin:$HOME/Library/Python/3.6/bin
-export EDITOR=vim
+export EDITOR=nvim
 export GOPATH=$HOME/go
 # https://github.com/feross/funding#how-can-i-disable-this
 export OPEN_SOURCE_CONTRIBUTOR=true
@@ -74,7 +74,7 @@ alias ports_in_use='lsof -i -n -P | grep TCP'
 # into a new Vim buffer.
 #
 # Requires jsonlint (`npm install -g jsonlint`).
-alias json2vim='pbpaste | jsonlint | vim -'
+alias json2vim='pbpaste | jsonlint | nvim -'
 
 # Temporarily disable BASH history
 # http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
@@ -371,16 +371,16 @@ restore_npm () {
 }
 
 function v () {
-  if [ "$(jobs | grep -c vim)" == 0 ];
+  if [ "$(jobs | grep -c nvim)" == 0 ];
   then
     if [ -z "$1" ];
     then
-      vim
+      nvim
     else
-      vim "$1"
+      nvim "$1"
     fi
   else
-    fg $(jobs | grep vim | grep -o "\d")
+    fg $(jobs | grep nvim | grep -o "\d")
   fi
 }
 
