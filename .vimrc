@@ -365,6 +365,8 @@ tmap <C-p> <C-w>:tabm +1<CR>
 tmap <C-j> <C-w><C-c>
 tmap <C-k> <C-w>:tabe <Bar> Startify<CR>
 
+let g:startify_change_to_dir=0
+
 " https://github.com/vim/vim/issues/2490#issuecomment-383382372
 tmap <C-b> <C-W>N
 
