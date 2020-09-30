@@ -514,8 +514,7 @@ let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
 let g:floaterm_width=0.95
 
-let g:floaterm_keymap_toggle = 'ff'
-let g:floaterm_keymap_new    = '<C-f>'
+let g:floaterm_keymap_toggle = '<C-t>'
 
 tnoremap <silent> <C-h> <C-\><C-n>:FloatermPrev<CR>
 tnoremap <silent> <C-l> <C-\><C-n>:FloatermNext<CR>
