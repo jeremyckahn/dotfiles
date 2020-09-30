@@ -367,9 +367,6 @@ tmap <C-k> <C-w>:tabe <Bar> Startify<CR>
 
 let g:startify_change_to_dir=0
 
-" https://github.com/vim/vim/issues/2490#issuecomment-383382372
-tmap <C-b> <C-W>N
-
 " Map <leader> + 1-9 to jump to respective tab
 let i = 1
 while i < 10
@@ -520,3 +517,6 @@ tnoremap <silent> <C-h> <C-\><C-n>:FloatermPrev<CR>
 tnoremap <silent> <C-l> <C-\><C-n>:FloatermNext<CR>
 tnoremap <silent> <C-j> <C-\><C-n>:FloatermKill<CR>
 tnoremap <silent> <C-k> <C-\><C-n>:FloatermNew<CR>
+
+" Break floaterm execution into Normal mode
+tnoremap <silent> <C-b> <C-\><C-n>
