@@ -62,6 +62,14 @@ function preview () {
   rg --files --hidden --glob '!.git/*' | fzf --preview 'bat --color always {}'
 }
 
+# Use FZF to preview Github gists with FZF and open them in $EDITOR.
+#   Requires:
+#     - https://github.com/cli/cli,
+#     - https://github.com/junegunn/fzf
+function gist-edit () {
+  gh gist edit $(gh gist list --limit 100 | awk '{ print $1 }' | fzf --preview 'gh gist view {}')
+}
+
 # Requires asciinema and svg-term
 # brew install asciinema
 # npm install -g svg-term-cli
