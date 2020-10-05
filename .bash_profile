@@ -67,7 +67,15 @@ function preview () {
 #     - https://github.com/cli/cli,
 #     - https://github.com/junegunn/fzf
 function gist-edit () {
-  gh gist edit $(gh gist list --limit 100 | awk '{ print $1 }' | fzf --preview 'gh gist view {}')
+  # Quoting switches between single and double quotes to leverage and avoid
+  # string interpolation as necessary. There is probably a better way to do
+  # this.
+  gh gist edit $(
+    gh gist list --limit 100 \
+      | awk '{ print $1 " " $2 }' \
+      | fzf --preview 'gh gist view $(echo {}'" | awk '{ print \$1 }')" \
+      | awk '{ print $1 }'
+  )
 }
 
 # Requires asciinema and svg-term
