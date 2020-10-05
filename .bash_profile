@@ -72,7 +72,6 @@ function gist-edit () {
   # this.
   gh gist edit $(
     gh gist list --limit 100 \
-      | awk '{ print $1 " " $2 }' \
       | fzf --preview 'gh gist view $(echo {}'" | awk '{ print \$1 }')" \
       | awk '{ print $1 }'
   )
