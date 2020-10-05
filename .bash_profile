@@ -77,7 +77,7 @@ function gist-edit () {
   )
 }
 
-# Use FZF to preview Github issues with FZF and open them in the browser.
+# Use FZF to preview Github issues and PRs with FZF and open them in the browser.
 #   Requires:
 #     - https://github.com/cli/cli,
 #     - https://github.com/junegunn/fzf
@@ -89,6 +89,17 @@ function issues () {
   gh issue view -w $(
     gh issue list --limit 100 \
       | fzf --preview 'gh issue view $(echo {}'" | awk '{ print \$1 }') | bat --color=always -l md" \
+      | awk '{ print $1 }'
+  )
+}
+
+function prs () {
+  # Quoting switches between single and double quotes to leverage and avoid
+  # string interpolation as necessary. There is probably a better way to do
+  # this.
+  gh pr view -w $(
+    gh pr list --limit 100 \
+      | fzf --preview 'gh pr view $(echo {}'" | awk '{ print \$1 }') | bat --color=always -l md" \
       | awk '{ print $1 }'
   )
 }
