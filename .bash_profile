@@ -81,6 +81,7 @@ function gist-edit () {
 #   Requires:
 #     - https://github.com/cli/cli,
 #     - https://github.com/junegunn/fzf
+#     - https://github.com/sharkdp/bat
 function issues () {
   # Quoting switches between single and double quotes to leverage and avoid
   # string interpolation as necessary. There is probably a better way to do
