@@ -492,6 +492,9 @@ endfunction
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
+" Format selected code.
+xmap <leader>b  <Plug>(coc-format-selected)
+
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
 map ,* *<C-O>:%s///gn<CR>
