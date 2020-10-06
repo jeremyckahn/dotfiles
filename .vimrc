@@ -495,6 +495,17 @@ nmap <silent> ]c <Plug>(coc-diagnostic-next)
 " Format selected code.
 xmap <leader>b  <Plug>(coc-format-selected)
 
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
 map ,* *<C-O>:%s///gn<CR>
