@@ -55,6 +55,7 @@ alias cs='cat $(ack -l "") | fzf'
 # Similar to vim.fzf's :Rg, for VSCode
 alias vf='code -g $(rg --column --line-number --no-heading --smart-case . | fzf | rg -o ".*:\d+:\d+")'
 alias clean_ds_store='find ./ -name ".DS_Store" -depth -exec rm {} \;'
+alias imgcat='~/dotfiles/imgcat.sh'
 
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
