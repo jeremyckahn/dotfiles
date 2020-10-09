@@ -59,6 +59,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'antoinemadec/coc-fzf'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'kshenoy/vim-signature'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
