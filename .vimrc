@@ -347,9 +347,9 @@ let g:ctrlsf_auto_focus = {
 set ww=<,>,[,],h,l
 
 noremap <C-h> :tabp<CR>
-noremap <C-y> :tabm -1<CR>
+noremap - :tabm -1<CR>
 noremap <C-l> :tabn<CR>
-noremap <C-p> :tabm +1<CR>
+noremap = :tabm +1<CR>
 noremap <C-j> :tabc<CR>
 noremap <C-k> :tabe <Bar> Startify<CR>
 
