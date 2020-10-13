@@ -44,6 +44,7 @@ brew "xvid"
 brew "ffmpeg"
 brew "fpp"
 brew "fzf"
+brew "gh"
 brew "git"
 brew "git-delta"
 brew "lua"
@@ -96,6 +97,7 @@ cask "now"
 cask "obs"
 cask "openemu"
 cask "pokemon-showdown"
+cask "stats"
 cask "twitch"
 cask "vagrant"
 cask "virtualbox"
@@ -106,6 +108,7 @@ mas "AdBlock", id: 1402042596
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
