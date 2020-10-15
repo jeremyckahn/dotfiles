@@ -510,6 +510,10 @@ omap ac <Plug>(coc-classobj-a)
 " Find symbol of current document.
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 
+" https://github.com/weirongxu/coc-explorer
+" :CocInstall coc-explorer
+nmap <leader>e :CocCommand explorer<CR>
+
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
 map ,* *<C-O>:%s///gn<CR>
