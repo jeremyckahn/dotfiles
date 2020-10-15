@@ -512,7 +512,7 @@ nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 
 " https://github.com/weirongxu/coc-explorer
 " :CocInstall coc-explorer
-nmap <leader>e :CocCommand explorer<CR>
+nmap <leader>e :CocCommand explorer --position floating<CR>
 
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
