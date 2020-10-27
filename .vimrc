@@ -292,13 +292,6 @@ set t_Co=256
 " show hidden whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 
-" Allow cursor movements during insert mode
-inoremap <C-h> <C-o>h
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-l> <C-o>l
-inoremap <C-d> <end>
-
 " hitting jj will jump out of insert mode
 inoremap jj <esc>
 
