@@ -123,21 +123,6 @@ alias json2vim='pbpaste | jsonlint | nvim -'
 # http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
 alias disablehistory="unset HISTFILE"
 
-# Start a simple server.  Provide a port number as an argument or leave it
-# blank to use 8080.
-#
-# Requires Node and http-server:
-#   npm install live-server -g
-function serve () {
-  SERVER_PORT=8080
-
-  if [ "$1" ]; then
-    SERVER_PORT=$1
-  fi
-
-  live-server --port="${SERVER_PORT}" --ignore=.git
-}
-
 # Prints the machine's broadcasting network IP
 function ip () {
   ifconfig | grep broadcast | awk '{print $2}' | head -n1
