@@ -17,6 +17,10 @@ filetype off
 " https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 set nomodeline
 
+" https://jovicailic.org/2017/04/vim-persistent-undo/
+set undofile
+set undodir=~/.vim/undodir
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/CSS-one-line--multi-line-folding'
