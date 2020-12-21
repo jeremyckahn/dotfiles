@@ -336,6 +336,7 @@ elseif has("unix")
 endif
 
 let g:ctrlsf_winsize = '33%'
+let g:ctrlsf_auto_preview = 1
 let g:ctrlsf_auto_close = 0
 let g:ctrlsf_confirm_save = 0
 let g:ctrlsf_auto_focus = {
