@@ -501,7 +501,9 @@ omap ac <Plug>(coc-classobj-a)
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 
 " https://github.com/weirongxu/coc-explorer
-nmap <leader>e :CocCommand explorer --position floating<CR>
+" nmap <leader>e :CocCommand explorer --position floating<CR>
+" Currently --position floating breaks the preview.
+nmap <leader>e :CocCommand explorer<CR>
 
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
