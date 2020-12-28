@@ -40,7 +40,6 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'itchyny/lightline.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'dyng/ctrlsf.vim'
-Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
@@ -68,7 +67,7 @@ Plug 'kshenoy/vim-signature'
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
 " To install language servers, manually call:
-"   CocInstall coc-tsserver coc-json coc-html coc-css
+"   CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Initialize plugin system
@@ -110,8 +109,6 @@ augroup standard_group
 
   " Open Ggrep results in a quickfix window
   autocmd QuickFixCmdPost *grep* cwindow
-
-  autocmd BufEnter dist/* ALEDisableBuffer
 
   " Resize splits in all tabs upon window resize
   " https://vi.stackexchange.com/a/206
@@ -394,13 +391,6 @@ let g:javascript_plugin_jsdoc = 1
 
 " https://github.com/mxw/vim-jsx#usage
 let g:jsx_ext_required = 0
-
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
-
-nmap <silent> <C-n> <Plug>(ale_previous_wrap)
-nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
 " Don't show YCM's preview window
