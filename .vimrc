@@ -66,13 +66,17 @@ Plug 'kshenoy/vim-signature'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
-" To install language servers, manually call:
-"   CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css
+" To install language servers, manually run:
+"   :call InstallCocPlugins()
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
+
+function InstallCocPlugins()
+  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-explorer
+endfunction
 
 colo vim-monokai-tasty
 
@@ -497,7 +501,6 @@ omap ac <Plug>(coc-classobj-a)
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 
 " https://github.com/weirongxu/coc-explorer
-" :CocInstall coc-explorer
 nmap <leader>e :CocCommand explorer --position floating<CR>
 
 " Print the number of occurrences of the current word under the cursor
