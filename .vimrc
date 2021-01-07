@@ -63,6 +63,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'antoinemadec/coc-fzf'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kshenoy/vim-signature'
+Plug 'keith/swift.vim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
