@@ -409,7 +409,7 @@ let g:ycm_add_preview_to_completeopt = 0
 noremap <leader>r :YcmRestartServer<CR>
 noremap <leader>R :source ~/.vimrc<CR>
 
-vmap <leader>s :'<,'>sort<CR>
+vmap <C-s> :'<,'>sort<CR>
 
 command! NPMStart execute "FloatermNew npm start"
 command! NPMTest execute "FloatermNew npm test -- --watch"
