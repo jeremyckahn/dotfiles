@@ -64,6 +64,7 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kshenoy/vim-signature'
 Plug 'keith/swift.vim'
+Plug 'chr4/nginx.vim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
