@@ -311,6 +311,7 @@ inoremap jj <esc>
 
 nmap ss :set syntax=off<CR>
 nmap SS :set syntax=on<CR>
+nmap sp :set spell!<CR>
 nmap cl :set cursorline!<CR>
 
 " quick vertical split
