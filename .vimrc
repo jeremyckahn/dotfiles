@@ -415,10 +415,10 @@ noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <C-s> :'<,'>sort<CR>
 
-" Copy the GitHub deeplink for the selected lines (requires Fugitive)
+" Copy the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
 vmap gb :'<,'>Gbrowse!<CR>
 
-" Navigate to the GitHub deeplink for the selected lines (requires Fugitive)
+" Navigate to the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
 vmap gB :'<,'>Gbrowse<CR>
 
 command! NPMStart execute "FloatermNew npm start"
