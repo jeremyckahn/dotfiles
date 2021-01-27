@@ -415,6 +415,8 @@ noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <C-s> :'<,'>sort<CR>
 
+nmap cm :Commits<CR>
+
 " Copy the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
 vmap gb :'<,'>Gbrowse!<CR>
 
