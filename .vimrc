@@ -172,9 +172,6 @@ endif
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
 
-nmap // :BLines<CR>
-nmap ?? :Rg<CR>
-
 " https://github.com/junegunn/fzf.vim/issues/162
 let g:fzf_commands_expect = 'enter'
 
@@ -183,8 +180,6 @@ nmap <leader>p :Files<CR>
 
 " Shows Git history for the current buffer
 command! FileHistory execute ":BCommits"
-
-nmap cc :Commands<CR>
 
 " Delete buffers
 " https://github.com/junegunn/fzf.vim/pull/733#issuecomment-559720813
@@ -411,6 +406,10 @@ noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <C-s> :'<,'>sort<CR>
 
+nmap // :BLines<CR>
+nmap ?? :Rg<CR>
+nmap bu :Buffers<CR>
+nmap cc :Commands<CR>
 nmap cm :Commits<CR>
 
 " Copy the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
