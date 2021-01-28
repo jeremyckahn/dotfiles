@@ -121,10 +121,6 @@ augroup standard_group
   " https://vi.stackexchange.com/a/206
   autocmd VimResized * Tabdo wincmd =
 
-  " Always make help windows take up the full screen
-  " https://github.com/mephraim/dotfiles-etc/blob/f38ae42e7508108108445e0f6d24f4891ae430f6/vim/vimrc#L413-L414
-  autocmd BufWinEnter * if &l:buftype ==# 'help' | only
-
   " Reload file on focus/enter. This seems to break in Windows.
   " https://stackoverflow.com/a/20418591
   if !has("win32")
