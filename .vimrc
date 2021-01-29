@@ -17,6 +17,8 @@ filetype off
 " https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 set nomodeline
 
+set cursorline
+
 " https://jovicailic.org/2017/04/vim-persistent-undo/
 set undofile
 set undodir=~/.vim/undodir
@@ -240,8 +242,6 @@ function! UnsetGutter()
   set tw=0
   set colorcolumn=0
 endfunction
-
-command! CleanJson execute "!jsonlint % > /tmp/json && mv /tmp/json %"
 
 if has('mouse')
   " https://vi.stackexchange.com/a/521
