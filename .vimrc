@@ -107,12 +107,6 @@ augroup standard_group
 
   autocmd BufNewFile,BufReadPost *.jenkinsfile set filetype=groovy
 
-  " Enable code folding for CoffeeScript
-  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-
-  autocmd BufNewFile,BufReadPost *.js setl foldmethod=indent
-  autocmd BufNewFile,BufReadPost *.json setl foldmethod=indent
-
   " Don't fold automatically https://stackoverflow.com/a/8316817
   autocmd BufRead * normal zR
 
@@ -375,8 +369,6 @@ while i < 10
   execute ":nmap <leader>" . i . " :tabn " . i . "<CR>"
   let i += 1
 endwhile
-
-nmap <leader>g :FloatermNew! EDITOR=floaterm bash -c 'lazygit'; exit<CR>
 
 noremap <leader>M :LivedownPreview<CR>
 
