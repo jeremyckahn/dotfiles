@@ -162,8 +162,15 @@ if has('win32')
   " Disable preview on Windows since it doesn't really work
   let g:fzf_preview_window = ''
 else
+  " Show file previews
   command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+
+  " Show mark previews
+  " https://github.com/junegunn/fzf.vim/issues/184#issuecomment-575571950
+  command! -bang -nargs=? Marks
+    \ call fzf#vim#marks({'options': ['--preview', 'cat -n {-1} | egrep --color=always -C 10 ^[[:space:]]*{2}[[:space:]]']})
 endif
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
