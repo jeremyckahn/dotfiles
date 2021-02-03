@@ -394,7 +394,8 @@ set laststatus=2
 " Necessary to show Unicode glyphs
 set encoding=utf-8
 
-setl foldmethod=syntax
+set foldmethod=indent
+set foldlevelstart=99 "start file with all folds opened
 
 let g:javascript_plugin_jsdoc = 1
 
