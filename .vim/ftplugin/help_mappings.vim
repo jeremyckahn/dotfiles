@@ -1,2 +1,3 @@
 " Always make help windows take up the full screen
-autocmd BufWinEnter * only
+" https://github.com/mephraim/dotfiles-etc/blob/f38ae
+autocmd BufWinEnter * if &l:buftype ==# 'help' | only
