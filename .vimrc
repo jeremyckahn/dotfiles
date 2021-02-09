@@ -215,13 +215,8 @@ function! ToggleNERDTree()
   silent NERDTreeMirror
 endfunction
 
-function! FindInNERDTree()
-  NERDTreeFind
-  silent NERDTreeMirror
-endfunction
-
 nmap <leader>n :call ToggleNERDTree()<CR>
-nmap gt :call FindInNERDTree()<CR>
+nmap gt :NERDTreeFind<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
