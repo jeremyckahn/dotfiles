@@ -204,6 +204,7 @@ command! BD call fzf#run(fzf#wrap({
 \ }))
 
 command! B execute "Buffers"
+nmap bd :bd<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
