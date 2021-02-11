@@ -149,6 +149,9 @@ filetype plugin indent on
 
 let mapleader = "\<Space>"
 
+" Make it easier to use marks
+nmap ' `
+
 nmap <leader>E :Error<CR><C-w>j
 
 " Toggle line numbers
