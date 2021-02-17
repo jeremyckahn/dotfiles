@@ -437,9 +437,7 @@ endfunction
 
 command! JS execute ":call JS()"
 command! L execute ":call L()"
-
-" https://stackoverflow.com/a/21945954/14172856
-command! Reload execute "mapclear | mapclear <buffer> | mapclear! | mapclear! <buffer> | source ~/.vimrc"
+command! Reload execute "source ~/.vimrc"
 
 " This is handled by lightline
 set noshowmode
