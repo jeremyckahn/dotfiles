@@ -231,8 +231,6 @@ if [ "$(uname)" == "Linux" ]; then
   alias getclip="xclip -selection c -o"
 fi
 
-TERM=screen-256color
-
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

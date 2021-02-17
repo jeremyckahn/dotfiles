@@ -85,6 +85,9 @@ endfunction
 
 colo vim-monokai-tasty
 
+" https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
+highlight Comment cterm=italic
+
 " http://damien.lespiau.name/blog/2009/03/18/per-project-vimrc/comment-page-1/
 " set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
