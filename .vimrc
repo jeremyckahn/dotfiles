@@ -23,6 +23,10 @@ set cursorline
 set undofile
 set undodir=~/.vim/undodir
 
+set sessionoptions-=blank
+set sessionoptions-=buffers
+set sessionoptions-=winsize
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/CSS-one-line--multi-line-folding'
