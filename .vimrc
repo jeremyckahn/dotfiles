@@ -200,18 +200,11 @@ function! s:list_buffers()
   return split(list, "\n")
 endfunction
 
-function! s:delete_buffers(lines)
-  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
-endfunction
-
-command! BD call fzf#run(fzf#wrap({
-  \ 'source': s:list_buffers(),
-  \ 'sink*': { lines -> s:delete_buffers(lines) },
-  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
-\ }))
-
 nmap bd :bd<CR>
 nmap BD :Bdelete hidden<CR>
+
+" Open every loaded buffer into a new tab
+nmap bt :bufdo tab split<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
