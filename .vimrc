@@ -204,7 +204,7 @@ nmap bd :bd<CR>
 nmap BD :Bdelete hidden<CR>
 
 " Open every loaded buffer into a new tab
-nmap bt :bufdo tab split<CR>
+nmap bt :tab sball<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
