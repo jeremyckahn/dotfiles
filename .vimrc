@@ -68,6 +68,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kshenoy/vim-signature'
 Plug 'keith/swift.vim'
 Plug 'chr4/nginx.vim'
+Plug 'Asheq/close-buffers.vim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
@@ -209,8 +210,8 @@ command! BD call fzf#run(fzf#wrap({
   \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
 
-command! B execute "Buffers"
 nmap bd :bd<CR>
+nmap BD :Bdelete hidden<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
