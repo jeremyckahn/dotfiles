@@ -226,7 +226,7 @@ nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
 nmap <leader>d :w !diff % -<CR>
-nmap <leader>D :bd<CR>
+nmap mk :mks!<CR>
 
 " Enable or disable auto width-formatting.
 noremap <leader>f :call UnsetGutter()<CR>
