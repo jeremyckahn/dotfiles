@@ -85,7 +85,7 @@ call plug#end()
 filetype plugin indent on    " required
 
 function InstallCocPlugins()
-  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-explorer
+  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-explorer coc-floaterm
 endfunction
 
 colo vim-monokai-tasty
@@ -486,6 +486,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap \ :CocList --auto-preview floaterm<CR>
 
 nnoremap <silent> gl :CocFzfListResume<CR>
 
