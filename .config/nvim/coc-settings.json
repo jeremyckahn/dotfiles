@@ -1,3 +1,9 @@
 {
-  "explorer.previewAction.onHover": "content"
+  "coc.preferences.jumpCommand": "tabe",
+  "diagnostic.level": "warning",
+  "explorer.previewAction.onHover": "content",
+  "list.previewSplitRight": true,
+  "suggest.enablePreview": true,
+  "languageserver": {
+  }
 }

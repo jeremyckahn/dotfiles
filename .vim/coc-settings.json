@@ -1,7 +1,9 @@
 {
-  "suggest.enablePreview": true,
+  "coc.preferences.jumpCommand": "vsplit",
   "diagnostic.level": "warning",
+  "explorer.previewAction.onHover": "content",
   "list.previewSplitRight": true,
+  "suggest.enablePreview": true,
   "languageserver": {
   }
 }
