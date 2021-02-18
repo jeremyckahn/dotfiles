@@ -486,7 +486,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-nnoremap \ :CocList --auto-preview floaterm<CR>
+nnoremap \ :CocList --auto-preview floaterm<CR><Tab>p
 
 nnoremap <silent> gl :CocFzfListResume<CR>
 

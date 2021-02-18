@@ -1,6 +1,7 @@
 {
   "suggest.enablePreview": true,
   "diagnostic.level": "warning",
+  "list.previewSplitRight": true,
   "languageserver": {
   }
 }
