@@ -1,5 +1,4 @@
 {
-  "coc.preferences.jumpCommand": "tabe",
   "diagnostic.level": "warning",
   "explorer.previewAction.onHover": "content",
   "list.previewSplitRight": true,
