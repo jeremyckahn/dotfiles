@@ -548,7 +548,7 @@ endfunction
 com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
 
 let g:git_messenger_always_into_popup=v:true
-let g:git_messenger_include_diff=v:true
+let g:git_messenger_include_diff="current"
 
 let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
