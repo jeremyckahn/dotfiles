@@ -477,11 +477,12 @@ let g:strip_whitespace_confirm=0
 inoremap <silent><expr> <c-space> coc#refresh()
 
 nmap <silent> gd <Plug>(coc-definition)
-
-" Go to definition in new tab
-nmap <silent> gD :tab split<CR><Plug>(coc-definition)
-
 nmap <silent> gy <Plug>(coc-type-definition)
+
+" Go to definition and type definition in new tab
+nmap <silent> gD :tab split<CR><Plug>(coc-definition)
+nmap <silent> gY :tab split<CR><Plug>(coc-type-definition)
+
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
