@@ -418,6 +418,8 @@ nmap bu :Buffers<CR>
 nmap cc :Commands<CR>
 nmap cm :Commits<CR>
 
+nmap gb :GitMessenger<CR>
+
 " Copy the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
 vmap gb :'<,'>Gbrowse!<CR>
 
@@ -546,6 +548,7 @@ endfunction
 com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
 
 let g:git_messenger_always_into_popup=v:true
+let g:git_messenger_include_diff=v:true
 
 let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
