@@ -426,23 +426,6 @@ vmap gb :'<,'>Gbrowse!<CR>
 " Navigate to the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
 vmap gB :'<,'>Gbrowse<CR>
 
-command! NPMStart execute "FloatermNew npm start"
-command! NPMTest execute "FloatermNew npm test -- --watch"
-
-function! JS ()
-  FloatermNew
-  NPMStart
-  NPMTest
-endfunction
-
-function! L ()
-  tab term ++curwin
-  tab term lazygit
-  tab term lazynpm
-endfunction
-
-command! JS execute ":call JS()"
-command! L execute ":call L()"
 command! Reload execute "source ~/.vimrc"
 
 " This is handled by lightline
