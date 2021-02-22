@@ -73,6 +73,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'keith/swift.vim'
 Plug 'chr4/nginx.vim'
 Plug 'Asheq/close-buffers.vim'
+Plug 'josa42/vim-lightline-coc'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
@@ -436,7 +437,7 @@ set noshowmode
 let g:lightline = {
   \ 'colorscheme': 'darcula',
   \ 'active': {
-  \   'right': [['lineinfo'], ['fileformat', 'filetype']]
+  \   'right': [['coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok'], ['lineinfo'], ['fileformat', 'filetype']]
   \ },
   \ 'component_function': {
   \   'filename': 'LightLineFilename'
@@ -448,6 +449,8 @@ let g:lightline = {
 function! LightLineFilename()
   return expand('%')
 endfunction
+
+call lightline#coc#register()
 
 let g:highlightedyank_highlight_duration = 200
 
