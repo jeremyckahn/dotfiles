@@ -312,6 +312,8 @@ nmap ss :set syntax=off<CR>
 nmap SS :set syntax=on<CR>
 nmap sp :set spell!<CR>
 nmap cl :set cursorline!<CR>
+nmap cd :CocDisable<CR>
+nmap ce :CocEnable<CR>
 
 " quick vertical split
 noremap <leader>v :vsp<CR><C-w><C-w>
