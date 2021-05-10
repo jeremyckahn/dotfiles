@@ -302,6 +302,10 @@ set noswapfile
 
 set t_Co=256
 
+" Enable transparent popups for Neovim
+set termguicolors
+set pumblend=10
+
 " show hidden whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 
