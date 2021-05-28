@@ -424,10 +424,10 @@ nmap cm :Commits<CR>
 nmap gb :GitMessenger<CR>
 
 " Copy the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
-vmap gb :'<,'>Gbrowse!<CR>
+vmap gb :'<,'>GBrowse!<CR>
 
 " Navigate to the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
-vmap gB :'<,'>Gbrowse<CR>
+vmap gB :'<,'>GBrowse<CR>
 
 command! Reload execute "source ~/.vimrc"
 
