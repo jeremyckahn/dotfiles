@@ -114,6 +114,7 @@ augroup standard_group
   " http://www.reddit.com/r/vim/comments/2x5yav/markdown_with_fenced_code_blocks_is_great/
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+  autocmd BufNewFile,BufReadPost *.dockerfile set filetype=Dockerfile
   autocmd BufNewFile,BufReadPost *.jenkinsfile set filetype=groovy
 
   " Don't fold automatically https://stackoverflow.com/a/8316817
