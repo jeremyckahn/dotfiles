@@ -448,3 +448,9 @@ enter_directory() {
 }
 
 export PROMPT_COMMAND="enter_directory; $PROMPT_COMMAND"
+
+# Enter the shell of a Docker container
+# Thanks to @thatsnotright for this!
+dexec() {
+  docker exec -it $1 /bin/bash
+}
