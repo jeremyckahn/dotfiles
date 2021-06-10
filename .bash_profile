@@ -42,7 +42,8 @@ alias nom='npm' # nom all the things
 
 # https://iterm2.com/documentation-tmux-integration.html
 # https://tmuxcheatsheet.com/
-alias mux='tmux -CC attach'
+alias mux-new='tmux -CC new'
+alias mux-attach='tmux -CC attach'
 
 # Display help text for user-installed binaries
 alias helps="ls /usr/local/bin | fzf --preview '{} --help'"
