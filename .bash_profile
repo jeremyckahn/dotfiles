@@ -459,3 +459,11 @@ export PROMPT_COMMAND="enter_directory; $PROMPT_COMMAND"
 dexec() {
   docker exec -it $1 /bin/bash
 }
+
+# Pause all docker containers
+# https://unix.stackexchange.com/a/17066
+dpauseall() {
+  for SERVICE in `docker ps | tail -n +2 | awk '{print $NF}'`; do
+    docker pause $SERVICE 2> /dev/null
+  done
+}
