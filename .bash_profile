@@ -9,6 +9,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 alias ll="ls -lah"
 alias g='lazygit'
+alias lzd='lazydocker'
 alias gs='git status'
 alias gd='tig status'
 alias gb='git branch'
