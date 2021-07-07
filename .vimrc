@@ -76,6 +76,7 @@ Plug 'Asheq/close-buffers.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'sindrets/diffview.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
@@ -554,3 +555,7 @@ tnoremap <silent> <C-k> <C-\><C-n>:FloatermNew<CR>
 
 " Break floaterm execution into Normal mode
 tnoremap <silent> <C-b> <C-\><C-n>
+
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_statusline = 1
