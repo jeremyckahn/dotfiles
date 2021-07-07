@@ -1,2 +1,2 @@
-nmap gb :Gbrowse!<CR>
-nmap gB :Gbrowse<CR>
+nmap gb :GBrowse!<CR>
+nmap gB :GBrowse<CR>
