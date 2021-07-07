@@ -556,6 +556,20 @@ tnoremap <silent> <C-k> <C-\><C-n>:FloatermNew<CR>
 " Break floaterm execution into Normal mode
 tnoremap <silent> <C-b> <C-\><C-n>
 
+" WebDevIcons
+"
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+
+" https://github.com/itchyny/lightline.vim/issues/469#issuecomment-630597998
+let g:lightline = {
+      \ 'tab_component_function': {
+      \   'tabnum': 'LightlineWebDevIcons',
+      \ },
+      \ }
+
+function! LightlineWebDevIcons(n)
+  let l:bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
+  return WebDevIconsGetFileTypeSymbol(bufname(l:bufnr))
+endfunction
