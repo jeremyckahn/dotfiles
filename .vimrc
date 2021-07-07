@@ -74,6 +74,8 @@ Plug 'keith/swift.vim'
 Plug 'chr4/nginx.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'josa42/vim-lightline-coc'
+Plug 'sindrets/diffview.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
