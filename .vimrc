@@ -74,7 +74,7 @@ Plug 'keith/swift.vim'
 Plug 'chr4/nginx.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'josa42/vim-lightline-coc'
-Plug 'sindrets/diffview.nvim'
+Plug 'sindrets/diffview.nvim' , { 'branch': 'main' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 
