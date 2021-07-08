@@ -438,8 +438,22 @@ command! Reload execute "source ~/.vimrc"
 " This is handled by lightline
 set noshowmode
 
+" WebDevIcons
+"
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+
+function! LightlineWebDevIcons(n)
+  let l:bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
+  return WebDevIconsGetFileTypeSymbol(bufname(l:bufnr))
+endfunction
+
 " Show file path in lightline
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-119130738
+"
+" Show devicons in tabs
+" https://github.com/itchyny/lightline.vim/issues/469#issuecomment-630597998
 let g:lightline = {
   \ 'colorscheme': 'darcula',
   \ 'active': {
@@ -450,6 +464,9 @@ let g:lightline = {
   \ },
   \ 'component': {
   \   'lineinfo': "[%l:%-v] [%{printf('%03d/%03d',line('.'),line('$'))}]",
+  \ },
+  \ 'tab_component_function': {
+  \   'tabnum': 'LightlineWebDevIcons',
   \ }
   \ }
 function! LightLineFilename()
@@ -555,21 +572,3 @@ tnoremap <silent> <C-k> <C-\><C-n>:FloatermNew<CR>
 
 " Break floaterm execution into Normal mode
 tnoremap <silent> <C-b> <C-\><C-n>
-
-" WebDevIcons
-"
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
-
-" https://github.com/itchyny/lightline.vim/issues/469#issuecomment-630597998
-let g:lightline = {
-      \ 'tab_component_function': {
-      \   'tabnum': 'LightlineWebDevIcons',
-      \ },
-      \ }
-
-function! LightlineWebDevIcons(n)
-  let l:bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
-  return WebDevIconsGetFileTypeSymbol(bufname(l:bufnr))
-endfunction
