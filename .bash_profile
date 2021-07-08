@@ -8,8 +8,9 @@ export OPEN_SOURCE_CONTRIBUTOR=true
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 alias ll="ls -lah"
+alias d='lazydocker'
 alias g='lazygit'
-alias lzd='lazydocker'
+alias n='lazynpm'
 alias gs='git status'
 alias gd='tig status'
 alias gb='git branch'
@@ -25,7 +26,7 @@ alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n
 alias git-nuke='git reset --hard && git clean -df'
 alias t='tig'
 
-alias d='cd ~/dotfiles'
+alias dot='cd ~/dotfiles'
 alias oss='cd ~/oss'
 alias jck='cd ~/oss/jeremyckahn'
 alias D='cd ~/Desktop'
