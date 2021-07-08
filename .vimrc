@@ -449,6 +449,10 @@ function! LightlineWebDevIcons(n)
   return WebDevIconsGetFileTypeSymbol(bufname(l:bufnr))
 endfunction
 
+function! LightLineFilename()
+  return WebDevIconsGetFileTypeSymbol(expand('%')) . ' ' . expand('%')
+endfunction
+
 " Show file path in lightline
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-119130738
 "
@@ -469,9 +473,6 @@ let g:lightline = {
   \   'tabnum': 'LightlineWebDevIcons',
   \ }
   \ }
-function! LightLineFilename()
-  return expand('%')
-endfunction
 
 call lightline#coc#register()
 
