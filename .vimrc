@@ -130,6 +130,10 @@ augroup standard_group
   " https://vi.stackexchange.com/a/206
   autocmd VimResized * Tabdo wincmd =
 
+  " Disable line numbers in :term
+  " https://stackoverflow.com/a/63908546
+  autocmd TermOpen * setlocal nonumber norelativenumber
+
   " Reload file on focus/enter. This seems to break in Windows.
   " https://stackoverflow.com/a/20418591
   if !has("win32")
