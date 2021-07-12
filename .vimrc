@@ -77,6 +77,7 @@ Plug 'josa42/vim-lightline-coc'
 Plug 'sindrets/diffview.nvim' , { 'branch': 'main' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
+Plug 'flazz/vim-colorschemes'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
