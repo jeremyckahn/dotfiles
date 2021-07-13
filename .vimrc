@@ -571,10 +571,10 @@ let g:floaterm_width=0.95
 
 let g:floaterm_keymap_toggle = '<C-f>'
 
-tnoremap <silent> <C-h> <C-\><C-n>:FloatermPrev<CR>
-tnoremap <silent> <C-l> <C-\><C-n>:FloatermNext<CR>
-tnoremap <silent> <C-j> <C-\><C-n>:FloatermKill<CR>
-tnoremap <silent> <C-k> <C-\><C-n>:FloatermNew<CR>
+" tnoremap <silent> <C-h> <C-\><C-n>:FloatermPrev<CR>
+" tnoremap <silent> <C-l> <C-\><C-n>:FloatermNext<CR>
+" tnoremap <silent> <C-j> <C-\><C-n>:FloatermKill<CR>
+" tnoremap <silent> <C-k> <C-\><C-n>:FloatermNew<CR>
 
 " Break floaterm execution into Normal mode
 tnoremap <silent> <C-b> <C-\><C-n>
