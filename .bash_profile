@@ -7,6 +7,10 @@ export OPEN_SOURCE_CONTRIBUTOR=true
 # https://support.apple.com/en-us/HT208050
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Fixes an odd NPM issue in WSL/Linux:
+# https://github.com/yarnpkg/yarn/issues/1016#issuecomment-283067214
+export npm_config_tmp=/tmp
+
 alias ll="ls -lah"
 alias d='lazydocker'
 alias g='lazygit'
