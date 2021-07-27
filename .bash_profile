@@ -473,3 +473,8 @@ dpauseall() {
     docker pause $SERVICE 2> /dev/null
   done
 }
+
+dclean() {
+  docker system prune --force
+  docker volume prune --force
+}
