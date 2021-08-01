@@ -1,0 +1,9 @@
+# Must be symlinked to lazygit config location:
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#user-config
+git:
+  paging:
+    colorArg: always -b
+    # pager: delta --side-by-side --dark --paging=never --24-bit-color=never
+    pager: delta --dark --paging=never --24-bit-color=never
+  pull:
+    mode: 'rebase'
