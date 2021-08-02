@@ -240,7 +240,13 @@ nmap mk :mks!<CR>
 noremap <leader>f :call UnsetGutter()<CR>
 noremap <leader>F :call SetGutter()<CR>
 
-nmap <leader>b :CocCommand eslint.executeAutofix<CR>
+
+function! FormatFile()
+  CocCommand eslint.executeAutofix
+  call CocAction('runCommand', 'prettier.formatFile')
+endfunction
+
+nmap <leader>b :call FormatFile()<CR>
 
 " Format selected code.
 xmap <leader>b  <Plug>(coc-format-selected)
