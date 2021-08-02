@@ -90,7 +90,7 @@ call plug#end()
 filetype plugin indent on    " required
 
 function InstallCocPlugins()
-  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-explorer coc-floaterm
+  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-floaterm
 endfunction
 
 colo vim-monokai-tasty
@@ -543,11 +543,6 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Find symbol of current document.
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
-
-" https://github.com/weirongxu/coc-explorer
-" nmap <leader>e :CocCommand explorer --position floating<CR>
-" Currently --position floating breaks the preview.
-nmap <leader>e :CocCommand explorer<CR>
 
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
