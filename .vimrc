@@ -252,6 +252,7 @@ nmap <leader>b :call FormatFile()<CR>
 xmap <leader>b  <Plug>(coc-format-selected)
 
 nmap <leader>d :CocDiagnostics<cr>
+nmap <leader>D :CocList diagnostics<cr>
 
 " Disable Ex mode
 nmap Q <Nop>
