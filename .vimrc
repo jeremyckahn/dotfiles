@@ -45,7 +45,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'itchyny/lightline.vim'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -242,7 +241,11 @@ nmap mk :mks!<CR>
 noremap <leader>f :call UnsetGutter()<CR>
 noremap <leader>F :call SetGutter()<CR>
 
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 nmap <leader>b :Prettier<CR>
+
+" Format selected code.
+xmap <leader>b  <Plug>(coc-format-selected)
 
 " Disable Ex mode
 nmap Q <Nop>
@@ -523,9 +526,6 @@ endfunction
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Format selected code.
-xmap <leader>b  <Plug>(coc-format-selected)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
