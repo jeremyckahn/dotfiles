@@ -1,8 +1,9 @@
 {
   "diagnostic.level": "warning",
-  "explorer.previewAction.onHover": "content",
   "list.previewSplitRight": true,
   "suggest.enablePreview": true,
+  "eslint.format.enable": true,
+  "eslint.autoFixOnSave": true,
   "languageserver": {
   }
 }
