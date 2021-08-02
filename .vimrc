@@ -234,7 +234,6 @@ nmap gt :NERDTreeFind<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
-nmap <leader>d :w !diff % -<CR>
 nmap mk :mks!<CR>
 
 " Enable or disable auto width-formatting.
@@ -245,6 +244,8 @@ nmap <leader>b :CocCommand eslint.executeAutofix<CR>
 
 " Format selected code.
 xmap <leader>b  <Plug>(coc-format-selected)
+
+nmap <leader>d :CocDiagnostics<cr>
 
 " Disable Ex mode
 nmap Q <Nop>
