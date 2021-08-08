@@ -242,8 +242,8 @@ noremap <leader>F :call SetGutter()<CR>
 
 
 function! FormatFile()
-  CocCommand eslint.executeAutofix
   call CocAction('runCommand', 'prettier.formatFile')
+  call CocAction('runCommand', 'eslint.executeAutofix')
 endfunction
 
 nmap <leader>b :call FormatFile()<CR>
