@@ -434,8 +434,8 @@ noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <C-s> :'<,'>sort<CR>
 
-nmap // :BLines<CR>
-nmap ?? :Rg<CR>
+nmap <leader>/ :BLines<CR>
+nmap <leader>? :Rg<CR>
 nmap bu :Buffers<CR>
 nmap cc :Commands<CR>
 nmap cm :Commits<CR>
