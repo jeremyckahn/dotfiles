@@ -478,3 +478,7 @@ dclean() {
   docker system prune --force
   docker volume prune --force
 }
+
+convert_to_demo_mp4() {
+  ffmpeg -i "$1" demo.mp4
+}
