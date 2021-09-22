@@ -238,8 +238,8 @@ fi
 
 if [ "$(uname)" == "Linux" ]; then
   # https://stackoverflow.com/a/27456981
-  alias setclip="xclip -selection c"
-  alias getclip="xclip -selection c -o"
+  alias pbcopy="xclip -selection c"
+  alias pbpaste="xclip -selection c -o"
 fi
 
 # Load RVM into a shell session *as a function*
