@@ -1,8 +1,8 @@
 {
   "diagnostic.level": "warning",
-  "explorer.previewAction.onHover": "content",
   "list.previewSplitRight": true,
   "suggest.enablePreview": true,
+  "tsserver.maxTsServerMemory": 4096,
   "languageserver": {
   }
 }
