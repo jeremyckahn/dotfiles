@@ -425,12 +425,6 @@ let g:javascript_plugin_jsdoc = 1
 " https://github.com/mxw/vim-jsx#usage
 let g:jsx_ext_required = 0
 
-" https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
-" Don't show YCM's preview window
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt = 0
-
-noremap <leader>r :YcmRestartServer<CR>
 noremap <leader>R :source ~/.vimrc<CR>
 
 vmap <C-s> :'<,'>sort<CR>
