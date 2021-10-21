@@ -48,7 +48,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'shime/vim-livedown', { 'do': 'npm install -g livedown' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'bogado/file-line'
 Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
