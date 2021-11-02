@@ -482,3 +482,8 @@ dclean() {
 convert_to_demo_mp4() {
   ffmpeg -i "$1" demo.mp4
 }
+
+# For Ubuntu 20.04
+restart_x() {
+  sudo systemctl restart display-manager
+}

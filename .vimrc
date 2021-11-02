@@ -135,6 +135,10 @@ augroup standard_group
   " https://stackoverflow.com/a/63908546
   autocmd TermOpen * setlocal nonumber norelativenumber
 
+  " https://github.com/neoclide/coc.nvim/issues/3312
+  autocmd VimLeavePre * if get(g:, 'coc_process_pid', 0)
+    \	| call system('kill -9 '.g:coc_process_pid) | endif
+
   " Reload file on focus/enter. This seems to break in Windows.
   " https://stackoverflow.com/a/20418591
   if !has("win32")
@@ -575,7 +579,3 @@ let g:floaterm_keymap_toggle = '<C-f>'
 
 " Break floaterm execution into Normal mode
 tnoremap <silent> <C-b> <C-\><C-n>
-
-" https://github.com/neoclide/coc.nvim/issues/3312
-autocmd VimLeavePre * if get(g:, 'coc_process_pid', 0)
-  \	| call system('kill -9 '.g:coc_process_pid) | endif
