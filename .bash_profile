@@ -487,3 +487,23 @@ convert_to_demo_mp4() {
 restart_x() {
   sudo systemctl restart display-manager
 }
+
+# Based on https://linuxhint.com/change_swap_size_ubuntu/
+change_swap_gb() {
+  if [ -z $1 ];
+  then
+    echo "Must specify number of gigabytes"
+    return
+  fi
+
+  GB="$((1024 * $1))"
+  echo "Changing swap size to $GB""gb"
+
+  sudo swapoff -a
+  sudo dd if=/dev/zero of=/swapfile bs=1M count=$GB
+  sudo mkswap /swapfile
+  sudo swapon /swapfile
+
+  # Show the result
+  swapon -s
+}
