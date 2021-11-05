@@ -95,6 +95,12 @@ endfunction
 
 colo vim-monokai-tasty
 
+function NoBackground()
+  hi Normal guibg=NONE ctermbg=NONE
+endfunction
+
+call NoBackground()
+
 " https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
 highlight Comment cterm=italic
 
