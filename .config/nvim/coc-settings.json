@@ -3,7 +3,7 @@
   "list.previewSplitRight": true,
   "suggest.enablePreview": true,
   "eslint.format.enable": true,
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
   "languageserver": {
   }
 }
