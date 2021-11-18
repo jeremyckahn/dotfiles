@@ -224,11 +224,7 @@ function! s:list_buffers()
   return split(list, "\n")
 endfunction
 
-nmap bd :bd<CR>
 nmap BD :Bdelete hidden<CR>
-
-" Open every loaded buffer into a new tab
-nmap bt :tab sball<CR>
 
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
@@ -310,7 +306,7 @@ if has("gui_running")
 
 endif
 
-:set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " --- command completion ---
 set wildmenu                " Hitting TAB in command mode will
@@ -441,7 +437,6 @@ vmap <C-s> :'<,'>sort<CR>
 
 nmap <leader>/ :BLines<CR>
 nmap <leader>? :Rg<CR>
-nmap bu :Buffers<CR>
 nmap cc :Commands<CR>
 nmap cm :Commits<CR>
 
