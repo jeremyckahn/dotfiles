@@ -448,7 +448,7 @@ vmap gb :'<,'>GBrowse!<CR>
 " Navigate to the GitHub deeplink for the selected lines (requires Fugitive/Rhubarb)
 vmap gB :'<,'>GBrowse<CR>
 
-command! Reload execute "source ~/.vimrc"
+command! Reload execute "source ~/.config/nvim/init.vim"
 
 " This is handled by lightline
 set noshowmode
