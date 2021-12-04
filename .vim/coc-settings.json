@@ -2,7 +2,7 @@
   "diagnostic.level": "warning",
   "list.previewSplitRight": true,
   "suggest.enablePreview": true,
-  "tsserver.maxTsServerMemory": 4096,
+  "tsserver.maxTsServerMemory": 6144,
   "languageserver": {
   }
 }
