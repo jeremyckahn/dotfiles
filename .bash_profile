@@ -507,3 +507,12 @@ change_swap_gb() {
   # Show the result
   swapon -s
 }
+
+js_project_session() {
+    tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
+    tmux new-window -d -n neovim "nvim; exec bash";
+    tmux new-window -d -n git "lazygit; exec bash";
+    tmux new-window -d -n npm "lazynpm; exec bash";
+    tmux select-window -t 1;
+    tmux attach-session -d -t ${PWD##*/};
+}
