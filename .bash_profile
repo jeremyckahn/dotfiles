@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH:$HOME/go/bin:$HOME/.local/bin:$HOME/.npm/bin
+export PATH=/usr/local/bin:$PATH:$HOME/go/bin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/bin
 export EDITOR=nvim
 export GOPATH=$HOME/go
 # https://github.com/feross/funding#how-can-i-disable-this
