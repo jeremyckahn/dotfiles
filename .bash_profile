@@ -455,7 +455,7 @@ enter_directory() {
   fi
 
   PREV_PWD=$PWD
-  [[ -f ".nvmrc" ]] && nvm use
+  [[ -f ".nvmrc" ]] && command -v nvm && nvm use
 }
 
 export PROMPT_COMMAND="enter_directory; $PROMPT_COMMAND"
