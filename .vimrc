@@ -91,7 +91,7 @@ call plug#end()
 filetype plugin indent on    " required
 
 function InstallCocPlugins()
-  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-floaterm coc-tailwindcss
+  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-floaterm coc-tailwindcss coc-flow
 endfunction
 
 colo vim-monokai-tasty
