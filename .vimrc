@@ -155,7 +155,7 @@ augroup END
 
 let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'sql']
 
-set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/bin/**,**/tmp/**
+set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/tmp/**
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_by_filename = 0
