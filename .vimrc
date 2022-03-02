@@ -79,6 +79,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'flazz/vim-colorschemes'
 Plug 'habamax/vim-godot'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'udalov/kotlin-vim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 "
