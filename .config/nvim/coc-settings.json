@@ -1,9 +1,0 @@
-{
-  "diagnostic.level": "warning",
-  "list.previewSplitRight": true,
-  "suggest.enablePreview": true,
-  "eslint.format.enable": true,
-  "eslint.autoFixOnSave": false,
-  "languageserver": {
-  }
-}
