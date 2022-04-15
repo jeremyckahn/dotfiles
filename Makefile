@@ -1,6 +1,7 @@
-# DOTFILE_TARGET = $$HOME
-DOTFILE_TARGET = /tmp/dotfile-target
-DOTFILE_PACKAGES = vim tmux linux lazygit
+DOTFILE_TARGET = $$HOME
+DOTFILE_PACKAGES = bash vim tmux linux lazygit
+
+# https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html
 
 dotfile_symlinks:
 	stow --verbose --target=$(DOTFILE_TARGET) --restow $(DOTFILE_PACKAGES)
