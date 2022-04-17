@@ -1,6 +1,6 @@
 DOTFILE_TARGET = $$HOME
 DOTFILE_PACKAGES = bash vim tmux linux lazygit
-COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-floaterm coc-tailwindcss coc-flow
+COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh
 
 # https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html
 
