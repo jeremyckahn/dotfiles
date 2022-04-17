@@ -50,6 +50,9 @@ function resource () {
   fi
 }
 
+# ~/.bash_env is meant to be an untracked file for bespoke environment configuration
+[ -s ~/.bash_env ] && source ~/.bash_env
+
 alias ll="ls -lah"
 alias d='lazydocker'
 alias g='lazygit'
