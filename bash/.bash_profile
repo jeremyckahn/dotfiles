@@ -16,32 +16,18 @@ alias d='lazydocker'
 alias g='lazygit'
 alias n='lazynpm'
 alias gs='git status'
-alias gd='tig status'
-alias gb='git branch'
-alias gc='git checkout'
-alias st='git stash'
-alias b='tig refs'
-alias c='git checkout $(git branch --all | fzf |  sed "s/remotes\/origin\///g")'
-alias B='git checkout --track -b'
-alias dev='git checkout develop'
-alias gf='git fetch --all'
-# http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
-alias git-cleanup-merged-branches='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
-alias git-nuke='git reset --hard && git clean -df'
-alias t='tig'
 
 alias dot='cd ~/dotfiles'
 alias oss='cd ~/oss'
 alias jck='cd ~/oss/jeremyckahn'
 alias D='cd ~/Desktop'
 alias grep='grep --color=auto'
-alias less='less -r'
+alias less='less -r --mouse'
 alias ni="npm install --save"
 alias nu="npm uninstall --save"
 alias nid="npm install --save-dev"
 alias nud="npm uninstall --save-dev"
 alias nh="npm home"
-alias nd="npm docs"
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias android='~/Library/Android/sdk/emulator/emulator -avd $(~/Library/Android/sdk/emulator/emulator -list-avds | head -n 1) &'
 alias nom='npm' # nom all the things
@@ -51,22 +37,20 @@ alias nom='npm' # nom all the things
 alias mux-new='tmux -CC new'
 alias mux-attach='tmux -CC attach'
 
-# Display help text for user-installed binaries
-alias helps="ls /usr/local/bin | fzf --preview '{} --help'"
-
 # Display tree of directories or previews of files
 alias trees="ls -ah | fzf --preview 'if [[ -d {} ]]; then tree {}; else bat --color always {}; fi'"
 
 # https://stackoverflow.com/a/48593067
 alias list_links='npm ls --depth=0 --link=true'
-alias mf='misfit'
-alias sudio="say There\'s this girl that\'s been on my mind All the time, Sussudio oh oh Now she don\'t even know my name But I think she likes me just the same Sussudio oh oh  Oh if she called me I\'d be there I\'d come running anywhere She\'s all I need, all my life I feel so good if I just say the word Sussudio, just say the word Oh Sussudio  Now I know that I\'m too young My love has just begun Sussudio oh oh Ooh give me a chance, give me a sign I\'ll show her anytime Sussudio oh oh  Ah, I\'ve just got to have her, have her now I\'ve got to get closer but I don\'t know how She makes me nervous and makes me scared But I feel so good if I just say the word Sussudio just say the word Oh Sussudio, oh  Ah, she\'s all I need all of my life I feel so good if I just say the word Sussudio I just say the word Oh Sussudio I just say the word Oh Sussudio I\'ll say the word Sussudio oh oh oh Just say the word"
 alias word-diff='git diff --word-diff=color'
-alias cs='cat $(ack -l "") | fzf'
 
-# Similar to vim.fzf's :Rg, for VSCode
-alias vf='code -g $(rg --column --line-number --no-heading --smart-case . | fzf | rg -o ".*:\d+:\d+")'
 alias clean_ds_store='find ./ -name ".DS_Store" -depth -exec rm {} \;'
+
+# Always follow symlinks.
+#
+# This alias needs to be below the RVM line above, for some crazy reason.
+# Syntax errors occur on shell startup, otherwise.
+alias cd="cd -P"
 
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
@@ -116,11 +100,6 @@ function prs () {
   )
 }
 
-# Requires asciinema and svg-term
-# brew install asciinema
-# npm install -g svg-term-cli
-alias record="asciinema rec /tmp/temp.cast --overwrite && cat /tmp/temp.cast | svg-term > recording.svg"
-
 # http://stackoverflow.com/a/21295146/470685
 alias ports_in_use='lsof -i -n -P | grep TCP'
 
@@ -159,28 +138,6 @@ function git-kill-tag () {
 
   git tag -d "$1"
   git push origin :refs/tags/"$1"
-}
-
-source ~/dotfiles/helpers/git-completion.bash
-
-# Push the current branch
-function PS () {
-  git push origin `git branch | grep \* | sed 's/\* //'`
-}
-
-# Force push the current branch
-function FORCE_PUSH () {
-  git push --force-with-lease origin -u `git branch | grep \* | sed 's/\* //'`
-}
-
-# Pull the current branch
-function PL () {
-  git pull origin `git branch | grep \* | sed 's/\* //'`
-}
-
-# Find and replace all files recursively in the current directory.
-function find_and_replace () {
-  grep -rl $1 ./ | xargs sed -i s/$1/$2/
 }
 
 # makes the connection to localhost:8888 really slow.
@@ -229,26 +186,6 @@ function unhide () {
   mv $1 ${1:1}
 }
 
-# The bash-powerline fork doesn't work well on Linux
-if [ "$(uname)" == "Darwin" ]; then
-  source ~/dotfiles/macos/bash-powerline/bash-powerline.sh
-fi
-
-if [ "$(uname)" == "Linux" ]; then
-  # https://stackoverflow.com/a/27456981
-  alias pbcopy="xclip -selection c"
-  alias pbpaste="xclip -selection c -o"
-fi
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Always follow symlinks.
-#
-# This alias needs to be below the RVM line above, for some crazy reason.
-# Syntax errors occur on shell startup, otherwise.
-alias cd="cd -P"
-
 function __file_size {
   echo `cat $1 | gzip -9f | wc -c`
 }
@@ -265,28 +202,9 @@ function mkdir_and_follow {
   mkdir -p $1 && cd $_
 }
 
-# Compare current Git branch to another brand and view it in Tig's friendly
-# pager.  Usage
-#
-#   diffbranch develop
-function diffbranch () {
-  if [ -z "$1" ];
-  then
-    echo "You need to specify a branch."
-    return
-  fi
-
-  BRANCH=$1
-  git diff $BRANCH -w | tig
-}
-
 # https://gist.github.com/meltedspork/b553985f096ab4520a2b
 function killport () {
   lsof -i tcp:$1 | awk '{ if($2 != "PID") print $2}' | xargs kill -9;
-}
-
-function checkpoint () {
-  git commit -am "$(echo "puts Time.new.inspect" | ruby)"
 }
 
 function o () {
@@ -305,29 +223,6 @@ function o () {
       xdg-open $1
     fi
   fi
-}
-
-# https://gist.github.com/intel352/9761288
-function git-show-base-branch () {
-  branch=`git rev-parse --abbrev-ref HEAD`
-  git show-branch | ack '\*' | ack -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'
-}
-
-function _github_repo () {
-  echo $(git remote -v show | head -n1 | grep -o ":.*\.git" | sed "s/^.//;s/.git//")
-}
-
-# Open the Github repo for the current directory
-function GH () {
-  REPO=$(_github_repo)
-  open "https://github.com/$REPO"
-}
-
-function PR () {
-  REPO=$(_github_repo)
-  BASE_BRANCH=$(git-show-base-branch)
-  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-  open "https://github.com/$REPO/compare/$BASE_BRANCH...$CURRENT_BRANCH"
 }
 
 # Usage:
@@ -349,61 +244,6 @@ function dl-yt-audio-chunk () {
 # https://mrcoles.com/convert-mov-mp4-ffmpeg/
 function convert-mov-to-mp4 () {
   ffmpeg -i "$1" -vcodec h264 -acodec mp2 video.mp4
-}
-
-nr () {
-  if [ -z "$1" ];
-  then
-    npm run $(node -e "Object.keys(require('./package.json').scripts).forEach(script => console.log(script))" | fzf)
-  else
-    npm run "$1"
-  fi
-}
-
-function __new_project () {
-  PROJECT_TYPE="$1"
-  PROJECT_NAME="$2"
-
-  if [ -z "$PROJECT_NAME" ];
-  then
-    echo "Must specify a project name as the first argument"
-    return
-  else
-    git clone --depth=1 "https://github.com/jeremyckahn/$PROJECT_TYPE.git" "$PROJECT_NAME"
-    cd "$PROJECT_NAME" || return
-    rm -rf .git
-    find . -type f -exec sed -i "" "s/$PROJECT_TYPE/$PROJECT_NAME/g" {} \;
-    git init
-    git add --all
-    git commit -m "Initial commit"
-    npm install
-  fi
-}
-
-function new_cli_tool () {
-  __new_project node-cli-boilerplate "$1"
-}
-
-function new_js_project() {
-  __new_project js-project-starter "$1"
-}
-
-function new_react_project() {
-  __new_project react-starter "$1"
-}
-
-# https://tomlankhorst.nl/brew-bundle-restore-backup/
-backup_brew () {
-  pushd ~/dotfiles
-  brew bundle dump --force
-}
-
-#https://stackoverflow.com/a/41199625
-backup_npm () {
-  npm list --global --parseable --depth=0 | sed '1d' | awk '{gsub(/\/.*\//,"",$1); print}' > ~/dotfiles/npm_backup
-}
-restore_npm () {
-  xargs npm install --global < ~/dotfiles/npm_backup
 }
 
 function v () {
@@ -464,14 +304,6 @@ dexec() {
   docker exec -it $1 /bin/bash
 }
 
-# Pause all docker containers
-# https://unix.stackexchange.com/a/17066
-dpauseall() {
-  for SERVICE in `docker ps | tail -n +2 | awk '{print $NF}'`; do
-    docker pause $SERVICE 2> /dev/null
-  done
-}
-
 dclean() {
   docker system prune --force
   docker volume prune --force
@@ -514,3 +346,15 @@ js_project_session() {
     tmux select-window -t 1;
     tmux attach-session -d -t ${PWD##*/};
 }
+
+# The bash-powerline fork doesn't work well on Linux
+if [ "$(uname)" == "Darwin" ]; then
+  source ~/dotfiles/macos/bash-powerline/bash-powerline.sh
+  source ~/dotfiles/macos/git-completion.bash
+fi
+
+if [ "$(uname)" == "Linux" ]; then
+  # https://stackoverflow.com/a/27456981
+  alias pbcopy="xclip -selection c"
+  alias pbpaste="xclip -selection c -o"
+fi
