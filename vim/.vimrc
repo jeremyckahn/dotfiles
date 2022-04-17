@@ -83,18 +83,11 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'udalov/kotlin-vim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
-"
-" To install language servers, manually run:
-"   :call InstallCocPlugins()
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
-
-function InstallCocPlugins()
-  CocInstall coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-floaterm coc-tailwindcss coc-flow
-endfunction
 
 colo vim-monokai-tasty
 
