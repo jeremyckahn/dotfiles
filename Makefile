@@ -14,14 +14,32 @@ bashrc:
 	touch ~/.bashrc
 	[ $$(cat ~/.bashrc | grep ^"\[ -s ~/.bash_profile \] && . ~/.bash_profile"$$ | wc -l) -eq 0 ] && echo "[ -s ~/.bash_profile ] && . ~/.bash_profile" >> ~/.bashrc; exit 0
 
-neovim:
-	[ ! -d vim/.vim/plugged ] && mkdir vim/.vim/plugged; exit 0
-	nvim +'PlugInstall --sync' +qa
-	npm i -g yarn
-	cd vim/.vim/plugged/coc.nvim; yarn; cd -;
-	cd ~/.config/coc/extensions; yarn add $(COC_EXTENSIONS); cd -;
+homebrew:
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+linux_deps:
+	sudo apt update
+	sudo apt install stow tmux
+	make homebrew
 
 linux_fonts:
 	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip" -fLo /tmp/UbuntuMono.zip
 	unzip -u /tmp/UbuntuMono.zip -d ~/.local/share/fonts
 	fc-cache -fv
+
+macos_deps:
+	make homebrew
+
+lazy:
+	brew install \
+		lazygit \
+		lazydocker \
+		jeremyckahn/lazynpm/lazynpm
+
+neovim:
+	brew install neovim
+	[ ! -d vim/.vim/plugged ] && mkdir vim/.vim/plugged; exit 0
+	nvim +'PlugInstall --sync' +qa
+	npm i -g yarn
+	cd vim/.vim/plugged/coc.nvim; yarn; cd -;
+	cd ~/.config/coc/extensions; yarn add $(COC_EXTENSIONS); cd -;
