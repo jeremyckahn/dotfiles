@@ -100,6 +100,19 @@ if [ "$(uname)" == "Linux" ]; then
   alias pbpaste="xclip -selection c -o"
 fi
 
+# http://stackoverflow.com/a/21295146/470685
+alias ports_in_use='lsof -i -n -P | grep TCP'
+
+# Take whatever JSON data is in the OS X pasteboard, jsonlint it, and pipe it
+# into a new Vim buffer.
+#
+# Requires jsonlint (`npm install -g jsonlint`).
+alias json2vim='pbpaste | jsonlint | nvim -'
+
+# Temporarily disable BASH history
+# http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
+alias disablehistory="unset HISTFILE"
+
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
 function preview () {
@@ -147,19 +160,6 @@ function prs () {
       | awk '{ print $1 }'
   )
 }
-
-# http://stackoverflow.com/a/21295146/470685
-alias ports_in_use='lsof -i -n -P | grep TCP'
-
-# Take whatever JSON data is in the OS X pasteboard, jsonlint it, and pipe it
-# into a new Vim buffer.
-#
-# Requires jsonlint (`npm install -g jsonlint`).
-alias json2vim='pbpaste | jsonlint | nvim -'
-
-# Temporarily disable BASH history
-# http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
-alias disablehistory="unset HISTFILE"
 
 # Prints the machine's broadcasting network IP
 function ip () {
