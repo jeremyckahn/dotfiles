@@ -20,3 +20,8 @@ neovim:
 	npm i -g yarn
 	cd vim/.vim/plugged/coc.nvim; yarn; cd -;
 	cd ~/.config/coc/extensions; yarn add $(COC_EXTENSIONS); cd -;
+
+linux_fonts:
+	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip" -fLo /tmp/UbuntuMono.zip
+	unzip -u /tmp/UbuntuMono.zip -d ~/.local/share/fonts
+	fc-cache -fv
