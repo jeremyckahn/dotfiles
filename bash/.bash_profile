@@ -50,8 +50,8 @@ function resource () {
   fi
 }
 
-# ~/.bash_env is meant to be an untracked file for bespoke environment configuration
-[ -s ~/.bash_env ] && source ~/.bash_env
+# ~/.env.bash_profile is meant to be an untracked file for bespoke environment configuration
+[ -s ~/.env.bash_profile ] && source ~/.env.bash_profile
 
 alias ll="ls -lah"
 alias d='lazydocker'
