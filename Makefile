@@ -17,7 +17,7 @@ bashrc:
 homebrew:
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-linux_deps:
+linux_setup:
 	sudo apt update
 	sudo apt install stow tmux
 	make homebrew
@@ -27,14 +27,21 @@ linux_fonts:
 	unzip -u /tmp/UbuntuMono.zip -d ~/.local/share/fonts
 	fc-cache -fv
 
-macos_deps:
+macos_setup:
 	make homebrew
+	brew install stow tmux
 
 lazy:
 	brew install \
 		lazygit \
 		lazydocker \
 		jeremyckahn/lazynpm/lazynpm
+
+tools:
+	brew install \
+		rg \
+		bat \
+		git-delta
 
 neovim:
 	brew install neovim
