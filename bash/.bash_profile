@@ -11,6 +11,45 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # https://github.com/yarnpkg/yarn/issues/1016#issuecomment-283067214
 export npm_config_tmp=/tmp
 
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# The bash-powerline fork doesn't work well on Linux
+if [ "$(uname)" == "Darwin" ]; then
+  source ~/dotfiles/macos/bash-powerline/bash-powerline.sh
+  source ~/dotfiles/macos/git-completion.bash
+fi
+
+# This loads Homebrew bash_completion
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX=$(brew --prefix)
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
+[ -s ~/Dropbox/bash_profile ] && source ~/Dropbox/bash_profile
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+function resource () {
+  if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+  fi
+  if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+  fi
+}
+
 alias ll="ls -lah"
 alias d='lazydocker'
 alias g='lazygit'
@@ -51,6 +90,12 @@ alias clean_ds_store='find ./ -name ".DS_Store" -depth -exec rm {} \;'
 # This alias needs to be below the RVM line above, for some crazy reason.
 # Syntax errors occur on shell startup, otherwise.
 alias cd="cd -P"
+
+if [ "$(uname)" == "Linux" ]; then
+  # https://stackoverflow.com/a/27456981
+  alias pbcopy="xclip -selection c"
+  alias pbpaste="xclip -selection c -o"
+fi
 
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
@@ -149,15 +194,6 @@ function goslow () {
 # makes the connection to localhost:8888 fast again
 function gofast () {
   ipfw flush
-}
-
-function resource () {
-  if [ -f ~/.bash_profile ]; then
-    source ~/.bash_profile
-  fi
-  if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-  fi
 }
 
 # Rename file "foo" to "_foo"
@@ -273,18 +309,6 @@ function search_git_history () {
   git log --patch -U0 --color=always | less +/"$1"
 }
 
-# https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
-if type brew &>/dev/null; then
-  HOMEBREW_PREFIX=$(brew --prefix)
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
-      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
-    done
-  fi
-fi
-
 # Use the correct Node version autimatically
 # https://stackoverflow.com/a/48322289
 enter_directory() {
@@ -346,15 +370,3 @@ js_project_session() {
     tmux select-window -t 1;
     tmux attach-session -d -t ${PWD##*/};
 }
-
-# The bash-powerline fork doesn't work well on Linux
-if [ "$(uname)" == "Darwin" ]; then
-  source ~/dotfiles/macos/bash-powerline/bash-powerline.sh
-  source ~/dotfiles/macos/git-completion.bash
-fi
-
-if [ "$(uname)" == "Linux" ]; then
-  # https://stackoverflow.com/a/27456981
-  alias pbcopy="xclip -selection c"
-  alias pbpaste="xclip -selection c -o"
-fi
