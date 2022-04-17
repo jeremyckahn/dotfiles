@@ -1,9 +1,0 @@
-set mouse = true
-set line-graphics = utf-8
-set refresh-mode = auto
-set split-view-width = 50%
-set tab-size = 2
-bind status P !git push origin
-bind generic F !git fetch
-bind generic O !git checkout %(commit)
-bind generic - !git checkout -

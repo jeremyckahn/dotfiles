@@ -163,7 +163,6 @@ function git-kill-tag () {
 }
 
 source ~/dotfiles/helpers/git-completion.bash
-source ~/dotfiles/forgit/forgit.plugin.zsh
 
 # Push the current branch
 function PS () {
