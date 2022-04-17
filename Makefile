@@ -1,6 +1,5 @@
 DOTFILE_TARGET = $$HOME
 DOTFILE_PACKAGES = bash vim tmux linux lazygit
-BASH_PROFILE_LINK = "\[ -s ~/.bash_profile \] && . ~/.bash_profile"
 
 # https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html
 
@@ -12,4 +11,4 @@ dotfile_symlinks_cleanup:
 
 bashrc:
 	touch ~/.bashrc
-	[ $$(cat ~/.bashrc | grep ^$(BASH_PROFILE_LINK)$$ | wc -l) -eq 0 ] && echo "[ -s ~/.bash_profile ] && . ~/.bash_profile" >> ~/.bashrc; exit 0
+	[ $$(cat ~/.bashrc | grep ^"\[ -s ~/.bash_profile \] && . ~/.bash_profile"$$ | wc -l) -eq 0 ] && echo "[ -s ~/.bash_profile ] && . ~/.bash_profile" >> ~/.bashrc; exit 0
