@@ -2,8 +2,10 @@ DOTFILE_TARGET = $$HOME
 DOTFILE_PACKAGES = bash vim tmux linux lazygit
 COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh
 
-install_linux:
-	make linux_setup bashrc tools dotfiles neovim
+
+linux_setup:
+	sudo apt update
+	make homebrew
 
 linux_fonts:
 	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip" -fLo /tmp/UbuntuMono.zip
@@ -11,14 +13,6 @@ linux_fonts:
 	mkdir -p ~/.local/share/fonts
 	unzip -u /tmp/UbuntuMono.zip -d ~/.local/share/fonts
 	fc-cache -fv
-
-install_macos:
-	make macos_setup bashrc dotfiles tools neovim
-
-linux_setup:
-	sudo apt update
-	make homebrew
-	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 macos_setup:
 	make homebrew
@@ -44,7 +38,6 @@ tools:
 		lazygit \
 		lazydocker \
 		jesseduffield/lazynpm/lazynpm \
-		stow \
 		tmux \
 		ripgrep \
 		bat \

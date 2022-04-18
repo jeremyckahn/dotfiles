@@ -2,20 +2,21 @@
 
 These are the dotfiles that I use and live by.  Perhaps you will find them useful too!
 
-To set up Linux:
+To set up Linux (this is still a work in progress):
 
 ```sh
-sudo apt install make
+sudo apt install make stow
 git clone https://github.com/jeremyckahn/dotfiles.git
 cd dotfiles
-make install_linux
+make homebrew
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.profile
+make bashrc tools
 ```
 
-To set up MacOS:
+Then, in a new shell instance:
 
 ```sh
-xcode-select --install
-git clone https://github.com/jeremyckahn/dotfiles.git
+mv ~/.profile ~/.profile.bak
 cd dotfiles
-make install_macos
+make dotfiles neovim
 ```
