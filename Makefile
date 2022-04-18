@@ -2,13 +2,20 @@ DOTFILE_TARGET = $$HOME
 DOTFILE_PACKAGES = bash vim tmux linux lazygit
 COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh
 
-# https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html
+install_linux:
+	make linux_setup linux_fonts bashrc dotfiles tools neovim
 
-dotfile_symlinks:
-	stow --verbose --target=$(DOTFILE_TARGET) --restow $(DOTFILE_PACKAGES)
+install_macos:
+	make macos_setup bashrc dotfiles tools neovim
 
-dotfile_symlinks_cleanup:
-	stow --verbose --target=$(DOTFILE_TARGET) --delete $(DOTFILE_PACKAGES)
+linux_setup:
+	sudo apt update
+	make homebrew
+
+macos_setup:
+	make homebrew
+	git submodule init
+	git submodule update
 
 bashrc:
 	touch ~/.bashrc
@@ -17,31 +24,31 @@ bashrc:
 homebrew:
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-linux_setup:
-	sudo apt update
-	sudo apt install stow tmux
-	make homebrew
+# https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html
+dotfiles:
+	stow --verbose --target=$(DOTFILE_TARGET) --restow $(DOTFILE_PACKAGES)
+
+dotfiles_cleanup:
+	stow --verbose --target=$(DOTFILE_TARGET) --delete $(DOTFILE_PACKAGES)
 
 linux_fonts:
 	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip" -fLo /tmp/UbuntuMono.zip
 	unzip -u /tmp/UbuntuMono.zip -d ~/.local/share/fonts
 	fc-cache -fv
 
-macos_setup:
-	make homebrew
-	brew install stow tmux
-
-lazy:
+tools:
 	brew install \
 		lazygit \
 		lazydocker \
-		jeremyckahn/lazynpm/lazynpm
-
-tools:
-	brew install \
-		rg \
+		jesseduffield/lazynpm/lazynpm \
+		stow \
+		tmux \
+		ripgrep \
 		bat \
-		git-delta
+		git-delta \
+		gh \
+		htop \
+		nvm
 
 neovim:
 	brew install neovim
