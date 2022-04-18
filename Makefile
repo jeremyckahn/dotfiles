@@ -35,6 +35,7 @@ dotfiles_cleanup:
 tools:
 	brew install \
 		stow \
+		gcc \
 		lazygit \
 		lazydocker \
 		jesseduffield/lazynpm/lazynpm \
