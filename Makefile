@@ -35,17 +35,21 @@ dotfiles_cleanup:
 tools:
 	brew install \
 		stow \
-		gcc \
+		go \
 		lazygit \
 		lazydocker \
-		jesseduffield/lazynpm/lazynpm \
 		tmux \
 		ripgrep \
 		bat \
 		git-delta \
 		gh \
-		htop \
-		nvm
+		htop
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+	go install github.com/jesseduffield/lazynpm@latest
+
+node:
+	nvm install 16
+	nvm use 16
 
 neovim:
 	brew install neovim
