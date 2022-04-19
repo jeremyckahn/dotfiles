@@ -11,8 +11,12 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # https://github.com/yarnpkg/yarn/issues/1016#issuecomment-283067214
 export npm_config_tmp=/tmp
 
+# Load Homebrew in Linux
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Load Homebrew in MacOS
+test -s /opt/homebrew/bin/brew && eval $(/opt/homebrew/bin/brew shellenv)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
