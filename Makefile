@@ -47,10 +47,6 @@ tools:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 	go install github.com/jesseduffield/lazynpm@latest
 
-node:
-	nvm install 16
-	nvm use 16
-
 neovim:
 	brew install neovim
 	[ ! -d vim/.vim/plugged ] && mkdir vim/.vim/plugged; exit 0

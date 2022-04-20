@@ -3,10 +3,11 @@
 sudo apt install make
 cd dotfiles
 make homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-make bashrc tools node dotfiles
-source ~/.bashrc
-make neovim
+
+# Temporarily install system-level node for one-time-setup
+brew install "node@16"
+make bashrc tools dotfiles neovim
+brew uninstall "node@16"
 
 echo 'Done! Consider running:'
 echo
