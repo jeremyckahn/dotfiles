@@ -43,6 +43,7 @@ tools:
 		bat \
 		git-delta \
 		gh \
+		node \
 		htop
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 	go install github.com/jesseduffield/lazynpm@latest
