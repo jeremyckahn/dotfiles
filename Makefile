@@ -33,6 +33,8 @@ dotfiles_cleanup:
 	stow --verbose --target=$(DOTFILE_TARGET) --delete $(DOTFILE_PACKAGES)
 
 tools:
+	# || true is appended to prevent spurious brew errors from ending this build
+	# step prematurely
 	brew install \
 		stow \
 		go \
@@ -44,7 +46,8 @@ tools:
 		git-delta \
 		gh \
 		node \
-		htop
+		htop \
+		|| true
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 	go install github.com/jesseduffield/lazynpm@latest
 
