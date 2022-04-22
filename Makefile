@@ -49,7 +49,12 @@ tools:
 		htop \
 		|| true
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+tools.linux:
 	go install github.com/jesseduffield/lazynpm@latest
+
+tools.macos:
+	brew install jesseduffield/lazynpm/lazynpm
 
 neovim:
 	brew install neovim
