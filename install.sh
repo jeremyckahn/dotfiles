@@ -27,6 +27,10 @@ make tools
 make bashrc dotfiles neovim
 
 if [ "$(uname)" == "Darwin" ]; then
+  LAZYGIT_MACOS_CONFIG="$HOME/Library/Application Support/jesseduffield/lazygit"
+  mkdir -p "$LAZYGIT_MACOS_CONFIG"
+  ln -s "$HOME/dotfiles/lazygit/.config/lazygit/config.yml" "$LAZYGIT_MACOS_CONFIG/config.yml" || true
+
   brew install --cask font-ubuntu-mono-nerd-font
 fi
 
