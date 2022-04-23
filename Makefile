@@ -1,5 +1,5 @@
 DOTFILE_TARGET = $$HOME
-DOTFILE_PACKAGES = bash vim tmux linux lazygit
+DOTFILE_PACKAGES = bash vim tmux linux lazygit conky
 COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh
 
 linux_setup:
