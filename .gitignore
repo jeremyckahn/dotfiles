@@ -4,3 +4,5 @@ vim/.vim/plugged
 vim/.vim/undodir/*
 .DS_Store
 Session.vim
+lazygit/.config/lazygit/*
+!lazygit/.config/lazygit/config.yml

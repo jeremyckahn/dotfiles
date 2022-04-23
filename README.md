@@ -5,6 +5,6 @@ These are the dotfiles that I use and live by.  Perhaps you will find them usefu
 To install on Linux and MacOS (still a work in progress):
 
 ```sh
-git clone https://github.com/jeremyckahn/dotfiles.git
-sh dotfiles/install.sh
+git clone https://github.com/jeremyckahn/dotfiles.git ~/dotfiles
+. ~/dotfiles/install.sh
 ```
