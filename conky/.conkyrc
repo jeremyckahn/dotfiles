@@ -68,7 +68,7 @@ $hr
 ${color grey}File systems:
  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
 ${color grey}Networking:
-Up:$color ${upspeed} ${color grey} - Down:$color ${downspeed}
+Up:$color ${upspeed wlp0s20f3} ${color grey} - Down:$color ${downspeed wlp0s20f3}
 $hr
 ${color grey}Name              PID     CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
