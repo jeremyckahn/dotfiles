@@ -540,6 +540,7 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+nmap <silent> g. <Plug>(coc-codeaction)
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
