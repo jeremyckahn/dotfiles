@@ -1,5 +1,5 @@
 {
-  "diagnostic.level": "warning",
+  "diagnostic.level": "hint",
   "list.previewSplitRight": true,
   "suggest.enablePreview": true,
   "tsserver.maxTsServerMemory": 6144,
