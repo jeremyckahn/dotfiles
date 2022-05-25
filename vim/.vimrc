@@ -49,7 +49,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'bogado/file-line'
 Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
@@ -408,8 +407,6 @@ while i < 10
   let i += 1
 endwhile
 
-noremap <leader>M :LivedownPreview<CR>
-
 " Open the current buffer in a new tab
 noremap <leader>z :tab split<CR>
 
@@ -578,3 +575,5 @@ let g:floaterm_keymap_toggle = '<C-f>'
 
 " Break floaterm execution into Normal mode
 tnoremap <silent> <C-b> <C-\><C-n>
+
+command! MarkdownPreview execute ":CocCommand markdown-preview-enhanced.openPreview"
