@@ -370,10 +370,17 @@ change_swap_gb() {
 }
 
 js_project_session() {
-    tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
-    tmux new-window -d -n neovim "nvim -S Session.vim; exec bash";
-    tmux new-window -d -n git "lazygit; exec bash";
-    tmux new-window -d -n npm "lazynpm; exec bash";
-    tmux select-window -t 1;
-    tmux attach-session -d -t ${PWD##*/};
+  tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
+
+  tmux new-window -d -n neovim
+  tmux send-keys -t neovim "nvim -S Session.vim" Enter
+
+  tmux new-window -d -n git
+  tmux send-keys -t git "lazygit" Enter
+
+  tmux new-window -d -n npm
+  tmux send-keys -t npm "lazynpm" Enter
+
+  tmux select-window -t 1;
+  tmux attach-session -d -t ${PWD##*/};
 }
