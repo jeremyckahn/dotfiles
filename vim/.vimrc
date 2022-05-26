@@ -147,7 +147,7 @@ augroup standard_group
   endif
 augroup END
 
-let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'sql', 'sh']
+let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'jsx=javascriptreact', 'json=javascript', 'ts=typescript', 'tsx=typescriptreact', 'ruby', 'sass', 'xml', 'html', 'sql', 'sh']
 
 set wildignore+=**/bower_components/**,**/node_modules/**,**/dist/**,**/tmp/**
 
