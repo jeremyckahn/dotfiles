@@ -384,3 +384,11 @@ js_project_session() {
   tmux select-window -t 1;
   tmux attach-session -d -t ${PWD##*/};
 }
+
+macos_set_up_keyboard() {
+  # https://mac-key-repeat.zaymon.dev/
+  defaults write -g InitialKeyRepeat -int 12
+  defaults write -g KeyRepeat -int 1
+  defaults write -g ApplePressAndHoldEnabled -bool false
+  echo "Done. Log out and then back in for changes to take effect."
+}
