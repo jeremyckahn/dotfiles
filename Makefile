@@ -1,6 +1,6 @@
 DOTFILE_TARGET = $$HOME
 DOTFILE_PACKAGES = bash vim tmux linux lazygit conky
-COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh coc-webview markdown-preview-enhanced.openPreview
+COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh coc-webview coc-markdown-preview-enhanced
 
 linux_setup:
 	sudo apt update
