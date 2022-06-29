@@ -117,6 +117,9 @@ alias json2vim='pbpaste | jsonlint | nvim -'
 # http://www.guyrutenberg.com/2011/05/10/temporary-disabling-bash-history/
 alias disablehistory="unset HISTFILE"
 
+alias lowercase="tr '[:upper:]' '[:lower:]'"
+alias uppercase="tr '[:lower:]' '[:upper:]'"
+
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
 function preview () {
