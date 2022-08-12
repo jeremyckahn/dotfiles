@@ -353,7 +353,7 @@ restart_x() {
 }
 
 # Based on https://linuxhint.com/change_swap_size_ubuntu/
-change_swap_gb() {
+linux_change_swap_gb() {
   if [ -z $1 ];
   then
     echo "Must specify number of gigabytes"
@@ -370,6 +370,12 @@ change_swap_gb() {
 
   # Show the result
   swapon -s
+}
+
+# https://github.com/facebook/watchman/issues/163#issuecomment-224263937
+linux_increase_watchman_limit() {
+  LIMIT=999999
+  echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_user_watches && echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_queued_events && echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_user_instances && watchman shutdown-server && sudo sysctl -p
 }
 
 js_project_session() {
