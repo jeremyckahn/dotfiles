@@ -388,7 +388,7 @@ js_project_session() {
   tmux send-keys -t git "lazygit" Enter
 
   tmux new-window -d -n scripts
-  tmux send-keys -t scripts "mprocs \"npm start\" \"npm test\"" Enter
+  tmux send-keys -t scripts "mprocs \"BROWSER=NONE npm start\" \"npm test\"" Enter
 
   tmux select-window -t 1;
   tmux attach-session -d -t ${PWD##*/};
