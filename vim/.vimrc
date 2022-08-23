@@ -38,7 +38,6 @@ Plug 'MobiusHorizons/fugitive-stash.vim'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
-Plug 'ervandew/supertab'
 Plug 'tpope/vim-sleuth'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
@@ -551,6 +550,10 @@ nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Adapted from https://github.com/neoclide/coc.nvim/issues/4043
+inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#next(1) : "\<tab>"
+inoremap <silent><expr> <S-tab> coc#pum#visible() ? coc#pum#prev(1) : "\<tab>"
 
 " Print the number of occurrences of the current word under the cursor
 " (comma + *)
