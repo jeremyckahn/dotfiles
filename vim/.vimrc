@@ -196,6 +196,13 @@ else
   " https://github.com/junegunn/fzf.vim/issues/184#issuecomment-575571950
   command! -bang -nargs=? Marks
     \ call fzf#vim#marks({'options': ['--preview', 'cat -n {-1} | egrep --color=always -C 10 ^[[:space:]]*{2}[[:space:]]']})
+
+  " https://github.com/junegunn/fzf.vim#example-rg-command-with-preview-window
+  " https://github.com/BurntSushi/ripgrep/issues/839#issuecomment-791971457
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   "rg --column --line-number --no-heading --color=always --smart-case --hidden --glob='!.git' --glob='!package-lock.json' --glob='!*.piskel' -- ".shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview(), <bang>0)
 endif
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
