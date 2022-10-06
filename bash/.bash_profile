@@ -378,6 +378,22 @@ linux_increase_watchman_limit() {
   echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_user_watches && echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_queued_events && echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_user_instances && watchman shutdown-server && sudo sysctl -p
 }
 
+project_session() {
+  tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
+
+  tmux new-window -d -n neovim
+  tmux send-keys -t neovim "nvim -S Session.vim" Enter
+
+  tmux new-window -d -n git
+  tmux send-keys -t git "lazygit" Enter
+
+  tmux new-window -d -n scripts
+  tmux send-keys -t scripts "mprocs" Enter
+
+  tmux select-window -t 1;
+  tmux attach-session -d -t ${PWD##*/};
+}
+
 js_project_session() {
   tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
 
