@@ -109,14 +109,15 @@ augroup standard_group
 
   " Force some file types to be other file types
   autocmd BufRead,BufNewFile *.ejs,*.mustache setfiletype html
-  autocmd BufRead,BufNewFile *.json setfiletype json
-  autocmd BufRead,BufNewFile *.json.* setfiletype json
   autocmd BufEnter * match ExtraWhitespace /\s\+$/
   autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
   autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
 
   " http://www.reddit.com/r/vim/comments/2x5yav/markdown_with_fenced_code_blocks_is_great/
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+  " Enable comments in JSON files
+  autocmd BufNewFile,BufReadPost *.json set filetype=jsonc
 
   autocmd BufNewFile,BufReadPost *.dockerfile set filetype=Dockerfile
   autocmd BufNewFile,BufReadPost *.jenkinsfile set filetype=groovy
