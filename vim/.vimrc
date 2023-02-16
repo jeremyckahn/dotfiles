@@ -75,6 +75,7 @@ Plug 'josa42/vim-lightline-coc'
 Plug 'sindrets/diffview.nvim' , { 'branch': 'main' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'flazz/vim-colorschemes'
 Plug 'habamax/vim-godot'
 Plug 'nvim-lua/plenary.nvim'
