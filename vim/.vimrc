@@ -329,8 +329,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set t_Co=256
-
 " show hidden whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 
