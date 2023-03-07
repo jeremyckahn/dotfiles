@@ -335,12 +335,10 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 " hitting jj will jump out of insert mode
 inoremap jj <esc>
 
-nmap ss :set syntax=off<CR>
-nmap SS :set syntax=on<CR>
-nmap sp :set spell!<CR>
-nmap cl :set cursorline!<CR>
-nmap cd :CocDisable<CR>
-nmap ce :CocEnable<CR>
+nmap <leader>ss :set syntax=off<CR>
+nmap <leader>SS :set syntax=on<CR>
+nmap <leader>sp :set spell!<CR>
+nmap <leader>cl :set cursorline!<CR>
 
 " quick vertical split
 noremap <leader>v :vsp<CR><C-w><C-w>
