@@ -232,6 +232,8 @@ endfunction
 
 nmap BD :Bdelete hidden<CR>
 
+nmap <leader>e <Cmd>CocCommand explorer<CR>
+
 let NERDTreeHijackNetrw=0
 let NERDTreeShowHidden=1
 
