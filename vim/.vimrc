@@ -31,7 +31,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/CSS-one-line--multi-line-folding'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'MobiusHorizons/fugitive-stash.vim'
@@ -75,7 +74,6 @@ Plug 'josa42/vim-lightline-coc'
 Plug 'sindrets/diffview.nvim' , { 'branch': 'main' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
-Plug 'johnstef99/vim-nerdtree-syntax-highlight'
 Plug 'flazz/vim-colorschemes'
 Plug 'habamax/vim-godot'
 Plug 'nvim-lua/plenary.nvim'
@@ -233,19 +231,6 @@ endfunction
 nmap BD :Bdelete hidden<CR>
 
 nmap <leader>e <Cmd>CocCommand explorer<CR>
-
-let NERDTreeHijackNetrw=0
-let NERDTreeShowHidden=1
-
-let g:NERDSpaceDelims = 1
-
-function! ToggleNERDTree()
-  NERDTreeToggle
-  silent NERDTreeMirror
-endfunction
-
-nmap <leader>n :call ToggleNERDTree()<CR>
-nmap gt :NERDTreeFind<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
@@ -458,8 +443,6 @@ set noshowmode
 " WebDevIcons
 "
 let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
 
 function! LightlineWebDevIcons(n)
   let l:bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
