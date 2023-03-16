@@ -232,7 +232,7 @@ endfunction
 
 nmap BD :Bdelete hidden<CR>
 
-let NERDTreeHijackNetrw=1
+let NERDTreeHijackNetrw=0
 let NERDTreeShowHidden=1
 
 let g:NERDSpaceDelims = 1
