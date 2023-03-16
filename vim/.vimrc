@@ -171,6 +171,9 @@ filetype plugin indent on
 
 let mapleader = "\<Space>"
 
+" Open Explorer at current file
+nmap <leader>X :Vex<CR>
+
 " Make it easier to use marks
 nmap ' `
 
