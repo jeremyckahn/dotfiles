@@ -3,6 +3,7 @@
   "list.previewSplitRight": true,
   "suggest.enablePreview": true,
   "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
   "tsserver.maxTsServerMemory": 6144,
   "tailwindCSS.headwind.runOnSave": false,
   "languageserver": {
