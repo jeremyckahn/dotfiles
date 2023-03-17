@@ -78,6 +78,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'habamax/vim-godot'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'udalov/kotlin-vim'
+Plug 'tanvirtin/monokai.nvim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -86,13 +87,14 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
 filetype plugin indent on    " required
 
-colo vim-monokai-tasty
+"colo vim-monokai-tasty
+colo monokai_ristretto
 
 function NoBackground()
   hi Normal guibg=NONE ctermbg=NONE
 endfunction
 
-call NoBackground()
+"call NoBackground()
 
 " https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
 highlight Comment cterm=italic
