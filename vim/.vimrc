@@ -230,7 +230,7 @@ endfunction
 
 nmap BD :Bdelete hidden<CR>
 
-nmap <leader>e <Cmd>CocCommand explorer<CR>
+nmap <leader>n <Cmd>CocCommand explorer<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
