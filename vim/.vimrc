@@ -257,7 +257,7 @@ nmap <leader>D :CocList diagnostics<cr>
 nmap Q <Nop>
 
 " Substitute the word under the cursor.
-nmap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nmap <C-s> :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
 function! SetGutter()
   set tw=79
@@ -349,7 +349,7 @@ inoremap <C-d> describe('', () => {});<Left><Left><Left><Left><Left><Left><Left>
 inoremap <C-t> test('', () => {});<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 inoremap <C-b> beforeEach(() => {});<Left><Left><Left>
 
-nmap <leader>a :CtrlSF -R ""<Left>
+nmap <C-a> :CtrlSF -R ""<Left>
 nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
 nmap <leader>c :CtrlSFFocus<CR>
 nmap <leader>C :CtrlSFToggle<CR>
@@ -566,13 +566,6 @@ let g:git_messenger_include_diff="current"
 let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
 let g:floaterm_width=0.95
-
-let g:floaterm_keymap_toggle = '<C-f>'
-
-" tnoremap <silent> <C-h> <C-\><C-n>:FloatermPrev<CR>
-" tnoremap <silent> <C-l> <C-\><C-n>:FloatermNext<CR>
-" tnoremap <silent> <C-j> <C-\><C-n>:FloatermKill<CR>
-" tnoremap <silent> <C-k> <C-\><C-n>:FloatermNew<CR>
 
 " Break floaterm execution into Normal mode
 tnoremap <silent> <C-b> <C-\><C-n>
