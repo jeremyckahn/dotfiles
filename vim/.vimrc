@@ -173,9 +173,6 @@ filetype plugin indent on
 
 let mapleader = "\<Space>"
 
-" Open Explorer at current file
-nmap <leader>X :Vex<CR>
-
 " Make it easier to use marks
 nmap ' `
 
@@ -538,7 +535,7 @@ vmap <silent> g. <Plug>(coc-codeaction-selected)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Find symbol of current document.
-nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>o  :CocOutline<cr>
 
 " https://github.com/neoclide/coc.nvim/issues/4082#issuecomment-1222999477
 " Make <CR> to accept selected completion item or notify coc.nvim to format
