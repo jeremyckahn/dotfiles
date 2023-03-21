@@ -64,3 +64,6 @@ neovim:
 	npm i -g yarn
 	cd vim/.vim/plugged/coc.nvim; yarn; cd -;
 	cd ~/.config/coc/extensions; yarn add $(COC_EXTENSIONS); cd -;
+
+tmux:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -2,6 +2,8 @@
 vim/.vim/.netrwhist
 vim/.vim/plugged
 vim/.vim/undodir/*
+tmux/.tmux/plugins/*
+!tmux/.tmux/plugins/.gitkeep
 .DS_Store
 Session.vim
 lazygit/.config/lazygit/*

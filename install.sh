@@ -26,6 +26,10 @@ make tools
 
 make bashrc dotfiles neovim
 
+# Add -B to prevent make from bailing out due to tmux directory name
+# https://stackoverflow.com/a/37489147
+make -B tmux
+
 if [ "$(uname)" == "Darwin" ]; then
   LAZYGIT_MACOS_CONFIG="$HOME/Library/Application Support/jesseduffield/lazygit"
   mkdir -p "$LAZYGIT_MACOS_CONFIG"
