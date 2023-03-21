@@ -67,3 +67,10 @@ neovim:
 
 tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# https://github.com/Gogh-Co/Gogh
+terminal.linux:
+	bash -c "$(wget -qO- https://git.io/vQgMr)"
+
+terminal.macos:
+	bash -c "$(curl -sLo- https://git.io/vQgMr)"
