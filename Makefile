@@ -70,7 +70,7 @@ tmux:
 
 # https://github.com/Gogh-Co/Gogh
 terminal.linux:
-	bash -c "$(wget -qO- https://git.io/vQgMr)"
+	wget -qO- https://git.io/vQgMr | bash
 
 terminal.macos:
-	bash -c "$(curl -sLo- https://git.io/vQgMr)"
+	curl -sLo- https://git.io/vQgMr | bash
