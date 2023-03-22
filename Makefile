@@ -53,10 +53,9 @@ tools:
 
 tools.linux:
 	sudo apt install gawk net-tools coreutils
-	go install github.com/jesseduffield/lazynpm@latest
 
 tools.macos:
-	brew install jesseduffield/lazynpm/lazynpm gawk coreutils
+	brew install gawk coreutils
 
 neovim:
 	brew install neovim
