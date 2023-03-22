@@ -52,10 +52,11 @@ tools:
 	npm i -g mprocs
 
 tools.linux:
+	sudo apt install gawk net-tools coreutils
 	go install github.com/jesseduffield/lazynpm@latest
 
 tools.macos:
-	brew install jesseduffield/lazynpm/lazynpm
+	brew install jesseduffield/lazynpm/lazynpm gawk coreutils
 
 neovim:
 	brew install neovim
