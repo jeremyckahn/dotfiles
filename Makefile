@@ -50,6 +50,7 @@ tools:
 		|| true
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 	npm i -g mprocs
+	gh extension install dlvhdr/gh-dash
 
 tools.linux:
 	sudo apt install gawk net-tools coreutils

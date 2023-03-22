@@ -38,6 +38,8 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install --cask font-hack-mono-nerd-font
 fi
 
+ln -s "$HOME/dotfiles/gh-dash/.config/gh-dash/config.yml" "$HOME/.config/gh-dash/config.yml" || true
+
 echo 'Done! Consider running:'
 echo
 
