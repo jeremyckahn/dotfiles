@@ -35,7 +35,7 @@ if [ "$(uname)" == "Darwin" ]; then
   mkdir -p "$LAZYGIT_MACOS_CONFIG"
   ln -s "$HOME/dotfiles/lazygit/.config/lazygit/config.yml" "$LAZYGIT_MACOS_CONFIG/config.yml" || true
 
-  brew install --cask font-ubuntu-mono-nerd-font
+  brew install --cask font-hack-mono-nerd-font
 fi
 
 echo 'Done! Consider running:'
