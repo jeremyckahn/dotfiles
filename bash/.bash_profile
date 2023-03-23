@@ -378,6 +378,23 @@ linux_increase_watchman_limit() {
   echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_user_watches && echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_queued_events && echo $LIMIT | sudo tee -a /proc/sys/fs/inotify/max_user_instances && watchman shutdown-server && sudo sysctl -p
 }
 
+monitor_session() {
+  cd ~/
+
+  tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
+
+  tmux new-window -d -n btop
+  tmux send-keys -t btop "btop" Enter
+
+  tmux new-window -d -n github
+  tmux send-keys -t github "gh dash" Enter
+
+  tmux select-window -t 1;
+  tmux attach-session -d -t ${PWD##*/};
+
+  cd -
+}
+
 project_session() {
   tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
 
