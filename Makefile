@@ -7,10 +7,10 @@ linux_setup:
 	make homebrew
 
 linux_fonts:
-	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip" -fLo /tmp/UbuntuMono.zip
+	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip" -fLo /tmp/Hack.zip
 	sudo apt install unzip
 	mkdir -p ~/.local/share/fonts
-	unzip -u /tmp/UbuntuMono.zip -d ~/.local/share/fonts
+	unzip -u /tmp/Hack.zip -d ~/.local/share/fonts
 	fc-cache -fv
 
 macos_setup:
