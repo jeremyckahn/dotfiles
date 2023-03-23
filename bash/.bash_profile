@@ -11,6 +11,10 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # https://github.com/yarnpkg/yarn/issues/1016#issuecomment-283067214
 export npm_config_tmp=/tmp
 
+# For simpler lazygit config
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#user-config
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Load Homebrew in Linux
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
