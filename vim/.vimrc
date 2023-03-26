@@ -1,3 +1,15 @@
+" Reset mappings
+:mapclear
+:nmapclear
+:vmapclear
+:xmapclear
+:smapclear
+:omapclear
+:mapclear
+:imapclear
+:lmapclear
+:cmapclear
+
 syntax enable
 set number
 set hlsearch
@@ -214,9 +226,6 @@ let g:fzf_commands_expect = 'enter'
 
 " Find files with fzf
 nmap <leader>p :Files<CR>
-
-" Shows Git history for the current buffer
-command! FileHistory execute ":BCommits"
 
 " Delete buffers
 " https://github.com/junegunn/fzf.vim/pull/733#issuecomment-559720813
