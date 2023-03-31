@@ -8,3 +8,4 @@ tmux/.tmux/plugins/*
 Session.vim
 lazygit/.config/lazygit/*
 !lazygit/.config/lazygit/config.yml
+extensions.conf

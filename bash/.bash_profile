@@ -438,3 +438,12 @@ macos_set_up_keyboard() {
   defaults write -g ApplePressAndHoldEnabled -bool false
   echo "Done. Log out and then back in for changes to take effect."
 }
+
+# https://www.reddit.com/r/linuxquestions/comments/cd02p6/comment/etr7q2d/?context=3
+linux_backup_gnome() {
+  dconf dump /org/gnome/shell/extensions/ > extensions.conf
+}
+
+linux_restore_gnome() {
+  [ -f extensions.conf ] && dconf load /org/gnome/shell/extensions/ < extensions.conf
+}
