@@ -447,3 +447,35 @@ linux_backup_gnome() {
 linux_restore_gnome() {
   [ -f extensions.conf ] && dconf load /org/gnome/shell/extensions/ < extensions.conf
 }
+
+# Use Tailscale Funnel to expose a port to the public internet.
+#
+# Requires setup:
+#   https://tailscale.com/kb/1223/tailscale-funnel/#setup
+#
+# Usage:
+#   expose_port 3000
+open_port() {
+  if [ -z "$1" ]; then
+    echo "Please specify a port."
+    return 1
+  fi
+
+  # https://tailscale.com/blog/tailscale-funnel-beta/
+  tailscale serve https / "http://localhost:$1"
+  tailscale funnel 443 on
+  tailscale funnel status
+}
+
+# Usage:
+#   expose_port 3000
+close_port() {
+  if [ -z "$1" ]; then
+    echo "Please specify a port."
+    return 1
+  fi
+
+  tailscale serve https / "http://localhost:$1" off
+  tailscale funnel 443 off
+  tailscale funnel status
+}
