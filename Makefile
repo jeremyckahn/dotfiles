@@ -1,6 +1,6 @@
 DOTFILE_TARGET = $$HOME
 DOTFILE_PACKAGES = bash vim tmux linux lazygit btop gh-dash
-COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh coc-webview coc-markdown-preview-enhanced coc-kotlin coc-explorer coc-marketplace coc-react-refactor
+COC_EXTENSIONS = coc-tsserver coc-eslint coc-prettier coc-json coc-html coc-css coc-tailwindcss coc-flow coc-sh coc-webview coc-markdown-preview-enhanced coc-kotlin coc-explorer coc-marketplace coc-react-refactor coc-yaml
 
 linux_setup:
 	sudo apt update
