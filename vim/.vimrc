@@ -255,6 +255,7 @@ function! FormatFile()
 endfunction
 
 nmap <leader>b :call FormatFile()<CR>
+nmap <leader>B :Buffers<CR>
 
 " Format selected code.
 xmap <leader>b  <Plug>(coc-format-selected)
