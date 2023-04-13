@@ -77,6 +77,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'rhysd/git-messenger.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'antoinemadec/coc-fzf'
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kshenoy/vim-signature'
 Plug 'keith/swift.vim'
@@ -489,6 +490,7 @@ let g:highlightedyank_highlight_duration = 200
 
 command! Filename execute ":echo expand('%:p')"
 command! Config execute ":e $MYVIMRC"
+command! ListMarks execute ":FzfPreviewMarksRpc"
 
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
