@@ -514,7 +514,6 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-nnoremap \ :CocList --auto-preview floaterm<CR><Tab>p
 
 nnoremap <silent> gl :CocFzfListResume<CR>
 
@@ -549,8 +548,8 @@ nmap <leader>rn <Plug>(coc-rename)
 " Find symbol of current document.
 nnoremap <silent><nowait> <leader>o  :CocOutline<cr>
 
-nmap <silent><nowait> <leader>s :DiffviewOpen<cr>
-nmap <silent><nowait> <leader>S :DiffviewClose<cr>
+nmap <silent><nowait> \ :DiffviewOpen<cr>
+nmap <silent><nowait> <bar> :DiffviewClose<cr>
 
 " https://github.com/neoclide/coc.nvim/issues/4082#issuecomment-1222999477
 " Make <CR> to accept selected completion item or notify coc.nvim to format
@@ -581,8 +580,5 @@ let g:git_messenger_include_diff="current"
 let g:floaterm_autoclose=1
 let g:floaterm_height=0.95
 let g:floaterm_width=0.95
-
-" Break floaterm execution into Normal mode
-tnoremap <silent> <C-b> <C-\><C-n>
 
 command! MarkdownPreview execute ":CocCommand markdown-preview-enhanced.openPreview"
