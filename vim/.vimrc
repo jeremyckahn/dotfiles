@@ -549,6 +549,9 @@ nmap <leader>rn <Plug>(coc-rename)
 " Find symbol of current document.
 nnoremap <silent><nowait> <leader>o  :CocOutline<cr>
 
+nmap <silent><nowait> <leader>s :DiffviewOpen<cr>
+nmap <silent><nowait> <leader>S :DiffviewClose<cr>
+
 " https://github.com/neoclide/coc.nvim/issues/4082#issuecomment-1222999477
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
