@@ -542,6 +542,20 @@ omap ac <Plug>(coc-classobj-a)
 nmap <silent> g. <Plug>(coc-codeaction)
 vmap <silent> g. <Plug>(coc-codeaction-selected)
 
+" navigate chunks of current buffer
+nmap [G <Plug>(coc-git-prevchunk)
+nmap ]G <Plug>(coc-git-nextchunk)
+" navigate conflicts of current buffer
+nmap [c <Plug>(coc-git-prevconflict)
+nmap ]c <Plug>(coc-git-nextconflict)
+" show commit contains current position
+nmap gc <Plug>(coc-git-commit)
+" create text object for git chunks
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
+
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
