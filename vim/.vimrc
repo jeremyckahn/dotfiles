@@ -94,7 +94,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'tanvirtin/monokai.nvim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Initialize plugin system
 call plug#end()
