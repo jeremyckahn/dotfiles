@@ -556,6 +556,9 @@ xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
 
+nmap gs <Cmd>CocCommand git.chunkStage<CR>
+nmap gS <Cmd>CocCommand git.chunkUnstage<CR>
+
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
