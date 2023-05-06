@@ -1,14 +1,14 @@
 " Reset mappings
-:mapclear
-:nmapclear
-:vmapclear
-:xmapclear
-:smapclear
-:omapclear
-:mapclear
-:imapclear
-:lmapclear
-:cmapclear
+mapclear
+nmapclear
+vmapclear
+xmapclear
+smapclear
+omapclear
+mapclear
+imapclear
+lmapclear
+cmapclear
 
 syntax enable
 set number

@@ -173,7 +173,7 @@ function prs () {
 }
 
 # Prints the machine's broadcasting network IP
-function ip () {
+function local_ip () {
   ifconfig | grep broadcast | awk '{print $2}' | head -n1
 }
 
