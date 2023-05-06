@@ -177,6 +177,11 @@ function local_ip () {
   ifconfig | grep broadcast | awk '{print $2}' | head -n1
 }
 
+function local_ssh_servers () {
+  GATEWAY_IP=$(ip route | awk '/default/ {print $3}' | uniq)
+  nmap -p 22 --open -sV "$GATEWAY_IP/24"
+}
+
 function git-kill-branch () {
   # http://stackoverflow.com/a/6482403
   if [ -z "$1" ]; then
