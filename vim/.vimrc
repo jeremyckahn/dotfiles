@@ -92,6 +92,7 @@ Plug 'habamax/vim-godot'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'udalov/kotlin-vim'
 Plug 'tanvirtin/monokai.nvim'
+Plug 'folke/todo-comments.nvim'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -599,3 +600,11 @@ let g:floaterm_height=0.95
 let g:floaterm_width=0.95
 
 command! MarkdownPreview execute ":CocCommand markdown-preview-enhanced.openPreview"
+
+lua << EOF
+  require("todo-comments").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section as
+    -- https://github.com/folke/todo-comments.nvim#%EF%B8%8F-configuration
+  }
