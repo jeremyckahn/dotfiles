@@ -492,6 +492,7 @@ let g:highlightedyank_highlight_duration = 200
 command! Filename execute ":echo expand('%:p')"
 command! Config execute ":e $MYVIMRC"
 command! ListMarks execute ":FzfPreviewMarksRpc"
+command! G execute ":FzfPreviewGitActionsRpc"
 
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
