@@ -246,11 +246,6 @@ nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
 nmap mk :mks!<CR>
 
-" Enable or disable auto width-formatting.
-noremap <leader>f :call UnsetGutter()<CR>
-noremap <leader>F :call SetGutter()<CR>
-
-
 function! FormatFile()
   call CocAction('runCommand', 'prettier.formatFile')
   call CocAction('runCommand', 'eslint.executeAutofix')
@@ -448,6 +443,8 @@ vmap gB :'<,'>GBrowse<CR>
 
 command! Reload execute "source ~/.config/nvim/init.vim"
 
+command! PR execute "!gh pr create --web"
+
 " This is handled by lightline
 set noshowmode
 
@@ -609,3 +606,4 @@ lua << EOF
     -- refer to the configuration section as
     -- https://github.com/folke/todo-comments.nvim#%EF%B8%8F-configuration
   }
+EOF
