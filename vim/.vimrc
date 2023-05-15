@@ -490,6 +490,7 @@ command! Filename execute ":echo expand('%:p')"
 command! Config execute ":e $MYVIMRC"
 command! ListMarks execute ":FzfPreviewMarksRpc"
 command! G execute ":FzfPreviewGitActionsRpc"
+command! Recent execute ":wviminfo | FzfPreviewOldFilesRpc"
 
 command! CdCurrentPath execute ":lcd %:p:h"
 
