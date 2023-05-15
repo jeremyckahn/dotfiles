@@ -491,6 +491,8 @@ command! Config execute ":e $MYVIMRC"
 command! ListMarks execute ":FzfPreviewMarksRpc"
 command! G execute ":FzfPreviewGitActionsRpc"
 
+command! CdCurrentPath execute ":lcd %:p:h"
+
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
