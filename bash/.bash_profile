@@ -124,6 +124,8 @@ alias disablehistory="unset HISTFILE"
 alias lowercase="tr '[:upper:]' '[:lower:]'"
 alias uppercase="tr '[:lower:]' '[:upper:]'"
 
+alias git-use-my-version='git checkout --ours -- .'
+
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
 function preview () {
