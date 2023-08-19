@@ -126,6 +126,16 @@ alias uppercase="tr '[:lower:]' '[:upper:]'"
 
 alias git-use-my-version='git checkout --ours -- .'
 
+# Syntax highlighting for less
+# https://www.tecmint.com/view-colored-man-pages-in-linux/
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
 function preview () {
