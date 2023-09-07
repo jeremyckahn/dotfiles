@@ -246,12 +246,7 @@ nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
 nmap mk :mks!<CR>
 
-function! FormatFile()
-  call CocAction('runCommand', 'prettier.formatFile')
-  call CocAction('runCommand', 'eslint.executeAutofix')
-endfunction
-
-nmap <leader>b :call FormatFile()<CR>
+nmap <leader>b <Plug>(coc-format-selected)<cr>
 nmap <leader>B :Buffers<CR>
 
 " Format selected code.

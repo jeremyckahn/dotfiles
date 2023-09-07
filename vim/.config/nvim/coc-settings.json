@@ -1,7 +1,7 @@
 {
   "diagnostic.level": "hint",
   "list.previewSplitRight": true,
-  "suggest.enablePreview": true,
+  "eslint.autoFixOnSave": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.file.showHiddenFiles": true,
   "tsserver.maxTsServerMemory": 6144,
