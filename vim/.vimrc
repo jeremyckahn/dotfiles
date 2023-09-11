@@ -246,7 +246,7 @@ nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
 nmap mk :mks!<CR>
 
-nmap <leader>b <Plug>(coc-format-selected)<cr>
+nmap <leader>b <Plug>(coc-format)<cr>
 nmap <leader>B :Buffers<CR>
 
 " Format selected code.
