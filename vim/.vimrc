@@ -140,6 +140,9 @@ augroup standard_group
   " Don't fold automatically https://stackoverflow.com/a/8316817
   autocmd BufRead * normal zR
 
+  " Made coc-pyright work better with codeactions:
+  " https://github.com/fannheyward/coc-pyright/issues/876#issuecomment-1411388054
+  autocmd BufRead *.py nmap <silent> g. <Plug>(coc-codeaction-cursor)
   " Open Ggrep results in a quickfix window
   autocmd QuickFixCmdPost *grep* cwindow
 
