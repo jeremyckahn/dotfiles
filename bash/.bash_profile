@@ -125,6 +125,7 @@ alias lowercase="tr '[:upper:]' '[:lower:]'"
 alias uppercase="tr '[:lower:]' '[:upper:]'"
 
 alias git-use-my-version='git checkout --ours -- .'
+alias git-use-my-version-and-continue='git-use-my-version && git add --all && git rebase --continue && git status'
 
 # Syntax highlighting for less
 # https://www.tecmint.com/view-colored-man-pages-in-linux/
