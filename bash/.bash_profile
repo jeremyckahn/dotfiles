@@ -43,7 +43,7 @@ if type brew &>/dev/null; then
   fi
 fi
 
-[ -s ~/Dropbox/bash_profile ] && source ~/Dropbox/bash_profile
+[ -s ~/Dropbox/Dotfiles/bash_profile ] && source ~/Dropbox/Dotfiles/bash_profile
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
