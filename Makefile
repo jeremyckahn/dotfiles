@@ -54,7 +54,8 @@ tools:
 	gh extension install dlvhdr/gh-dash
 
 tools.linux:
-	sudo apt install gawk net-tools coreutils
+	sudo apt install gawk net-tools coreutils wl-clipboard
+
 
 tools.macos:
 	brew install gawk coreutils
