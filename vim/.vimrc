@@ -258,6 +258,8 @@ xmap <leader>b  <Plug>(coc-format-selected)
 nmap <leader>d :CocDiagnostics<cr>
 nmap <leader>D :CocList diagnostics<cr>
 
+nmap <leader>l :CocFzfListResume<cr>
+
 " Disable Ex mode
 nmap Q <Nop>
 
