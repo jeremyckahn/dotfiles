@@ -2,10 +2,10 @@
   "diagnostic.level": "hint",
   "list.previewSplitRight": true,
   "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSave": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.file.showHiddenFiles": true,
   "tsserver.maxTsServerMemory": 6144,
   "tailwindCSS.headwind.runOnSave": false,
-  "languageserver": {
-  }
+  "languageserver": {}
 }
