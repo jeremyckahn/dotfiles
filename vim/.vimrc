@@ -102,10 +102,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 filetype plugin indent on    " required
 
-"colo vim-monokai-tasty
-"colo monokai_ristretto
-"colo monokai_soda
 colo github_dark_default
+
+" Make search results extremely visible
+highlight Search guibg=Yellow guifg=Black
 
 function NoBackground()
   hi Normal guibg=NONE ctermbg=NONE
