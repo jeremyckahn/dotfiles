@@ -93,6 +93,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'udalov/kotlin-vim'
 Plug 'tanvirtin/monokai.nvim'
 Plug 'folke/todo-comments.nvim'
+Plug 'projekt0n/github-nvim-theme'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -103,7 +104,8 @@ filetype plugin indent on    " required
 
 "colo vim-monokai-tasty
 "colo monokai_ristretto
-colo monokai_soda
+"colo monokai_soda
+colo github_dark_default
 
 function NoBackground()
   hi Normal guibg=NONE ctermbg=NONE
