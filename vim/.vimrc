@@ -103,7 +103,7 @@ filetype plugin indent on    " required
 
 "colo vim-monokai-tasty
 "colo monokai_ristretto
-colo monokai_pro
+colo monokai_soda
 
 function NoBackground()
   hi Normal guibg=NONE ctermbg=NONE
