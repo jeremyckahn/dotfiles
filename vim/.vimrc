@@ -94,6 +94,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'tanvirtin/monokai.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'prisma/vim-prisma'
 
 " https://freshman.tech/vim-javascript/#intelligent-code-completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
