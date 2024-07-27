@@ -7,5 +7,6 @@
   "explorer.file.showHiddenFiles": true,
   "tsserver.maxTsServerMemory": 6144,
   "tailwindCSS.headwind.runOnSave": false,
-  "languageserver": {}
+  "languageserver": {},
+  "cSpell.enabledLanguageIds": ["markdown"]
 }
