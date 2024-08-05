@@ -7,4 +7,7 @@ git:
     # pager: delta --side-by-side --dark --paging=never --24-bit-color=never
     pager: delta --dark --paging=never --24-bit-color=never
   pull:
-    mode: 'rebase'
+    mode: "rebase"
+
+gui:
+  nerdFontsVersion: "3"
