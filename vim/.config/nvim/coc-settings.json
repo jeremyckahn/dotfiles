@@ -2,6 +2,7 @@
   "diagnostic.level": "hint",
   "list.previewSplitRight": true,
   "eslint.autoFixOnSave": true,
+  "eslint.experimental.useFlatConfig": true,
   "coc.preferences.formatOnSave": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.file.showHiddenFiles": true,
