@@ -501,3 +501,7 @@ close_port() {
 create-localhost-ssl-cert() {
   openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout localhost.key -out localhost.crt
 }
+
+stop_ollama() {
+  ollama ps | tail -n 1 | fzf | awk '{print $1}' | xargs -I {} ollama stop {}
+}
