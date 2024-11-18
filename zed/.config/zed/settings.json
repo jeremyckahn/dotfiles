@@ -65,7 +65,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Github Dark Colorblind"
+    "dark": "Github Dark"
   },
   "terminal": {
     "font_family": "Hack Nerd Font Mono",
