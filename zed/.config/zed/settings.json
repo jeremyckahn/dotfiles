@@ -16,7 +16,7 @@
   "assistant": {
     "default_model": {
       "provider": "openai",
-      "model": "qwen2.5-coder_32b-instruct-q4_K_M"
+      "model": "llama3.2-3b-instruct"
     },
     "version": "2"
   },
