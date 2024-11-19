@@ -68,7 +68,7 @@
     "dark": "Github Dark"
   },
   "terminal": {
-    "font_family": "Hack Nerd Font Mono",
+    "font_family": "DejaVu Sans Mono",
     "font_size": 12,
     "line_height": "standard"
   },
