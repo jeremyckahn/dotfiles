@@ -9,6 +9,7 @@
 {
   "pane_split_direction_vertical": "right",
   "pane_split_direction_horizontal": "down",
+  "use_autoclose": false,
   "tab_bar": {
     "show_nav_history_buttons": false
   },
