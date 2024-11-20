@@ -9,6 +9,9 @@
 {
   "pane_split_direction_vertical": "right",
   "pane_split_direction_horizontal": "down",
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
   "features": {
     "inline_completion_provider": "none"
   },
