@@ -56,7 +56,6 @@ tools:
 tools.linux:
 	sudo apt install gawk net-tools coreutils wl-clipboard luarocks fd-find
 
-
 tools.macos:
 	brew install gawk coreutils luarocks fd
 
