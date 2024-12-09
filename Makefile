@@ -54,11 +54,11 @@ tools:
 	gh extension install dlvhdr/gh-dash
 
 tools.linux:
-	sudo apt install gawk net-tools coreutils wl-clipboard luarocks
+	sudo apt install gawk net-tools coreutils wl-clipboard luarocks fd-find
 
 
 tools.macos:
-	brew install gawk coreutils luarocks
+	brew install gawk coreutils luarocks fd
 
 neovim:
 	brew install neovim
