@@ -7,7 +7,7 @@ linux_setup:
 	make homebrew
 
 linux_fonts:
-	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip" -fLo /tmp/Hack.zip
+	curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Hack.zip" -fLo /tmp/Hack.zip
 	sudo apt install unzip
 	mkdir -p ~/.local/share/fonts
 	unzip -u /tmp/Hack.zip -d ~/.local/share/fonts
