@@ -1,0 +1,10 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.editor.overseer",
+    "lazyvim.plugins.extras.lang.typescript"
+  ],
+  "news": {
+    "NEWS.md": "7429"
+  },
+  "version": 7
+}
