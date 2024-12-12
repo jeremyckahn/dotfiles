@@ -9,11 +9,29 @@ return {
       require("codecompanion").setup({
         strategies = {
           chat = {
-            adapter = "anthropic",
+            adapter = "ollama",
           },
           inline = {
-            adapter = "anthropic",
+            adapter = "ollama",
           },
+        },
+        adapters = {
+          ollama = function()
+            return require("codecompanion.adapters").extend("ollama", {
+              env = {
+                url = os.getenv("OLLAMA_URL"),
+              },
+              headers = {
+                ["Content-Type"] = "application/json",
+              },
+              parameters = {
+                sync = true,
+              },
+              num_ctx = {
+                default = 32768,
+              },
+            })
+          end,
         },
       })
     end,
