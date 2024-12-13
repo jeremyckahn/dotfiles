@@ -24,6 +24,11 @@ return {
               headers = {
                 ["Content-Type"] = "application/json",
               },
+              schema = {
+                model = {
+                  default = "qwen2.5-coder:14b",
+                },
+              },
               parameters = {
                 sync = true,
               },
