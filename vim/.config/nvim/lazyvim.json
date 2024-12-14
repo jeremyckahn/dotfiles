@@ -4,6 +4,7 @@
     "lazyvim.plugins.extras.editor.overseer",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.test.core"
   ],
   "news": {
