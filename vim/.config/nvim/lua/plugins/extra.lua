@@ -6,4 +6,9 @@ return {
   {
     "tpope/vim-rhubarb",
   },
+
+  {
+    "sindrets/diffview.nvim",
+    branch = "main",
+  },
 }
