@@ -15,4 +15,8 @@ return {
   {
     "pechorin/any-jump.vim",
   },
+
+  {
+    "kshenoy/vim-signature",
+  },
 }
