@@ -11,4 +11,8 @@ return {
     "sindrets/diffview.nvim",
     branch = "main",
   },
+
+  {
+    "pechorin/any-jump.vim",
+  },
 }
