@@ -46,10 +46,10 @@ fi
 [ -s ~/Dropbox/Dotfiles/bash_profile ] && source ~/Dropbox/Dotfiles/bash_profile
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-function resource () {
+function resource() {
   if [ -f ~/.bash_profile ]; then
     source ~/.bash_profile
   fi
@@ -139,7 +139,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr
 # brew install bat
-function preview () {
+function preview() {
   rg --files --hidden --glob '!.git/*' | fzf --preview 'bat --color always {}'
 }
 
@@ -147,14 +147,14 @@ function preview () {
 #   Requires:
 #     - https://github.com/cli/cli,
 #     - https://github.com/junegunn/fzf
-function gist-edit () {
+function gist-edit() {
   # Quoting switches between single and double quotes to leverage and avoid
   # string interpolation as necessary. There is probably a better way to do
   # this.
   gh gist edit $(
-    gh gist list --limit 100 \
-      | fzf --preview 'gh gist view $(echo {}'" | awk '{ print \$1 }')" \
-      | awk '{ print $1 }'
+    gh gist list --limit 100 |
+      fzf --preview 'gh gist view $(echo {}'" | awk '{ print \$1 }')" |
+      awk '{ print $1 }'
   )
 }
 
@@ -163,39 +163,39 @@ function gist-edit () {
 #     - https://github.com/cli/cli,
 #     - https://github.com/junegunn/fzf
 #     - https://github.com/sharkdp/bat
-function issues () {
+function issues() {
   # Quoting switches between single and double quotes to leverage and avoid
   # string interpolation as necessary. There is probably a better way to do
   # this.
   gh issue view -w $(
-    gh issue list --limit 100 \
-      | fzf --preview 'gh issue view $(echo {}'" | awk '{ print \$1 }') | bat --color=always -l md" \
-      | awk '{ print $1 }'
+    gh issue list --limit 100 |
+      fzf --preview 'gh issue view $(echo {}'" | awk '{ print \$1 }') | bat --color=always -l md" |
+      awk '{ print $1 }'
   )
 }
 
-function prs () {
+function prs() {
   # Quoting switches between single and double quotes to leverage and avoid
   # string interpolation as necessary. There is probably a better way to do
   # this.
   gh pr view -w $(
-    gh pr list --limit 100 \
-      | fzf --preview 'gh pr view $(echo {}'" | awk '{ print \$1 }') | bat --color=always -l md" \
-      | awk '{ print $1 }'
+    gh pr list --limit 100 |
+      fzf --preview 'gh pr view $(echo {}'" | awk '{ print \$1 }') | bat --color=always -l md" |
+      awk '{ print $1 }'
   )
 }
 
 # Prints the machine's broadcasting network IP
-function local_ip () {
+function local_ip() {
   ifconfig | grep broadcast | awk '{print $2}' | head -n1
 }
 
-function local_ssh_servers () {
+function local_ssh_servers() {
   GATEWAY_IP=$(ip route | awk '/default/ {print $3}' | uniq)
   nmap -p 22 --open -sV "$GATEWAY_IP/24"
 }
 
-function git-kill-branch () {
+function git-kill-branch() {
   # http://stackoverflow.com/a/6482403
   if [ -z "$1" ]; then
     echo "Please specify a branch."
@@ -206,7 +206,7 @@ function git-kill-branch () {
   git push origin :"$1"
 }
 
-function git-kill-tag () {
+function git-kill-tag() {
   # https://nathanhoad.net/how-to-delete-a-remote-git-tag
   if [ -z "$1" ]; then
     echo "Please specify a tag"
@@ -218,22 +218,21 @@ function git-kill-tag () {
 }
 
 # makes the connection to localhost:8888 really slow.
-function goslow () {
+function goslow() {
   ipfw pipe 1 config bw 4KByte/s
   ipfw add pipe 1 tcp from any to me 8888
 }
 
 # makes the connection to localhost:8888 fast again
-function gofast () {
+function gofast() {
   ipfw flush
 }
 
 # Rename file "foo" to "_foo"
 #
 # Usage: hide [filename]
-function hide () {
-  if [ -z "$1" ];
-  then
+function hide() {
+  if [ -z "$1" ]; then
     echo "Please specify a file to hide."
     return
   fi
@@ -244,9 +243,8 @@ function hide () {
 # Rename file "_foo" to "foo"
 #
 # Usage: unhide [filename]
-function unhide () {
-  if [ -z "$1" ];
-  then
+function unhide() {
+  if [ -z "$1" ]; then
     echo "Please specify a file to unhide."
     return
   fi
@@ -255,15 +253,15 @@ function unhide () {
 }
 
 function __file_size {
-  echo `cat $1 | gzip -9f | wc -c`
+  echo $(cat $1 | gzip -9f | wc -c)
 }
 
 function file_size {
-  echo `__file_size $1` "bytes, gzipped."
+  echo $(__file_size $1) "bytes, gzipped."
 }
 
 function minified_js_size {
-  echo `__file_size <(uglifyjs $1)` "bytes, minified and gzipped."
+  echo $(__file_size <(uglifyjs $1)) "bytes, minified and gzipped."
 }
 
 function mkdir_and_follow {
@@ -271,21 +269,19 @@ function mkdir_and_follow {
 }
 
 # https://gist.github.com/meltedspork/b553985f096ab4520a2b
-function killport () {
-  lsof -i tcp:$1 | awk '{ if($2 != "PID") print $2}' | xargs kill -9;
+function killport() {
+  lsof -i tcp:$1 | awk '{ if($2 != "PID") print $2}' | xargs kill -9
 }
 
-function o () {
+function o() {
   if [ "$(uname)" == "Darwin" ]; then
-    if [ -z "$1" ];
-    then
+    if [ -z "$1" ]; then
       open ./
     else
       open $1
     fi
   else
-    if [ -z "$1" ];
-    then
+    if [ -z "$1" ]; then
       xdg-open ./
     else
       xdg-open $1
@@ -301,7 +297,7 @@ function o () {
 #  have a file type suffix.
 #
 # Requires youtube-dl and ffmpeg
-function dl-yt-audio-chunk () {
+function dl-yt-audio-chunk() {
   ffmpeg -ss "$2" -i $(youtube-dl -f best --get-url "$1") -t "$3" -c:v copy -c:a copy "/tmp/$4.mp4"
   ffmpeg -i "/tmp/$4.mp4" -vn -acodec copy "$4.aac"
 }
@@ -310,15 +306,13 @@ function dl-yt-audio-chunk () {
 #
 #   convert-mov-to-mp4 some.mov
 # https://mrcoles.com/convert-mov-mp4-ffmpeg/
-function convert-mov-to-mp4 () {
+function convert-mov-to-mp4() {
   ffmpeg -i "$1" -vcodec h264 -acodec mp2 video.mp4
 }
 
-function v () {
-  if [ "$(jobs | grep -c nvim)" == 0 ];
-  then
-    if [ -z "$1" ];
-    then
+function v() {
+  if [ "$(jobs | grep -c nvim)" == 0 ]; then
+    if [ -z "$1" ]; then
       nvim
     else
       nvim "$1"
@@ -328,16 +322,15 @@ function v () {
   fi
 }
 
-function mirror_from_to () {
-  if [ -z "$1" ] || [ -z "$2" ];
-  then
+function mirror_from_to() {
+  if [ -z "$1" ] || [ -z "$2" ]; then
     echo "Requires a \"from\" and \"to\" file"
   else
     nodemon --watch "$1" --exec "cp $1 $2"
   fi
 }
 
-function search_git_history () {
+function search_git_history() {
   git log --patch -U0 --color=always | less +/"$1"
 }
 
@@ -376,8 +369,7 @@ restart_x() {
 
 # Based on https://linuxhint.com/change_swap_size_ubuntu/
 linux_change_swap_gb() {
-  if [ -z $1 ];
-  then
+  if [ -z $1 ]; then
     echo "Must specify number of gigabytes"
     return
   fi
@@ -403,7 +395,7 @@ linux_increase_watchman_limit() {
 monitor_session() {
   cd ~/
 
-  tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
+  tmux new-session -d -s ${PWD##*/} -n bash "exec bash"
 
   tmux new-window -d -n btop
   tmux send-keys -t btop "btop" Enter
@@ -411,14 +403,14 @@ monitor_session() {
   tmux new-window -d -n github
   tmux send-keys -t github "gh dash" Enter
 
-  tmux select-window -t 1;
-  tmux attach-session -d -t ${PWD##*/};
+  tmux select-window -t 1
+  tmux attach-session -d -t ${PWD##*/}
 
   cd -
 }
 
 project_session() {
-  tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
+  tmux new-session -d -s ${PWD##*/} -n bash "exec bash"
 
   tmux new-window -d -n neovim
   tmux send-keys -t neovim "nvim" Enter
@@ -429,12 +421,12 @@ project_session() {
   tmux new-window -d -n scripts
   tmux send-keys -t scripts "mprocs" Enter
 
-  tmux select-window -t 1;
-  tmux attach-session -d -t ${PWD##*/};
+  tmux select-window -t 1
+  tmux attach-session -d -t ${PWD##*/}
 }
 
 project_session_npm() {
-  tmux new-session -d -s ${PWD##*/} -n bash "exec bash";
+  tmux new-session -d -s ${PWD##*/} -n bash "exec bash"
 
   tmux new-window -d -n neovim
   tmux send-keys -t neovim "nvim -S Session.vim" Enter
@@ -445,8 +437,8 @@ project_session_npm() {
   tmux new-window -d -n scripts
   tmux send-keys -t scripts "mprocs --npm" Enter
 
-  tmux select-window -t 1;
-  tmux attach-session -d -t ${PWD##*/};
+  tmux select-window -t 1
+  tmux attach-session -d -t ${PWD##*/}
 }
 
 macos_set_up_keyboard() {
@@ -459,11 +451,11 @@ macos_set_up_keyboard() {
 
 # https://www.reddit.com/r/linuxquestions/comments/cd02p6/comment/etr7q2d/?context=3
 linux_backup_gnome() {
-  dconf dump /org/gnome/shell/extensions/ > extensions.conf
+  dconf dump /org/gnome/shell/extensions/ >extensions.conf
 }
 
 linux_restore_gnome() {
-  [ -f extensions.conf ] && dconf load /org/gnome/shell/extensions/ < extensions.conf
+  [ -f extensions.conf ] && dconf load /org/gnome/shell/extensions/ <extensions.conf
 }
 
 # Use Tailscale Funnel to expose a port to the public internet.
