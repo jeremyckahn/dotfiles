@@ -2,3 +2,5 @@
 require("config.lazy")
 
 vim.cmd([[colo github_dark_default]])
+
+vim.o.wrap = true
