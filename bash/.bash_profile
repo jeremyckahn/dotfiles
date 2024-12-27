@@ -429,7 +429,7 @@ project_session_npm() {
   tmux new-session -d -s ${PWD##*/} -n bash "exec bash"
 
   tmux new-window -d -n neovim
-  tmux send-keys -t neovim "nvim -S Session.vim" Enter
+  tmux send-keys -t neovim "nvim" Enter
 
   tmux new-window -d -n git
   tmux send-keys -t git "lazygit" Enter
