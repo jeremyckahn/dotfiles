@@ -7,4 +7,7 @@ vim.api.nvim_create_user_command("Reload", [[execute "source ~/.config/nvim/init
 
 vim.o.wrap = true
 vim.o.relativenumber = false
+
 vim.g.snacks_animate = false
+
+vim.keymap.set("i", "jj", [[<Esc>]])
