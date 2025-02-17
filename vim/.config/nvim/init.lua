@@ -1,7 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
-vim.cmd([[colo github_dark_default]])
+vim.cmd([[colo catppuccin-mocha]])
 
 vim.api.nvim_create_user_command("Reload", [[execute "source ~/.config/nvim/init.lua"]], { desc = "Reload the config" })
 

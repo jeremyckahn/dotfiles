@@ -6,4 +6,9 @@ return {
   {
     "tanvirtin/monokai.nvim",
   },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+  },
 }
