@@ -415,12 +415,6 @@ project_session() {
   tmux new-window -d -n neovim
   tmux send-keys -t neovim "nvim" Enter
 
-  tmux new-window -d -n git
-  tmux send-keys -t git "lazygit" Enter
-
-  tmux new-window -d -n scripts
-  tmux send-keys -t scripts "mprocs" Enter
-
   tmux select-window -t 1
   tmux attach-session -d -t ${PWD##*/}
 }
