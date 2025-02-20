@@ -19,4 +19,11 @@ return {
   {
     "kshenoy/vim-signature",
   },
+
+  {
+    "dmmulroy/tsc.nvim",
+    config = function()
+      require("tsc").setup()
+    end,
+  },
 }
