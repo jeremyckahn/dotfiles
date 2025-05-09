@@ -19,15 +19,15 @@
     "show_nav_history_buttons": false
   },
   "features": {
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
   "buffer_font_family": "Hack Nerd Font Mono",
   "buffer_font_size": 14,
   "buffer_line_height": "standard",
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "openai",
-      "model": "llama3.2-3b-instruct"
+      "model": "qwen3:30b"
     },
     "version": "2"
   },
@@ -36,37 +36,13 @@
       "low_speed_timeout_in_seconds": 600
     },
     "openai": {
-      "api_url": "http://127.0.0.1:1337/v1",
+      "api_url": "http://mac-mini.tailafb14.ts.net:11434/v1",
       "low_speed_timeout_in_seconds": 600,
       "available_models": [
         {
-          "name": "llama3.2-3b-instruct",
-          "display_name": "llama3.2 3B",
-          "max_tokens": 131072
-        },
-        {
-          "name": "qwen2.5-coder_3b",
-          "display_name": "qwen2.5 Coder 3B",
-          "max_tokens": 16384,
-          "max_output_tokens": 16384
-        },
-        {
-          "name": "qwen2.5-coder-7b-instruct",
-          "display_name": "qwen2.5 Coder 7B",
-          "max_tokens": 16384,
-          "max_output_tokens": 16384
-        },
-        {
-          "name": "qwen2.5-14b-instruct",
-          "display_name": "qwen2.5 Coder 14B",
-          "max_tokens": 16384,
-          "max_output_tokens": 16384
-        },
-        {
-          "name": "qwen2.5-coder_32b-instruct-q4_K_M",
-          "display_name": "qwen2.5 Coder 32B",
-          "max_tokens": 16384,
-          "max_output_tokens": 16384
+          "name": "qwen3:30b",
+          "display_name": "Qwen3 30B A3B",
+          "max_tokens": 32768
         }
       ],
       "version": "1"
@@ -87,7 +63,7 @@
     "button": false
   },
   "chat_panel": {
-    "button": false
+    "button": "never"
   },
   "notification_panel": {
     "button": false
