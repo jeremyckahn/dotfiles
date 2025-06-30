@@ -25,27 +25,34 @@
   "buffer_font_size": 14,
   "buffer_line_height": "standard",
   "agent": {
+    "play_sound_when_agent_done": true,
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "openai",
-      "model": "qwen3:30b"
+      "provider": "ollama",
+      "model": "devstral:latest"
     },
     "version": "2"
   },
   "language_models": {
     "ollama": {
-      "low_speed_timeout_in_seconds": 600
-    },
-    "openai": {
-      "api_url": "http://mac-mini.tailafb14.ts.net:11434/v1",
       "low_speed_timeout_in_seconds": 600,
+      "api_url": "http://jeremys-mac-mini.tailafb14.ts.net:11434",
       "available_models": [
         {
           "name": "qwen3:30b",
           "display_name": "Qwen3 30B A3B",
-          "max_tokens": 32768
+          "max_tokens": 32768,
+          "supports_tools": true,
+          "supports_thinking": true
+        },
+        {
+          "name": "devstral:latest",
+          "display_name": "Devstral",
+          "max_tokens": 131072,
+          "supports_tools": true
         }
-      ],
-      "version": "1"
+      ]
     }
   },
   "vim_mode": true,
