@@ -22,7 +22,9 @@
     "edit_prediction_provider": "none"
   },
   "buffer_font_family": "Hack Nerd Font Mono",
-  "buffer_font_size": 14,
+  "ui_font_family": "Ubuntu",
+  "buffer_font_size": 12,
+  "ui_font_size": 16,
   "buffer_line_height": "standard",
   "agent": {
     "play_sound_when_agent_done": true,
