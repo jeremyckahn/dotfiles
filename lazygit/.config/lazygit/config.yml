@@ -6,8 +6,8 @@ git:
   paging:
     #colorArg: always -b
     colorArg: always
-    # pager: delta --side-by-side --dark --paging=never --24-bit-color=never
-    pager: delta --dark --paging=never --24-bit-color=never
+    # pager: delta --side-by-side --dark --paging=never --24-bit-color=never --syntax-theme="Sublime Snazzy"
+    pager: delta --dark --paging=never --24-bit-color=never --syntax-theme="Sublime Snazzy"
 
 gui:
   nerdFontsVersion: "3"
