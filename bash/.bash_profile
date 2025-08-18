@@ -491,3 +491,29 @@ create-localhost-ssl-cert() {
 stop_ollama() {
   ollama ps | tail -n 1 | fzf | awk '{print $1}' | xargs -I {} ollama stop {}
 }
+
+# get_pr_comments - Get comments from Gemini Code Assist bot on a pull request
+#
+# Usage:
+#   get_pr_comments [PR_NUMBER]
+#
+# Arguments:
+#   PR_NUMBER (optional) - Pull request number to fetch comments from
+#
+# Examples:
+#   get_pr_comments 1566    # Get comments from PR #1566
+#   get_pr_comments         # Prompts for PR number interactively
+#
+# Description:
+#   Fetches all comments made by the "gemini-code-assist[bot]" user on the specified
+#   pull request and returns them in JSON format with diff_hunk, line, start_line,
+#   and body fields. Must be run from within a git repository with GitHub CLI configured.
+#
+get_pr_comments() {
+  if [ -n "$1" ]; then
+    pr_number="$1"
+  else
+    read -p "Enter pull request number: " pr_number
+  fi
+  gh api repos/:owner/:repo/pulls/$pr_number/comments | jq '[ .[] | select(.user.login == "gemini-code-assist[bot]") | { diff_hunk, line, start_line, body } ]'
+}
