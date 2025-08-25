@@ -14,4 +14,4 @@ vim.keymap.set("i", "jj", [[<Esc>]])
 
 -- Override standard config:
 -- https://github.com/LazyVim/LazyVim/blob/25abbf546d564dc484cf903804661ba12de45507/lua/lazyvim/config/options.lua#L105C1-L105C46
-vim.opt.timeoutlen = 200
+vim.opt.timeoutlen = 1000
