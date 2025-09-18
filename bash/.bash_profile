@@ -61,7 +61,7 @@ function resource() {
 # ~/.env.bash_profile is meant to be an untracked file for bespoke environment configuration
 [ -s ~/.env.bash_profile ] && source ~/.env.bash_profile
 
-alias ll="ls -lah"
+alias ll="ls -lah --color=auto"
 alias d='lazydocker'
 alias g='lazygit'
 alias n='lazynpm'
