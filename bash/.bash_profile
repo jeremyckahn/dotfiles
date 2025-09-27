@@ -127,6 +127,8 @@ alias uppercase="tr '[:lower:]' '[:upper:]'"
 alias git-use-my-version='git checkout --ours -- .'
 alias git-use-my-version-and-continue='git-use-my-version && git add --all && git rebase --continue && git status'
 
+alias dict-fzf="cat /usr/share/dict/words | fzf --preview 'dict {} | colorit' --preview-window=right,75%"
+
 # Syntax highlighting for less
 # https://www.tecmint.com/view-colored-man-pages-in-linux/
 export LESS_TERMCAP_mb=$'\e[1;32m'
