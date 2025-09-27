@@ -402,9 +402,6 @@ monitor_session() {
   tmux new-window -d -n btop
   tmux send-keys -t btop "btop" Enter
 
-  tmux new-window -d -n github
-  tmux send-keys -t github "gh dash" Enter
-
   tmux select-window -t 1
   tmux attach-session -d -t ${PWD##*/}
 
