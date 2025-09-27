@@ -4,3 +4,4 @@ export MOZ_USE_XINPUT2=1
 
 # ~/.env.profile is meant to be an untracked file for bespoke environment configuration
 [ -s ~/.env.profile ] && source ~/.env.profile
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
