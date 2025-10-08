@@ -31,28 +31,36 @@
     "default_profile": "write",
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-thinking"
-    },
-    "version": "2"
+      "provider": "ollama",
+      "model": "gpt-coder:latest"
+    }
   },
   "language_models": {
+    "lmstudio": {
+      "api_url": "http://jeremys-mac-mini.tailafb14.ts.net:1234/api/v0"
+    },
+
     "ollama": {
-      "low_speed_timeout_in_seconds": 600,
-      "api_url": "http://jeremys-mac-mini.tailafb14.ts.net:11434",
       "available_models": [
         {
-          "name": "qwen3:30b",
-          "display_name": "Qwen3 30B A3B",
-          "max_tokens": 32768,
-          "supports_tools": true,
-          "supports_thinking": true
-        },
-        {
-          "name": "devstral:latest",
-          "display_name": "Devstral",
+          "name": "gpt-coder:latest",
+          "display_name": "gpt-coder",
           "max_tokens": 131072,
+          "supports_images": false,
+          "supports_thinking": true,
           "supports_tools": true
+        }
+      ]
+    },
+    "openai": {
+      "api_url": "http://127.0.0.1:1337/v1",
+      "available_models": [
+        {
+          "name": "Jan-v1-4B-Q4_K_M",
+          "display_name": "Jan",
+          "max_tokens": 131072,
+          "max_completion_tokens": 131072,
+          "max_output_tokens": 131072
         }
       ]
     }
