@@ -51,18 +51,6 @@
           "supports_tools": true
         }
       ]
-    },
-    "openai": {
-      "api_url": "http://127.0.0.1:1337/v1",
-      "available_models": [
-        {
-          "name": "Jan-v1-4B-Q4_K_M",
-          "display_name": "Jan",
-          "max_tokens": 131072,
-          "max_completion_tokens": 131072,
-          "max_output_tokens": 131072
-        }
-      ]
     }
   },
   "vim_mode": true,
