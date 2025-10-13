@@ -11,10 +11,10 @@ return {
       require("codecompanion").setup({
         strategies = {
           chat = {
-            adapter = "gemini",
+            adapter = "ollama",
           },
           inline = {
-            adapter = "gemini",
+            adapter = "ollama",
           },
         },
         adapters = {
@@ -29,6 +29,27 @@ return {
               schema = {
                 model = {
                   default = os.getenv("OLLAMA_MODEL"),
+                },
+              },
+              parameters = {
+                sync = true,
+              },
+              num_ctx = {
+                default = 32768,
+              },
+            })
+          end,
+          lmstudio = function()
+            return require("codecompanion.adapters").extend("openai_compatible", {
+              env = {
+                url = os.getenv("LM_STUDIO_URL"),
+              },
+              headers = {
+                ["Content-Type"] = "application/json",
+              },
+              schema = {
+                model = {
+                  default = os.getenv("LM_STUDIO_MODEL"),
                 },
               },
               parameters = {
