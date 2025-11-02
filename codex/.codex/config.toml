@@ -1,0 +1,18 @@
+model = "gpt-oss-20b-mxfp4"
+model_provider = "jan"
+show_raw_agent_reasoning = true
+model_context_window = 131072
+
+[model_providers.jan]
+name = "Jan"
+base_url = "http://localhost:1337/v1"
+env_key = "JAN_API_KEY"
+
+[profiles.jan]
+name = "Jan"
+model_provider = "jan"
+model_reasoning_effort = "high"
+
+[mcp_servers.lsp]
+command = "mcp-language-server"
+args = [ "--workspace", ".", "--lsp", "typescript-language-server", "--", "--stdio" ]

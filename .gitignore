@@ -10,3 +10,7 @@ lazygit/.config/lazygit/*
 !lazygit/.config/lazygit/config.yml
 extensions.conf
 ~/.vim/undodir
+codex/.codex/log/codex-tui.log
+codex/.codex/sessions/*
+codex/.codex/version.json
+codex/.codex/sessions/*
