@@ -14,3 +14,4 @@ codex/.codex/log/codex-tui.log
 codex/.codex/sessions/*
 codex/.codex/version.json
 codex/.codex/sessions/*
+codex/.codex/history.jsonl

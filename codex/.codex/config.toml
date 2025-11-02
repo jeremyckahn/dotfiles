@@ -1,3 +1,4 @@
+profile = "jan"
 model = "gpt-oss-20b-mxfp4"
 model_provider = "jan"
 show_raw_agent_reasoning = true
