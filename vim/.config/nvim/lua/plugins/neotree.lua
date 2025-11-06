@@ -1,10 +1,11 @@
 -- LazyVim-friendly neo-tree.nvim override that adds "copy relative path" mappings
--- Place this file in your LazyVim config (e.g. ~/.config/nvim/lua/plugins/neo-tree.lua)
+-- and registers which-key labels for them inside Neo-tree buffers.
+--
+-- Place this file in your LazyVim config (e.g. ~/.config/nvim/lua/custom/plugins/neo-tree.lua)
 
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
-    -- Use opts function so Lazy will pass the plugin's default opts and we can merge.
     opts = function(_, opts)
       local function normalize_path(p)
         if not p then
@@ -72,21 +73,44 @@ return {
       opts.window = opts.window or {}
       opts.window.mappings = opts.window.mappings or {}
 
-      -- Merge in new mappings without clobbering existing ones.
-      -- Use <leader>y / <leader>Y so we don't unintentionally override builtin 'y'.
+      -- Add mappings (merge into existing mappings)
       opts.window.mappings["<leader>y"] = copy_relative_to_root
       opts.window.mappings["<leader>Y"] = copy_relative_to_git_root
 
-      -- If you prefer to add the mapping only for the filesystem source, use:
+      -- filesystem-specific (optional)
       opts.filesystem = opts.filesystem or {}
       opts.filesystem.window = opts.filesystem.window or {}
       opts.filesystem.window.mappings = opts.filesystem.window.mappings or {}
-      -- filesystem-specific mapping (optional)
       opts.filesystem.window.mappings["<leader>y"] = copy_relative_to_root
 
-      -- If you explicitly want to OVERRIDE the default 'y' behavior (not recommended by default),
-      -- uncomment the next line:
-      -- opts.window.mappings["y"] = copy_relative_to_root
+      -- which-key labels: register labels only in neo-tree buffers using an autocmd.
+      -- This keeps the labels local to the neo-tree UI and doesn't interfere with other buffers.
+      local has_wk, wk = pcall(require, "which-key")
+      if has_wk then
+        -- create a dedicated augroup so the autocmd doesn't get duplicated on reload
+        local group = vim.api.nvim_create_augroup("NeoTreeWhichKey", { clear = true })
+        vim.api.nvim_create_autocmd("FileType", {
+          group = group,
+          pattern = { "neo-tree" }, -- add "neo-tree-popup" if needed
+          callback = function(args)
+            local bufnr = args.buf or vim.api.nvim_get_current_buf()
+            -- register only for this buffer
+            wk.register({
+              y = "Neo-tree: copy path (relative)",
+              Y = "Neo-tree: copy path (git root)",
+            }, {
+              mode = "n",
+              prefix = "<leader>",
+              buffer = bufnr,
+              silent = true,
+            })
+          end,
+        })
+      else
+        -- Fallback: if which-key isn't installed, do nothing.
+        -- Optionally you can register global labels like this (uncomment if desired):
+        -- if has_wk then wk.register({ y = "Copy rel path", Y = "Copy git rel path" }, { mode = "n", prefix = "<leader>" }) end
+      end
 
       return opts
     end,
