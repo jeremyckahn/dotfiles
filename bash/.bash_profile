@@ -129,6 +129,8 @@ alias git-use-my-version-and-continue='git-use-my-version && git add --all && gi
 
 alias dict-fzf="cat /usr/share/dict/words | fzf --preview 'dict {} | colorit' --preview-window=right,75%"
 
+alias windows='docker run -it --rm --name windows -e "VERSION=11" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${HOME:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows'
+
 # Syntax highlighting for less
 # https://www.tecmint.com/view-colored-man-pages-in-linux/
 export LESS_TERMCAP_mb=$'\e[1;32m'
