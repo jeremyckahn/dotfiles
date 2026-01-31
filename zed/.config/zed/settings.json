@@ -27,12 +27,30 @@
   "ui_font_size": 16,
   "buffer_line_height": "standard",
   "agent": {
+    "profiles": {
+      "shell": {
+        "default_model": {
+          "provider": "lmstudio",
+          "model": "openai/gpt-oss-20b"
+        },
+        "name": "Shell",
+        "tools": {
+          "thinking": false,
+          "now": false,
+          "grep": false,
+          "fetch": false,
+          "terminal": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
     "play_sound_when_agent_done": true,
-    "default_profile": "write",
+    "default_profile": "shell",
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "ollama",
-      "model": "gpt-coder:latest"
+      "provider": "lmstudio",
+      "model": "mistralai/devstral-small-2-2512"
     }
   },
   "language_models": {
@@ -54,11 +72,7 @@
     }
   },
   "vim_mode": true,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Github Dark"
-  },
+  "theme": "GitHub Dark",
   "terminal": {
     "font_family": "Hack Nerd Font Mono",
     "font_size": 12,

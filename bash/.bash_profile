@@ -352,7 +352,7 @@ enter_directory() {
 export PROMPT_COMMAND="enter_directory; $PROMPT_COMMAND"
 
 # https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/sandbox.md
-export GEMINI_SANDBOX=true
+export GEMINI_SANDBOX=false
 export SANDBOX_SET_UID_GID=true
 
 # Enter the shell of a Docker container
