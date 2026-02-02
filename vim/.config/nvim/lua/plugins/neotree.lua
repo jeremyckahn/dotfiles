@@ -95,21 +95,16 @@ return {
           callback = function(args)
             local bufnr = args.buf or vim.api.nvim_get_current_buf()
             -- register only for this buffer
-            wk.register({
-              y = "Neo-tree: copy path (relative)",
-              Y = "Neo-tree: copy path (git root)",
-            }, {
-              mode = "n",
-              prefix = "<leader>",
-              buffer = bufnr,
-              silent = true,
+            wk.add({
+              { "<leader>y", desc = "Neo-tree: copy path (relative)", buffer = bufnr, mode = "n", silent = true },
+              { "<leader>Y", desc = "Neo-tree: copy path (git root)", buffer = bufnr, mode = "n", silent = true },
             })
           end,
         })
       else
         -- Fallback: if which-key isn't installed, do nothing.
         -- Optionally you can register global labels like this (uncomment if desired):
-        -- if has_wk then wk.register({ y = "Copy rel path", Y = "Copy git rel path" }, { mode = "n", prefix = "<leader>" }) end
+        -- if has_wk then wk.add({ { "<leader>y", desc = "Copy rel path", mode = "n" }, { "<leader>Y", desc = "Copy git rel path", mode = "n" } }) end
       end
 
       return opts
