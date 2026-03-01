@@ -1,0 +1,27 @@
+# https://gemini.google.com/app/8baad60930d6cdd7
+
+# To view logs:
+#   sudo journalctl -u llama-server -f
+
+[Unit]
+Description=llama.cpp Server (Vulkan)
+After=network.target
+
+[Service]
+Type=simple
+# Run as your normal user so it inherits the correct groups (like 'render') for GPU access
+User=jeremyckahn
+WorkingDirectory=/opt/llama.cpp
+
+# The command to start the server.
+ExecStart=/opt/llama.cpp/bin/llama-server --jinja --port 4000 -ngl -1 --models-max 1 --models-preset /home/jeremyckahn/llama.ini
+
+# Automatically restart if it crashes
+Restart=always
+RestartSec=5
+
+# Ensure systemd doesn't buffer logs too heavily so you can view them in real-time
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

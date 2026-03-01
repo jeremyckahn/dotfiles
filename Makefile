@@ -76,3 +76,19 @@ terminal.linux:
 
 terminal.macos:
 	curl -sLo- https://git.io/vQgMr | bash
+
+llama:
+	stow --verbose --target=$(DOTFILE_TARGET) llama
+
+llama.dependencies:
+	sudo apt update
+	sudo apt install -y build-essential cmake git mesa-vulkan-drivers libvulkan-dev vulkan-tools glslang-tools glslc libshaderc-dev spirv-tools libcurl4-openssl-dev ca-certificates
+
+llama.setup:
+	sudo cp /home/jeremyckahn/dotfiles/llama/etc/systemd/system/llama-server.service /etc/systemd/system/
+	sudo systemctl daemon-reload
+	sudo systemctl enable llama-server
+	sudo systemctl restart llama-server
+	mkdir -p /home/jeremyckahn/scripts
+	[ -e /home/jeremyckahn/scripts/update-llama.sh ] || cp /home/jeremyckahn/dotfiles/llama/scripts/update-llama.sh /home/jeremyckahn/scripts/
+	chmod +x /home/jeremyckahn/scripts/update-llama.sh
