@@ -11,77 +11,36 @@ return {
       require("codecompanion").setup({
         strategies = {
           chat = {
-            adapter = "jan",
+            adapter = "llama",
           },
           inline = {
-            adapter = "jan",
+            adapter = "llama",
           },
         },
         adapters = {
-          ollama = function()
-            return require("codecompanion.adapters").extend("ollama", {
-              env = {
-                url = os.getenv("OLLAMA_URL"),
-              },
-              headers = {
-                ["Content-Type"] = "application/json",
-              },
-              schema = {
-                model = {
-                  default = os.getenv("OLLAMA_MODEL"),
+          http = {
+            llama = function()
+              return require("codecompanion.adapters").extend("openai_compatible", {
+                env = {
+                  url = os.getenv("LLAMA_URL"),
                 },
-              },
-              parameters = {
-                sync = true,
-              },
-              num_ctx = {
-                default = 32768,
-              },
-            })
-          end,
-          jan = function()
-            return require("codecompanion.adapters").extend("openai_compatible", {
-              env = {
-                url = "http://localhost:1337",
-                api_key = os.getenv("JAN_API_KEY"),
-              },
-              headers = {
-                ["Content-Type"] = "application/json",
-              },
-              schema = {
-                model = {
-                  default = "gpt-oss-20b-mxfp4",
+                headers = {
+                  ["Content-Type"] = "application/json",
                 },
-              },
-              parameters = {
-                sync = true,
-              },
-              num_ctx = {
-                default = 131072,
-              },
-            })
-          end,
-          lmstudio = function()
-            return require("codecompanion.adapters").extend("openai_compatible", {
-              env = {
-                url = os.getenv("LM_STUDIO_URL"),
-              },
-              headers = {
-                ["Content-Type"] = "application/json",
-              },
-              schema = {
-                model = {
-                  default = os.getenv("LM_STUDIO_MODEL"),
+                schema = {
+                  model = {
+                    default = "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL:thinking",
+                  },
                 },
-              },
-              parameters = {
-                sync = true,
-              },
-              num_ctx = {
-                default = 32768,
-              },
-            })
-          end,
+                parameters = {
+                  sync = true,
+                },
+                num_ctx = {
+                  default = 131072,
+                },
+              })
+            end,
+          },
           acp = {
             claude_code = function()
               return require("codecompanion.adapters").extend("claude_code", {
