@@ -1,0 +1,30 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "providers": {
+    "llama.cpp": {
+      "name": "llama.cpp",
+      "base_url": "http://localhost:4000/v1/",
+      "type": "openai",
+      "models": [
+        {
+          "id": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL:thinking",
+          "name": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL:thinking",
+          "cost_per_1m_in": 0,
+          "cost_per_1m_out": 0,
+          "cost_per_1m_in_cached": 0,
+          "cost_per_1m_out_cached": 0,
+          "context_window": 131072,
+          "default_max_tokens": 131072,
+          "can_reason": true,
+          "supports_attachments": true
+        }
+      ]
+    }
+  },
+  "lsp": {
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"]
+    }
+  }
+}
