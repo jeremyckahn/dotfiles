@@ -16,7 +16,7 @@ for file in "$@"; do
   output="${file%.webm}.mp4"
   echo "Converting: $file -> $output"
 
-  ffmpeg -i "$file" -c:v libx264 -preset medium -crf 23 -c:a aac "$output" 2>&1
+  ffmpeg -i "$file" -c:v libx264 -preset medium -crf 23 -c:a aac -r 30 "$output" 2>&1
 
   if [ $? -eq 0 ]; then
     echo "Successfully converted: $output"
