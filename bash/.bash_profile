@@ -4,6 +4,9 @@ export GOPATH=$HOME/go
 # https://github.com/feross/funding#how-can-i-disable-this
 export OPEN_SOURCE_CONTRIBUTOR=true
 
+# https://github.com/anomalyco/opencode/issues/12445
+export OPENCODE_DISABLE_EMBEDDED_WEB_UI=true
+
 # https://support.apple.com/en-us/HT208050
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
