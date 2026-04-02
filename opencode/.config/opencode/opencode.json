@@ -1,0 +1,86 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "llamacpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama-server (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:4000/v1"
+      },
+      "models": {
+        "LFM2-24B-A2B": {
+          "name": "LFM2-24B-A2B",
+          "id": "LiquidAI/LFM2-24B-A2B-GGUF:Q4_K_M",
+          "limit": {
+            "context": 32768,
+            "output": 32768
+          }
+        },
+        "gptoss20b": {
+          "name": "GPT-OSS 20B",
+          "id": "unsloth/gpt-oss-20b-GGUF",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "gptoss120b": {
+          "name": "GPT-OSS 120B",
+          "id": "unsloth/gpt-oss-120b-GGUF",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "qwen30b": {
+          "name": "Qwen 30B A30 Coder",
+          "id": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q4_K_M",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "qwen35b": {
+          "name": "Qwen 35B A35",
+          "id": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "qwen35bThinking": {
+          "name": "Qwen 35B A35 (Thinking)",
+          "id": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL:thinking",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "qwen80b": {
+          "name": "Qwen 80B A30",
+          "id": "unsloth/Qwen3-Coder-Next-GGUF:Q4_K_M",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        }
+      }
+    }
+  },
+  "permission": {
+    "*": "allow",
+    "bash": "ask",
+    "doom_loop": "ask"
+  },
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics"
+      ]
+    }
+  }
+}
