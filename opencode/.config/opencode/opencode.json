@@ -8,12 +8,12 @@
         "baseURL": "http://127.0.0.1:4000/v1"
       },
       "models": {
-        "LFM2-24B-A2B": {
-          "name": "LFM2-24B-A2B",
-          "id": "LiquidAI/LFM2-24B-A2B-GGUF:Q4_K_M",
+        "gemma26": {
+          "name": "Gemma 26B A4",
+          "id": "unsloth/gemma-4-26B-A4B-it-GGUF",
           "limit": {
-            "context": 32768,
-            "output": 32768
+            "context": 131072,
+            "output": 65536
           }
         },
         "gptoss20b": {
@@ -41,14 +41,6 @@
           }
         },
         "qwen35b": {
-          "name": "Qwen 35B A35",
-          "id": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL",
-          "limit": {
-            "context": 131072,
-            "output": 65536
-          }
-        },
-        "qwen35bThinking": {
           "name": "Qwen 35B A35 (Thinking)",
           "id": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL:thinking",
           "limit": {
