@@ -57,6 +57,39 @@
           }
         }
       }
+    },
+    "mac-mini": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Mac mini",
+      "options": {
+        "baseURL": "http://jeremys-mac-mini.tailafb14.ts.net:4000/"
+      },
+      "models": {
+        "qwen9b": {
+          "name": "Qwen 9B",
+          "id": "unsloth/Qwen3.5-9B-GGUF:UD-Q4_K_XL",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "gemma-4-26B-A4B-it": {
+          "name": "Gemma 4 26B A4B",
+          "id": "unsloth/gemma-4-26B-A4B-it-GGUF:IQ4_NL",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "gemma-4-E4B-it": {
+          "name": "Gemma 4 E4B",
+          "id": "unsloth/gemma-4-E4B-it-GGUF",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        }
+      }
     }
   },
   "permission": {

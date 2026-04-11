@@ -16,3 +16,4 @@ codex/.codex/version.json
 codex/.codex/sessions/*
 codex/.codex/history.jsonl
 codex/.codex
+opencode/.config/opencode/package-lock.json
