@@ -41,8 +41,8 @@
           }
         },
         "qwen35b": {
-          "name": "Qwen 35B A35 (Thinking)",
-          "id": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL:thinking",
+          "name": "Qwen 35B A35",
+          "id": "unsloth/Qwen3.5-35B-A3B-GGUF:UD-Q4_K_XL",
           "limit": {
             "context": 131072,
             "output": 65536
