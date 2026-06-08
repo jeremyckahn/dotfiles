@@ -10,31 +10,7 @@
       "models": {
         "gemma26": {
           "name": "Gemma 26B A4",
-          "id": "unsloth/gemma-4-26B-A4B-it-GGUF",
-          "limit": {
-            "context": 131072,
-            "output": 65536
-          }
-        },
-        "gptoss20b": {
-          "name": "GPT-OSS 20B",
-          "id": "unsloth/gpt-oss-20b-GGUF",
-          "limit": {
-            "context": 131072,
-            "output": 65536
-          }
-        },
-        "gptoss120b": {
-          "name": "GPT-OSS 120B",
-          "id": "unsloth/gpt-oss-120b-GGUF",
-          "limit": {
-            "context": 131072,
-            "output": 65536
-          }
-        },
-        "qwen30b": {
-          "name": "Qwen 30B A30 Coder",
-          "id": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q4_K_M",
+          "id": "gemma-4-26B-A4B",
           "limit": {
             "context": 131072,
             "output": 65536
@@ -42,7 +18,7 @@
         },
         "qwen35b": {
           "name": "Qwen 35B A35",
-          "id": "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_XL",
+          "id": "Qwen3.6-35B-A3B",
           "limit": {
             "context": 131072,
             "output": 65536
@@ -50,7 +26,7 @@
         },
         "qwen80b": {
           "name": "Qwen 80B A30",
-          "id": "unsloth/Qwen3-Coder-Next-GGUF:Q4_K_M",
+          "id": "Qwen3-Coder-Next",
           "limit": {
             "context": 131072,
             "output": 65536
@@ -75,7 +51,7 @@
         },
         "gemma-4-26B-A4B-it": {
           "name": "Gemma 4 26B A4B",
-          "id": "unsloth/gemma-4-26B-A4B-it-GGUF:IQ4_NL",
+          "id": "unsloth/gemma-4-26B-A4B",
           "limit": {
             "context": 131072,
             "output": 65536
