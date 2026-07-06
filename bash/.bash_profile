@@ -28,7 +28,10 @@ test -s /opt/homebrew/bin/brew && eval $(/opt/homebrew/bin/brew shellenv)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # The bash-powerline fork doesn't work well on Linux
-if [ "$(uname)" == "Darwin" ]; then
+# Only load it in an interactive shell with a real terminal attached, since
+# it shells out to `tput` and that's noisy/broken otherwise (e.g. tool-driven
+# non-interactive bash invocations).
+if [ "$(uname)" == "Darwin" ] && [[ $- == *i* ]] && [ -n "$TERM" ]; then
   source ~/dotfiles/macos/bash-powerline/bash-powerline.sh
   source ~/dotfiles/macos/git-completion.bash
 fi
