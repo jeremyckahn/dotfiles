@@ -23,6 +23,10 @@
         "qwen35b": {
           "name": "Qwen 35B A35",
           "id": "Qwen3.6-35B-A3B",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"]
+          },
           "limit": {
             "context": 131072,
             "output": 65536
@@ -31,6 +35,10 @@
         "qwen80b": {
           "name": "Qwen 80B A30",
           "id": "Qwen3-Coder-Next",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"]
+          },
           "limit": {
             "context": 131072,
             "output": 65536
@@ -48,22 +56,22 @@
         "gemma12b": {
           "name": "Gemma 12B",
           "id": "gemma-4-12b",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"]
+          },
           "limit": {
             "context": 65536,
             "output": 65536
           }
         },
-        "gemma-4-26B-A4B-it": {
-          "name": "Gemma 4 26B A4B",
-          "id": "unsloth/gemma-4-26B-A4B",
-          "limit": {
-            "context": 131072,
-            "output": 65536
-          }
-        },
         "gemma-4-E4B-it": {
           "name": "Gemma 4 E4B",
-          "id": "unsloth/gemma-4-E4B-it-GGUF",
+          "id": "gemma-4-E4B",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image", "audio"]
+          },
           "limit": {
             "context": 131072,
             "output": 65536
