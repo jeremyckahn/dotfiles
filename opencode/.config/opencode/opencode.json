@@ -45,11 +45,11 @@
         "baseURL": "http://jeremys-mac-mini.tailafb14.ts.net:4000/"
       },
       "models": {
-        "qwen9b": {
-          "name": "Qwen 9B",
-          "id": "unsloth/Qwen3.5-9B-GGUF:UD-Q4_K_XL",
+        "gemma12b": {
+          "name": "Gemma 12B",
+          "id": "gemma-4-12b",
           "limit": {
-            "context": 131072,
+            "context": 65536,
             "output": 65536
           }
         },
