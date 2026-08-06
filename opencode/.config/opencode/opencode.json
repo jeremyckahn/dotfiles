@@ -11,6 +11,10 @@
         "gemma26": {
           "name": "Gemma 26B A4",
           "id": "gemma-4-26B-A4B",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"]
+          },
           "limit": {
             "context": 131072,
             "output": 65536
