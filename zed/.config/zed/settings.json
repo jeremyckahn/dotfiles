@@ -7,6 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "auto",
+        "model": "sonnet"
+      },
+      "type": "registry"
+    }
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
   "git": {
     "inline_blame": {
       "enabled": false
@@ -18,7 +36,7 @@
   "tab_bar": {
     "show_nav_history_buttons": false
   },
-  "features": {
+  "feature_flags": {
     "edit_prediction_provider": "none"
   },
   "buffer_font_family": "Hack Nerd Font Mono",
@@ -27,6 +45,7 @@
   "ui_font_size": 16,
   "buffer_line_height": "standard",
   "agent": {
+    "dock": "left",
     "profiles": {
       "shell": {
         "default_model": {
@@ -45,9 +64,11 @@
         "context_servers": {}
       }
     },
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "when_hidden",
     "default_profile": "shell",
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_model": {
       "provider": "lmstudio",
       "model": "mistralai/devstral-small-2-2512"
@@ -79,12 +100,7 @@
     "line_height": "standard"
   },
   "collaboration_panel": {
+    "dock": "right",
     "button": false
   },
-  "chat_panel": {
-    "button": "never"
-  },
-  "notification_panel": {
-    "button": false
-  }
 }
