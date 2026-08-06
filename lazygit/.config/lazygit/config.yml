@@ -3,12 +3,11 @@
 # Must be symlinked to lazygit config location:
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#user-config
 git:
-  paging:
-    #colorArg: always -b
-    colorArg: always
-    # pager: delta --side-by-side --dark --paging=never --24-bit-color=never --syntax-theme="Sublime Snazzy"
-    pager: delta --dark --paging=never --24-bit-color=never --syntax-theme="Sublime Snazzy"
-
+  pagers:
+    - #colorArg: always -b
+      colorArg: always
+      # pager: delta --side-by-side --dark --paging=never --24-bit-color=never --syntax-theme="Sublime Snazzy"
+      pager: delta --dark --paging=never --24-bit-color=never --syntax-theme="Sublime Snazzy"
 gui:
   nerdFontsVersion: "3"
   showFileTree: false
