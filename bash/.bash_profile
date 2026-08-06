@@ -529,3 +529,7 @@ get_pr_comments() {
   gh api repos/:owner/:repo/pulls/$pr_number/comments | jq '[ .[] | select(.user.login == "gemini-code-assist[bot]") | { diff_hunk, line, start_line, body } ]'
 }
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/jeremyckahn/.local/bin:$PATH"
