@@ -13,10 +13,11 @@
           "id": "gemma-4-26B-A4B",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image"]
+            "input": ["text", "image"],
+            "output": ["text"]
           },
           "limit": {
-            "context": 131072,
+            "context": 245000,
             "output": 65536
           }
         },
@@ -25,22 +26,11 @@
           "id": "Qwen3.6-35B-A3B",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image"]
+            "input": ["text", "image"],
+            "output": ["text"]
           },
           "limit": {
-            "context": 131072,
-            "output": 65536
-          }
-        },
-        "qwen80b": {
-          "name": "Qwen 80B A30",
-          "id": "Qwen3-Coder-Next",
-          "attachment": true,
-          "modalities": {
-            "input": ["text", "image"]
-          },
-          "limit": {
-            "context": 131072,
+            "context": 245000,
             "output": 65536
           }
         }
@@ -58,10 +48,11 @@
           "id": "gemma-4-12b",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image"]
+            "input": ["text", "image"],
+            "output": ["text"]
           },
           "limit": {
-            "context": 65536,
+            "context": 245000,
             "output": 65536
           }
         },
@@ -70,10 +61,11 @@
           "id": "gemma-4-E4B",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image", "audio"]
+            "input": ["text", "image", "audio"],
+            "output": ["text"]
           },
           "limit": {
-            "context": 131072,
+            "context": 245000,
             "output": 65536
           }
         }
