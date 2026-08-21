@@ -17,7 +17,7 @@
             "output": ["text"]
           },
           "limit": {
-            "context": 245000,
+            "context": 131072,
             "output": 65536
           }
         },
@@ -30,7 +30,7 @@
             "output": ["text"]
           },
           "limit": {
-            "context": 245000,
+            "context": 131072,
             "output": 65536
           }
         }
@@ -52,7 +52,7 @@
             "output": ["text"]
           },
           "limit": {
-            "context": 245000,
+            "context": 131072,
             "output": 65536
           }
         },
@@ -65,7 +65,7 @@
             "output": ["text"]
           },
           "limit": {
-            "context": 245000,
+            "context": 131072,
             "output": 65536
           }
         }
