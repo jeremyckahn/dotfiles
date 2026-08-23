@@ -13,8 +13,7 @@
           "id": "gemma-4-26B-A4B",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+            "input": ["text", "image"]
           },
           "limit": {
             "context": 131072,
@@ -26,8 +25,7 @@
           "id": "Qwen3.6-35B-A3B",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+            "input": ["text", "image"]
           },
           "limit": {
             "context": 131072,
@@ -43,13 +41,24 @@
         "baseURL": "http://jeremys-mac-mini.tailafb14.ts.net:4000/"
       },
       "models": {
+        "qwen27b": {
+          "name": "Qwen 27b",
+          "id": "Qwen3.8-27B",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"]
+          },
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
         "gemma12b": {
           "name": "Gemma 12B",
           "id": "gemma-4-12b",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+            "input": ["text", "image", "audio"]
           },
           "limit": {
             "context": 131072,
@@ -61,8 +70,28 @@
           "id": "gemma-4-E4B",
           "attachment": true,
           "modalities": {
-            "input": ["text", "image", "audio"],
-            "output": ["text"]
+            "input": ["text", "image", "audio"]
+          },
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        }
+      }
+    },
+    "mbp14": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "MacBook Pro 14",
+      "options": {
+        "baseURL": "http://jeremys-macbook-pro-14:1234/v1/"
+      },
+      "models": {
+        "qwen27b": {
+          "name": "Qwen 27b",
+          "id": "Qwen3.8-27B",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"]
           },
           "limit": {
             "context": 131072,
