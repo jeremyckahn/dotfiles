@@ -87,6 +87,7 @@ alias nh="npm home"
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias android='~/Library/Android/sdk/emulator/emulator -avd $(~/Library/Android/sdk/emulator/emulator -list-avds | head -n 1) &'
 alias nom='npm' # nom all the things
+alias prune-hermes='hermes sessions prune --older-than 1w --include-archived'
 
 # https://iterm2.com/documentation-tmux-integration.html
 # https://tmuxcheatsheet.com/
@@ -529,7 +530,6 @@ get_pr_comments() {
   gh api repos/:owner/:repo/pulls/$pr_number/comments | jq '[ .[] | select(.user.login == "gemini-code-assist[bot]") | { diff_hunk, line, start_line, body } ]'
 }
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-
 
 # Added by Antigravity CLI installer
 export PATH="/home/jeremyckahn/.local/bin:$PATH"
