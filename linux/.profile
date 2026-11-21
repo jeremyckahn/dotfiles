@@ -6,6 +6,7 @@ export MOZ_USE_XINPUT2=1
 [ -s ~/.env.profile ] && source ~/.env.profile
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-
 # Added by Antigravity CLI installer
 export PATH="/home/jeremyckahn/.local/bin:$PATH"
+
+export PATH="$HOME/.local/tiiny/bin:$PATH"
